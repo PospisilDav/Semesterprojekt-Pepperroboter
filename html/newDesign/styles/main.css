@@ -1,0 +1,285 @@
+/* Base Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(5px);
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Header Section */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 160px;
+  margin: 3.5% auto 0 26.6%;
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  word-wrap: break-word;
+  margin-top: 30px;
+  margin-left: 20%;
+}
+
+.header-subtitle {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  word-wrap: break-word;
+  margin-left: 20%;
+  margin-top: 10px;
+  width: 75%;
+  margin-bottom: 20px;
+}
+
+.header-avatar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 100px;
+  outline: 3px white solid;
+  outline-offset: -3px;
+  position: absolute;
+  left: 3.2%;
+  top: 35px;
+}
+
+.header-avatar {
+  width: 61px;
+  height: 55.42px;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 3.5%;
+  left: 0;
+  width: 23.4%;
+  height: 160px;
+  background: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 1;
+}
+
+.icon {
+  width: 70.7%;
+  height: auto;
+  max-height: 89px;
+}
+
+/* Action Button */
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 160px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 3.5%;
+  right: 2.2rem;
+  z-index: 1;
+}
+
+.action-button img {
+  width: 82.5%;
+}
+
+/* Lower Section */
+.lower-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+  background: var(--background-transparent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  z-index: 2;
+  margin: auto;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 488px;
+  background: var(--gradient-primary);
+  border-radius: 16px;
+  min-width: 300px;
+  margin-bottom: 16px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.title-burgeramt,
+.title-furtwangen,
+.title-spiele {
+  margin-top: 20px;
+}
+
+.card-content {
+  width: 90%;
+  padding-left: 1rem;
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.card-content.center {
+  text-align: center;
+}
+
+/* Card Icon */
+.card-icon-container {
+  display: flex;
+  width: 91px;
+  height: 87px;
+  padding: 12.5px 15px;
+  margin-top: 17.5px;
+  background: var(--background-light);
+  overflow: hidden;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-icon {
+  width: 60px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.card-icon.wide {
+  width: 65px;
+  height: 42px;
+}
+
+/* Show Button */
+.show-button {
+  display: inline-flex;
+  padding: 8px 17.5px;
+  margin-top: auto;
+  margin-bottom: 30px;
+  background: var(--background-light);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.show-button-text {
+  color: var(--button-green);
+  font-size: 14px;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.show-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 10px;
+}
+
+.arrow-icon {
+  width: 18px;
+  height: 10px;
+  object-fit: contain;
+}
+
+/* City Image */
+.city-image {
+  width: 64%;
+  height: auto;
+  max-height: 211px;
+  margin-top: 55px;
+  border-radius: 20px;
+}
+
+/* Service List */
+.service-list {
+  padding-left: 0.5rem;
+  font-size: 25px;
+  margin: 1.7rem 0;
+  list-style: disc;
+}
+
+.service-list li {
+  margin-bottom: 0.5rem;
+}
+
+.service-list li:last-child {
+  margin-bottom: 0;
+}

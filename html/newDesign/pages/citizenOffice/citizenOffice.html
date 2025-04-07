@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bürgerbüro - Pepper</title>
+  <link rel="icon" type="image/png" href="../assets/furtwangen_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/globals.css">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <link rel="stylesheet" href="../../styles/subpage.css">
+</head>
+
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/furtwangen_background.jpg" alt="Background" />
+    
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <div class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </div>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section-right">
+      <img src="../../assets/furtwangen_logo.svg" alt="Logo" />
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-title">Bürgerbüro Furtwangen</div>
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-subtitle">
+        Wählen Sie einen der angebotenen Services oder stellen Sie mir eine Frage.
+      </div>
+    </div>
+
+    <div class="lower-section">
+      <!-- Services Container -->
+      <div class="cards-container">
+        <!-- Wegweiser Card -->
+        <div class="card" id="wegweiser-card">
+          <div class="card-icon-container">
+            <div class="card-icon">
+              <img src="../../assets/icons/mappin.svg" alt="Wegweiser" class="card-icon" />
+            </div>
+          </div>
+          <div class="card-title title-burgeramt">Wegweiser</div>
+          <div class="card-content">
+            <ul class="service-list">
+              <li>Büros und Abteilungen</li>
+              <li>Zuständigkeiten</li>
+              <li>Barrierefreie Zugänge</li>
+              <li>Wartezimmernummern</li>
+              <li>Anfahrt und Parken</li>
+            </ul>
+          </div>
+          <div class="show-button">
+            <div class="show-button-text">Auswählen</div>
+            <div class="show-button-icon">
+              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+          
+        </div>
+
+        <!-- Öffnungszeiten Card -->
+        <div class="card">
+          <div class="card-icon-container">
+            <div class="card-icon">
+              <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" class="card-icon" />
+            </div>
+          </div>
+          <div class="card-title title-burgeramt">Öffnungszeiten</div>
+          <div class="card-content">
+            <p><strong>Montag - Freitag:</strong><br>8:30 - 12:00 Uhr</p>
+            <p><strong>Dienstag:</strong><br>14:00 - 18:00 Uhr</p>
+            <p><strong>Donnerstag:</strong><br>14:00 - 17:00 Uhr</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add event listener for back button
+    document.querySelector('#back-button').addEventListener('click', function() {
+      window.location.href = '../../index.html';
+    });
+
+    // Add event listeners for all service buttons
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        const cardTitle = this.querySelector('.card-title').textContent;
+        console.log(`Selected service: ${cardTitle}`);
+        
+        // Navigate based on card title
+        if (cardTitle === 'Wegweiser') {
+          window.location.href = './wegweiser.html';
+        } else if (cardTitle === 'Personalausweis') {
+          window.location.href = './personalausweis.html';
+        } else if (cardTitle === 'Öffnungszeiten') {
+          // Show appointment booking dialog or navigate to scheduling page
+          console.log('Opening appointment scheduler');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

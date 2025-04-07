@@ -1,0 +1,26 @@
+:root {
+  --primary-green: #09B637;
+  --primary-blue: #07859E;
+  --gradient-primary: linear-gradient(180deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+  
+  --button-green: #0CB100;
+  --button-hover-green: #0A9000;
+  
+  --background-light: #F5F7FA;
+  --background-transparent: rgba(255, 255, 255, 0.40);
+  
+  --text-white: #FFFFFF;
+  --text-dark: #333333;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
