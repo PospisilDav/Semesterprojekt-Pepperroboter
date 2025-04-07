@@ -1,0 +1,49 @@
+:root {
+  /* Color Palette */
+  --primary-green: #09B637;
+  --primary-blue: #07859E;
+  --gradient-primary: linear-gradient(180deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+  
+  --button-green: #0CB100;
+  --button-hover-green: #0A9000;
+  
+  --background-light: #F5F7FA;
+  --background-transparent: rgba(255, 255, 255, 0.40);
+  
+  --text-white: #FFFFFF;
+  --text-dark: #333333;
+  
+  /* Font Sizes */
+  --font-size-small: clamp(15px, 1.3vw, 18px);
+  --font-size-medium: clamp(18px, 1.8vw, 22.5px);
+  --font-size-large: clamp(24px, 2.7vw, 35px);
+  
+  /* Layout */
+  --border-radius-small: 12.5px;
+  --border-radius-medium: 20px;
+  --border-radius-large: 30px;
+  
+  --shadow-small: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  --shadow-large: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  
+  /* Containers */
+  --container-max-width: 1280px;
+  
+  /* Animations */
+  --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
