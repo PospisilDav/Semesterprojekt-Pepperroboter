@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furtwangen - Informationen</title>
+  <link rel="stylesheet" href="../../styles/globals.css">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <link rel="stylesheet" href="../../styles/subpage.css">
+  <link rel="stylesheet" href="./furtwangen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/furtwangen_background.jpg" alt="Background" />
+    
+    <!-- Back Button -->
+    <div class="back-button-container">
+      <div class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </div>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section-right">
+      <img src="../../assets/furtwangen_logo.svg" alt="Logo" />
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-title">Stadt Furtwangen</div>
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-subtitle">
+        Entdecken Sie Furtwangen im Schwarzwald. Wählen Sie eine Kategorie.
+      </div>
+    </div>
+
+    <div class="lower-section">
+      <!-- Services Container -->
+      <div class="cards-container">
+
+        <!-- Freizeit Card -->
+        <div class="card" id="freizeit-card">
+          <div class="card-background"></div>
+          
+          <div class="card-icon-container">
+            <div class="card-icon">
+              <img src="../../assets/icons/walk.svg" alt="Freizeit" class="card-icon" />
+            </div>
+          </div>
+          <div class="card-title title-furtwangen">Freizeit</div>
+          
+          <div class="card-content">
+            <ul class="service-list">
+              <li>Sport</li>
+              <li>Aktivitäten</li>
+              <li>Lokale Küche (Essen)</li>
+            </ul>
+          </div>
+          <div class="show-button">
+            <div class="show-button-text">Erkunden</div>
+            <div class="show-button-icon">
+              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bildung Card -->
+        <div class="card" id="bildung-card">
+          <div class="card-icon-container">
+            <div class="card-icon">
+              <img src="../../assets/icons/graduate_cap.svg" alt="Bildung" class="card-icon" />
+            </div>
+          </div>
+          <div class="card-title title-furtwangen">Bildung (HFU)</div>
+          <div class="card-content">
+            <ul class="service-list">
+              <li>Hochschule Furtwangen</li>
+              <li>Fachbereiche</li>
+            </ul>
+          </div>
+          <div class="show-button">
+            <div class="show-button-text">Erkunden</div>
+            <div class="show-button-icon">
+              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Sehenswürdigkeiten Card -->
+        <div class="card" id="sehenswuerdigkeiten-card">
+          <div class="card-icon-container">
+            <div class="card-icon">
+              <img src="../../assets/icons/camera_on_rectangle.svg" alt="Sehenswürdigkeiten" class="card-icon" />
+            </div>
+          </div>
+          <div class="card-title title-furtwangen">Sehenswürdigkeiten</div>
+          <div class="card-content">
+            <ul class="service-list">
+              <li>Uhrenmuseum</li>
+              <li>Aussichtsturm Brend</li>
+              <li>Günterfelsen</li>
+            </ul>
+          </div>
+          <div class="show-button">
+            <div class="show-button-text">Erkunden</div>
+            <div class="show-button-icon">
+              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add event listener for back button
+    document.querySelector('#back-button').addEventListener('click', function() {
+      window.location.href = '../../index.html';
+    });
+
+    // Add event listeners for all service buttons
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function() {
+        const cardId = this.id;
+        
+        // Navigate based on card ID
+        if (cardId === 'freizeit-card') {
+          window.location.href = './freizeit.html';
+        } else if (cardId === 'bildung-card') {
+          window.location.href = './bildung.html';
+        } else if (cardId === 'sehenswuerdigkeiten-card') {
+          window.location.href = './sehenswuerdigkeiten.html';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
