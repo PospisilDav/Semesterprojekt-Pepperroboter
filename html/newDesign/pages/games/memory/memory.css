@@ -1,0 +1,264 @@
+.memory-container {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 0.3rem;
+}
+
+.memory-header {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 3rem;
+  gap: 5rem;
+}
+
+.memory-stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 80px;
+}
+
+.memory-stat {
+  background-color: var(--background-light);
+  border-radius: 18px;
+  padding: 20px 35px;
+  text-align: center;
+  min-width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.memory-stat__label {
+  font-size: 24px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.memory-stat__value {
+  font-size: 32px;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.memory-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-green);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 25px 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.memory-button:active {
+  transform: translateY(1px);
+}
+
+.memory-button img {
+  width: 28px;
+  height: 28px;
+  margin-right: 12px;
+  filter: brightness(0) invert(1);
+}
+
+#gameBoard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  width: 95%;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.memory-tile {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.memory-tile:hover {
+  transform: scale(1.05);
+}
+
+.memory-tile.flipped {
+  transform: rotateY(180deg);
+}
+
+.memory-tile.matched {
+  animation: memory-pulse 0.5s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+}
+
+.memory-tile__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.memory-tile__front, 
+.memory-tile__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.memory-tile__front {
+  background: var(--background-light);
+  transform: rotateY(180deg);
+}
+
+.memory-tile__back {
+  background: var(--gradient-primary);
+}
+
+.memory-tile.matched .memory-tile__front {
+  background-color: rgba(225, 255, 233, 0.814);
+  border: 3px solid var(--primary-green);
+}
+
+.memory-tile__image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.memory-tile svg {
+  width: 80%;
+  height: 80%;
+}
+
+.memory-tile path {
+  stroke: var(--primary-blue);
+  stroke-width: 2px;
+  fill: var(--primary-blue);
+}
+
+.memory-tile.matched path {
+  fill: var(--primary-green);
+  stroke: var(--primary-green);
+}
+
+.memory-card-image {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.memory-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.memory-overlay--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.memory-win-message {
+  background: white;
+  border-radius: 30px;
+  padding: 50px 80px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease 0.1s;
+  min-width: 600px;
+}
+
+.memory-overlay--active .memory-win-message {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.memory-win-message h2 {
+  color: var(--primary-green);
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.memory-win-message p {
+  color: var(--text-dark);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.memory-win-message .memory-results {
+  color: var(--primary-blue);
+  font-size: 32px;
+  font-weight: 600;
+  margin: 35px 0;
+}
+
+@keyframes memory-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.lower-section {
+  background: none;
+  border-top: 2px solid var(--background-light);
+  padding-top: 20px;
+}
+
+.header-title {
+  font-size: 40px !important;
+}
+
+.header-subtitle {
+  font-size: 26px !important;
+}
+
+.back-button {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.back-button img {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.container {
+  padding-bottom: 30px;
+}
