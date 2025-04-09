@@ -15,7 +15,7 @@
 
 <body>
   <div class="container">
-    <img class="background-image" src="../../assets/furtwangen_background.jpg" alt="Background" />
+    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
     
     <!-- Back Button -->
     <div class="back-button-container">
@@ -107,20 +107,17 @@
       window.location.href = '../../index.html';
     });
 
-    // Add event listeners for all service buttons
     document.querySelectorAll('.card').forEach(card => {
       card.style.cursor = 'pointer';
       card.addEventListener('click', function() {
         const cardTitle = this.querySelector('.card-title').textContent;
         console.log(`Selected service: ${cardTitle}`);
         
-        // Navigate based on card title
         if (cardTitle === 'Wegweiser') {
           window.location.href = './wegweiser.html';
         } else if (cardTitle === 'Personalausweis') {
           window.location.href = './personalausweis.html';
         } else if (cardTitle === 'Öffnungszeiten') {
-          // Show appointment booking dialog or navigate to scheduling page
           console.log('Opening appointment scheduler');
         }
       });

@@ -12,13 +12,13 @@
 </head>
 <body>
   <div class="container">
-    <img class="background-image" src="../../assets/furtwangen_background.jpg" alt="Background" />
+    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
     
     <!-- Back Button -->
     <div class="back-button-container">
-      <div class="back-button" id="back-button">
+      <a href="../../index.html" class="back-button" id="back-button">
         <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-      </div>
+      </a>
     </div>
 
     <!-- Logo Section -->
@@ -42,7 +42,7 @@
       <div class="cards-container">
 
         <!-- Freizeit Card -->
-        <div class="card" id="freizeit-card">
+        <a href="./freizeit.html" class="card" id="freizeit-card">
           <div class="card-background"></div>
           
           <div class="card-icon-container">
@@ -56,19 +56,19 @@
             <ul class="service-list">
               <li>Sport</li>
               <li>Aktivitäten</li>
-              <li>Lokale Küche (Essen)</li>
+              <li>Lokale Küche</li>
             </ul>
           </div>
           <div class="show-button">
             <div class="show-button-text">Erkunden</div>
             <div class="show-button-icon">
-              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+              <img src="../../assets/icons/game_controller.svg" alt="Arrow" class="arrow-icon" />
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Bildung Card -->
-        <div class="card" id="bildung-card">
+        <a href="./bildung.html" class="card" id="bildung-card">
           <div class="card-icon-container">
             <div class="card-icon">
               <img src="../../assets/icons/graduate_cap.svg" alt="Bildung" class="card-icon" />
@@ -87,10 +87,10 @@
               <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Sehenswürdigkeiten Card -->
-        <div class="card" id="sehenswuerdigkeiten-card">
+        <a href="./sehenswuerdigkeiten.html" class="card" id="sehenswuerdigkeiten-card">
           <div class="card-icon-container">
             <div class="card-icon">
               <img src="../../assets/icons/camera_on_rectangle.svg" alt="Sehenswürdigkeiten" class="card-icon" />
@@ -110,32 +110,9 @@
               <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
-
-  <script>
-    // Add event listener for back button
-    document.querySelector('#back-button').addEventListener('click', function() {
-      window.location.href = '../../index.html';
-    });
-
-    // Add event listeners for all service buttons
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', function() {
-        const cardId = this.id;
-        
-        // Navigate based on card ID
-        if (cardId === 'freizeit-card') {
-          window.location.href = './freizeit.html';
-        } else if (cardId === 'bildung-card') {
-          window.location.href = './bildung.html';
-        } else if (cardId === 'sehenswuerdigkeiten-card') {
-          window.location.href = './sehenswuerdigkeiten.html';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
