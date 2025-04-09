@@ -1,0 +1,41 @@
+.card-content.compact {
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-content.opening-hours-content {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.opening-hours {
+  width: 85%;
+  border-spacing: 0;
+  font-size: 22px;
+  margin-top: 1.5rem;
+}
+
+.opening-hours td {
+  padding: 8px 0;
+  vertical-align: top;
+}
+
+.opening-hours td:first-child {
+  white-space: nowrap;
+  padding-right: 15px;
+  font-weight: 500;
+}
+
+.opening-hours strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.opening-hours tr:not(:last-child) td {
+  padding-bottom: 15px;
+}
