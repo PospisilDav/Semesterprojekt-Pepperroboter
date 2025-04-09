@@ -194,6 +194,11 @@ html, body {
   text-align: center;
 }
 
+a.card {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Card Icon */
 .card-icon-container {
   display: flex;
