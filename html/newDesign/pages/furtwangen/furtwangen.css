@@ -74,10 +74,10 @@
   top: 10px;
   right: 10px;
   padding: 5px 10px;
-  background: var(--background-light);
+  background: #F5F7FA;
   border-radius: 12px;
   font-size: 12px;
-  color: var(--button-green);
+  color: #0CB100;
   font-weight: 500;
 }
 
@@ -91,8 +91,8 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: var(--background-light);
-  color: var(--primary-blue);
+  background: #F5F7FA;
+  color: #07859E;
   font-weight: 600;
   font-size: 12px;
   border-radius: 50%;

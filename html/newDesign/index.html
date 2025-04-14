@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=962, height=601, user-scalable=no">
   <title>Infoterminal Pepper</title>
   <link rel="icon" type="image/png" href="./assets/furtwangen_logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,64 +33,78 @@
 
     <!-- Action Button -->
     <div class="action-button">
-      <img src="./assets/icons/settings.svg" alt="Bürgeramt" class="icon" />
+      <img src="./assets/icons/settings.svg" alt="Einstellungen" />
     </div>
 
     <div class="lower-section">
       <!-- Cards Container -->
       <div class="cards-container">
         <!-- Bürgeramt Card -->
-        <a href="./pages/citizenOffice/citizenOffice.html" class="card">
-          <div class="card-icon-container">
-            <div class="card-icon">
+        <a href="./pages/citizenOffice/citizenOffice.html" class="card card-buergeramt">
+          <div class="card-header">
+            <div class="card-icon-container">
               <img src="./assets/icons/questionmark_folder.svg" alt="Bürgeramt" class="card-icon" />
             </div>
+            <div class="card-title title-burgeramt">Bürgeramt</div>
           </div>
-          <div class="card-title title-burgeramt">Bürgeramt</div>
           <div class="card-content">
             <ul class="service-list">
-              <li>Neuer Wohnsitz</li>
-              <li>Meldebescheinigung</li>
-              <li>Personalausweis</li>
-              <li>Führerschein</li>
-              <li>Fundbüro</li>
+              <li><span class="service-item">Neuer Wohnsitz</span></li>
+              <li><span class="service-item">Meldebescheinigung</span></li>
+              <li><span class="service-item">Personalausweis</span></li>
             </ul>
           </div>
-          <div class="show-button">
-            <div class="show-button-text">Anzeigen</div>
-            <div class="show-button-icon">
-              <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-text">Anzeigen</div>
+              <div class="show-button-icon">
+                <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+              </div>
             </div>
           </div>
         </a>
 
         <!-- Furtwangen Card -->
-        <a href="./pages/furtwangen/furtwangen.html" class="card">
-          <img class="city-image" src="./assets/furtwangen_badge.svg" alt="Furtwangen" />
-          <div class="card-title title-furtwangen">Furtwangen</div>
-          <div class="show-button">
-            <div class="show-button-text">Anzeigen</div>
-            <div class="show-button-icon">
-              <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+        <a href="./pages/furtwangen/furtwangen.html" class="card card-furtwangen">
+          <div class="card-header">
+            <img class="city-image" src="./assets/furtwangen_badge.svg" alt="Furtwangen" />
+            <div class="card-title title-furtwangen">Furtwangen</div>
+          </div>
+          <div class="card-content center">
+            <p>Erkunden Sie unsere wunderschöne Stadt im Schwarzwald</p>
+          </div>
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-text">Anzeigen</div>
+              <div class="show-button-icon">
+                <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+              </div>
             </div>
           </div>
         </a>
 
         <!-- Spiele Card -->
-        <a href="./pages/games/games.html" class="card">
-          <div class="card-icon-container">
-            <div class="card-icon wide">
-              <img src="./assets/icons/game_controller.svg" alt="Logo" class="card-icon" />
+        <a href="./pages/games/games.html" class="card card-spiele">
+          <div class="card-header">
+            <div class="card-icon-container">
+              <img src="./assets/icons/game_controller.svg" alt="Spiele" class="card-icon wide" />
+            </div>
+            <div class="card-title title-spiele">Spiele</div>
+          </div>
+          <div class="card-content center">
+            <p>Lange Wartezeiten? Spiel eine Runde mit mir!</p>
+            <div class="games-preview">
+              <div class="game-icon">🎮</div>
+              <div class="game-icon">🧩</div>
+              <div class="game-icon">🎯</div>
             </div>
           </div>
-          <div class="card-title title-spiele">Spiele</div>
-          <div class="card-content center">
-            Lange Wartezeiten? Spiel eine Runde mit mir!
-          </div>
-          <div class="show-button">
-            <div class="show-button-text">Anzeigen</div>
-            <div class="show-button-icon">
-              <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-text">Anzeigen</div>
+              <div class="show-button-icon">
+                <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+              </div>
             </div>
           </div>
         </a>

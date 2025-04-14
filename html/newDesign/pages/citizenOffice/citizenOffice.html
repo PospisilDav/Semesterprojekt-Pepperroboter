@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=962, height=601, user-scalable=no">
   <title>Bürgerbüro - Pepper</title>
-  <link rel="icon" type="image/png" href="../assets/furtwangen_logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../../assets/furtwangen_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles/globals.css">
   <link rel="stylesheet" href="../../styles/main.css">
   <link rel="stylesheet" href="../../styles/subpage.css">
@@ -41,45 +41,74 @@
     </div>
 
     <div class="lower-section">
-      <!-- Services Container -->
+      <!-- Cards Container -->
       <div class="cards-container">
+        
         <!-- Wegweiser Card -->
         <div class="card" id="wegweiser-card">
-          <div class="card-icon-container">
-            <div class="card-icon">
+          <div class="card-header">
+            <div class="card-icon-container">
               <img src="../../assets/icons/mappin.svg" alt="Wegweiser" class="card-icon" />
             </div>
+            <div class="card-title title-burgeramt">Wegweiser</div>
           </div>
-          <div class="card-title title-burgeramt">Wegweiser</div>
+          
           <div class="card-content">
             <ul class="service-list">
-              <li>Büros und Abteilungen</li>
-              <li>Zuständigkeiten</li>
-              <li>Barrierefreie Zugänge</li>
-              <li>Wartezimmernummern</li>
+              <li><span class="service-item">Büros und Abteilungen</span></li>
+              <li><span class="service-item">Zuständigkeiten</span></li>
+              <li><span class="service-item">Barrierefreie Zugänge</span></li>
+              <li><span class="service-item">Wartezimmernummern</span></li>
             </ul>
           </div>
-          <div class="show-button">
-            <div class="show-button-text">Auswählen</div>
-            <div class="show-button-icon">
-              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+          
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-text">Auswählen</div>
+              <div class="show-button-icon">
+                <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Card -->
-        <div class="card">
+        <!-- Personalausweis Card -->
+        <div class="card" id="personalausweis-card">
+          <div class="card-header">
+            <div class="card-icon-container">
+              <img src="../../assets/icons/id_card.svg" alt="Personalausweis" class="card-icon" />
+            </div>
+            <div class="card-title title-burgeramt">Personalausweis</div>
+          </div>
           
+          <div class="card-content">
+            <ul class="service-list">
+              <li><span class="service-item">Beantragung</span></li>
+              <li><span class="service-item">Verlängerung</span></li>
+              <li><span class="service-item">Benötigte Dokumente</span></li>
+              <li><span class="service-item">Gebühreninformation</span></li>
+            </ul>
+          </div>
+          
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-text">Auswählen</div>
+              <div class="show-button-icon">
+                <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Öffnungszeiten Card -->
-        <div class="card">
-          <div class="card-icon-container">
-            <div class="card-icon">
+        <div class="card" id="oeffnungszeiten-card">
+          <div class="card-header">
+            <div class="card-icon-container">
               <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" class="card-icon" />
             </div>
+            <div class="card-title title-burgeramt">Öffnungszeiten</div>
           </div>
-          <div class="card-title title-burgeramt">Öffnungszeiten</div>
+          
           <div class="card-content compact">
             <table class="opening-hours">
               <tr>
@@ -96,7 +125,17 @@
               </tr>
             </table>
           </div>
+          
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-text">Termin buchen</div>
+              <div class="show-button-icon">
+                <img src="../../assets/icons/calendar.svg" alt="Calendar" class="arrow-icon" />
+              </div>
+            </div>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>
