@@ -135,9 +135,9 @@ body {
 }
 
 .volume-buttons-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     margin: 20px 0;
 }
 
@@ -159,41 +159,16 @@ body {
     position: relative;
     overflow: hidden;
     min-height: 150px;
+    flex: 1;
+    margin: 0 10px;
 }
 
-.volume-btn:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+.volume-btn:first-child {
+    margin-left: 0;
 }
 
-#volumeUpBtn {
-    background-color: #e1f7e1;
-}
-
-#volumeUpBtn:active {
-    background-color: #c8f0c8;
-}
-
-#volumeDownBtn {
-    background-color: #e1f7ff;
-}
-
-#volumeDownBtn:active {
-    background-color: #c8edff;
-}
-
-#muteBtn {
-    background-color: #fff0f0;
-}
-
-#muteBtn:active {
-    background-color: #ffe0e0;
-}
-
-.volume-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
+.volume-btn:last-child {
+    margin-right: 0;
 }
 
 .btn {
@@ -293,17 +268,17 @@ select {
 select:focus {
     border-color: #07859E;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(7, 133, 158, 0.25);
+    box-shadow: 0 0 2px rgba(7, 133, 158, 0.25);
 }
 
 .back-button img {
     width: 40px;
     height: 40px;
-    padding: 10px;
 }
 
 header {
     width: 100%;
+    padding: 10px;
     position: relative;
 }
 
@@ -345,9 +320,6 @@ header {
 @keyframes shimmer {
     0% {
         transform: translateX(-100%) skewX(-15deg);
-    }
-    30% {
-        transform: translateX(100%) skewX(-15deg);
     }
     100% {
         transform: translateX(100%) skewX(-15deg);
