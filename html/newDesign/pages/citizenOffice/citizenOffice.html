@@ -146,7 +146,9 @@
       window.location.href = '../../index.html';
     });
 
-    document.querySelectorAll('.card').forEach(card => {
+    var cards = document.querySelectorAll('.card')
+    for (var i = 0; i < cards.length; i++) {
+      var card = cards[i]
       card.style.cursor = 'pointer';
       card.addEventListener('click', function() {
         const cardTitle = this.querySelector('.card-title').textContent;
@@ -160,7 +162,8 @@
           console.log('Opening appointment scheduler');
         }
       });
-    });
+    }
+
   </script>
 </body>
 </html>
