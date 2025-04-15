@@ -7,7 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/main.css">
     <link rel="stylesheet" href="settings.css">
-    <script src="../../js/qilib/qimessaging/2/qimessaging.js"></script>
+    <!-- <script src="../../js/qilib/qimessaging/2/qimessaging.js"></script> -->
+    <script src="../../scripts/pepperController.js"></script>
+    <script src="../../scripts/settings.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -28,19 +31,19 @@
                     <h2>Volume Controls</h2>
                     
                     <div class="volume-buttons-grid">
-                        <button id="volumeUpBtn" class="volume-btn">
+                        <button id="volumeUpBtn" class="volume-btn" onclick="window.pepperController.volPlus()">
                             <img src="../../assets/icons/volume_up.svg" alt="Volume Up" class="volume-icon">
                             <span>Volume Up</span>
                         </button>
                         
-                        <button id="volumeDownBtn" class="volume-btn">
+                        <button id="volumeDownBtn" class="volume-btn" onclick="window.pepperController.volMinus()">
                             <img src="../../assets/icons/volume_down.svg" alt="Volume Down" class="volume-icon">
                             <span>Volume Down</span>
                         </button>
                         
-                        <button id="muteBtn" class="volume-btn">
-                            <img src="../../assets/icons/volume_mute.svg" alt="Mute" class="volume-icon">
-                            <span>Mute</span>
+                        <button id="muteBtn" class="volume-btn" onclick="toggleMute()">
+                            <img id="muteIcon" src="../../assets/icons/volume_mute.svg" alt="Mute" class="volume-icon">
+                            <span id="muteText">Mute</span>
                         </button>
                     </div>
                 </div>

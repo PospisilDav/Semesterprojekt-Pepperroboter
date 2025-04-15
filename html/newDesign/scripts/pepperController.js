@@ -5,7 +5,7 @@ function pepperController() {
     var isDesktop = false;
 
     self.init = function() {
-        window.console.log("PepperController initialisiert");
+        window.console.log("PepperController initalized");
         // Prüfen, ob echter Pepper mit echtem Tablet
         // falls Windows-System: dann keine pepper-Funktionen aufrufen!!
         if (window.navigator.userAgent.indexOf("Windows NT") != -1)
@@ -149,3 +149,6 @@ function pepperController() {
     };
 }
 
+// initialize pepperController Globally
+window.pepperController = new pepperController();
+window.pepperController.init();
