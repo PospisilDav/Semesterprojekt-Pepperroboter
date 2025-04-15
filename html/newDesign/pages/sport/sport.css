@@ -1,0 +1,99 @@
+/* Enhanced card styles */
+.card {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background pattern or subtle texture */
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/patterns/subtle-pattern.svg');
+  opacity: 0.07;
+  z-index: 0;
+}
+
+/* Preview image for content */
+.card-preview-image {
+  width: 85%;
+  height: 120px;
+  margin: 10px auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Adjust card content positioning */
+.card-content {
+  z-index: 1;
+}
+
+/* Enhanced button styles */
+.show-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.show-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Card highlight effect */
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: all 0.5s ease;
+  opacity: 0.7;
+}
+
+/* Category badges */
+.category-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background: #F5F7FA;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #0CB100;
+  font-weight: 500;
+}
+
+/* Card counter - shows available items */
+.item-counter {
+  position: absolute;
+  bottom: 80px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #F5F7FA;
+  color: #07859E;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 50%;
+}
