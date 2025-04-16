@@ -1,54 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=962, height=601, user-scalable=no">
-    <title>Settings - Pepper Robot</title>
+    <title>Einstellungen - Pepper Roboter</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/subpage.css">
+    <link rel="stylesheet" href="./settings.css">
     <link rel="stylesheet" href="settings.css">
     <!-- <script src="../../js/qilib/qimessaging/2/qimessaging.js"></script> -->
     <script src="../../scripts/pepperController.js"></script>
     <script src="../../scripts/settings.js"></script>
 
 </head>
+
 <body>
     <div class="container">
-        <img class="background-image" src="../../assets/backgrounds/settings_background.jpg" alt="Background" />
-        
-        <header>
-            <div class="header-container">
-                <a href="../../index.html" class="back-button">
-                    <img src="../../assets/icons/arrow_left.svg" alt="Back">
-                </a>
-                <h1>Volume Settings</h1>
-            </div>
-        </header>
+        <img class="background-image" src="../../assets/backgrounds/settings_background.jpg" alt="Hintergrund" />
 
-        <main>
-            <div class="settings-container">
-                <div class="settings-section">
-                    <h2>Volume Controls</h2>
-                    
-                    <div class="volume-buttons-grid">
-                        <button id="volumeUpBtn" class="volume-btn" onclick="window.pepperController.volPlus()">
-                            <img src="../../assets/icons/volume_up.svg" alt="Volume Up" class="volume-icon">
-                            <span>Volume Up</span>
-                        </button>
-                        
-                        <button id="volumeDownBtn" class="volume-btn" onclick="window.pepperController.volMinus()">
-                            <img src="../../assets/icons/volume_down.svg" alt="Volume Down" class="volume-icon">
-                            <span>Volume Down</span>
-                        </button>
-                        
-                        <button id="muteBtn" class="volume-btn" onclick="toggleMute()">
-                            <img id="muteIcon" src="../../assets/icons/volume_mute.svg" alt="Mute" class="volume-icon">
-                            <span id="muteText">Mute</span>
-                        </button>
-                    </div>
+        <!-- Zurück-Button -->
+        <div class="navigation-buttons-container">
+            <a href="../../index.html" class="back-button">
+                <img src="../../assets/icons/arrow_left.svg" alt="Zurück">
+            </a>
+        </div>
+
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="header-title">Einstellungen</div>
+        </div>
+
+        <!-- Einstellungen Inhalt -->
+        <div class="settings-container">
+            <div class="settings-section">
+                <h2>Lautstärkeregelung</h2>
+
+                <div class="volume-slider-container">
+                    <div class="volume-label">Lautstärke</div>
+                    <input type="range" min="0" max="100" value="50" class="volume-slider" id="volumeSlider">
+                    <div class="volume-value"><span id="volumeValue">50</span>%</div>
+                </div>
+
+                <div class="volume-buttons">
+                    <button id="volumeUpBtn" class="volume-btn">
+                        <img src="../../assets/icons/volume_up.svg" alt="Lauter" class="volume-icon">
+                        <span>Erhöhen</span>
+                    </button>
+
+                    <button id="volumeDownBtn" class="volume-btn">
+                        <img src="../../assets/icons/volume_down.svg" alt="Leiser" class="volume-icon">
+                        <span>Verringern</span>
+                    </button>
+
+                    <button id="muteBtn" class="volume-btn">
+                        <img src="../../assets/icons/volume_mute.svg" alt="Stumm" class="volume-icon">
+                        <span>Stummschalten</span>
+                    </button>
                 </div>
             </div>
-        </main>
-    </div>
+        </div>
 </body>
 </html>

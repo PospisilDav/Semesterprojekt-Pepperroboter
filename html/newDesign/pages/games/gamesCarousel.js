@@ -110,6 +110,4 @@ document.addEventListener('DOMContentLoaded', function () {
     carousel.parentNode.appendChild(paginationDots);
   }
   updateCarousel();
-
-
 });

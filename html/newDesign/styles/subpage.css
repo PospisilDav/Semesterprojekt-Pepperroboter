@@ -60,13 +60,41 @@
 .header-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
   width: 50%;
   height: 120px;
-  margin: 20px auto 0 22.5% !important;
+  margin: 20px auto 0 auto;
   background: linear-gradient(to bottom, #09B637, #07859E);
   border-radius: 16px;
   position: relative;
   z-index: 1;
+  padding: 15px 15px;
+  box-sizing: border-box;
+}
+
+.header-title {
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 3.5px;
+}
+
+.header-subtitle {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.header-avatar-container {
+  margin: 5px 0;
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
 }
 
 .logo-section-right {
