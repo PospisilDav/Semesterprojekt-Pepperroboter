@@ -16,24 +16,4 @@ document.addEventListener("DOMContentLoaded", function() {
             speedDial.classList.remove('active');
         }
     });
-    
-    // Language button functionality
-    const languageButton = document.getElementById('language-button');
-    if (languageButton) {
-        languageButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Toggle between languages (implement as needed)
-            alert('Sprache wechseln');
-        });
-    }
-    
-    // Help button functionality
-    const helpButton = document.getElementById('help-button');
-    if (helpButton) {
-        helpButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Show help dialog (implement as needed)
-            alert('Hilfe angezeigt');
-        });
-    }
 });
