@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="./styles/main.css">
 
   <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="./scripts/speedDial.js"></script>
   <!-- <script src="scripts/jquery-2.2.2.min.js"></script>
   <script src="scripts/jquery.qimhelpers.js"></script>
   <script src="scripts/jquery.mobile-1.4.5.min.js"></script> -->
-  
+
   <script src="scripts/pepperController.js"></script>
   <script src="scripts/homepage.js"></script>
 </head>
@@ -22,7 +23,7 @@
 <body>
   <div class="container">
     <img class="background-image" src="./assets/backgrounds/furtwangen_background.jpg" alt="Background" />
-    
+
     <!-- Logo Section -->
     <div class="logo-section">
       <img src="./assets/furtwangen_logo.svg" alt="Logo" class="icon" />
@@ -40,18 +41,32 @@
     </div>
 
     <!-- Action Button -->
-    <a href="./pages/settings/settings.html" class="action-button">
-      <img src="./assets/icons/settings.svg" alt="Einstellungen" />
-    </a>
+    <div class="speed-dial">
+      <button class="speed-dial-button main-button">
+        <img src="./assets/icons/menu.svg" alt="Menü" />
+      </button>
+      <div class="speed-dial-items">
+        <a href="./pages/settings/settings.html" class="speed-dial-item">
+          <img src="./assets/icons/settings.svg" alt="Einstellungen" />
+        </a>
+        <a href="#" class="speed-dial-item" id="language-button">
+          <img src="./assets/icons/language.svg" alt="Sprache" />
+        </a>
+        <a href="#" class="speed-dial-item" id="help-button">
+          <img src="./assets/icons/help.svg" alt="Hilfe" />
+        </a>
+      </div>
+    </div>
 
     <div class="lower-section">
       <!-- Cards Container -->
       <div class="cards-container">
+
         <!-- Bürgeramt Card -->
         <a href="./pages/citizenOffice/citizenOffice.html" class="card card-buergeramt">
           <div class="card-header">
-            <div class="card-icon-container">
-              <img src="./assets/icons/questionmark_folder.svg" alt="Bürgeramt" class="card-icon" />
+            <div class="card-image">
+              <img src="./assets/rathaus_image.png" alt="Bürgeramt" />
             </div>
             <div class="card-title title-burgeramt">Bürgeramt</div>
           </div>
@@ -64,31 +79,12 @@
           </div>
           <div class="card-footer">
             <div class="show-button">
-              <div class="show-button-text">Anzeigen</div>
               <div class="show-button-icon">
-                <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
               </div>
             </div>
           </div>
-        </a>
-
-        <!-- Furtwangen Card -->
-        <a href="./pages/furtwangen/furtwangen.html" class="card card-furtwangen">
-          <div class="card-header">
-            <img class="city-image" src="./assets/furtwangen_badge.svg" alt="Furtwangen" />
-            <div class="card-title title-furtwangen">Furtwangen</div>
-          </div>
-          <div class="card-content center">
-            <p>Erkunden Sie unsere wunderschöne Stadt im Schwarzwald</p>
-          </div>
-          <div class="card-footer">
-            <div class="show-button">
-              <div class="show-button-text">Anzeigen</div>
-              <div class="show-button-icon">
-                <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
-              </div>
-            </div>
-          </div>
+          <img class="logo-detail-outline" src="./assets/furtwangen_logo_outline.svg" alt="Logo outline" />
         </a>
 
         <!-- Spiele Card -->
@@ -99,22 +95,45 @@
             </div>
             <div class="card-title title-spiele">Spiele</div>
           </div>
-          <div class="card-content center">
-            <p>Lange Wartezeiten? Spiel eine Runde mit mir!</p>
-            <div class="games-preview">
-              <div class="game-icon">🎮</div>
-              <div class="game-icon">🧩</div>
-              <div class="game-icon">🎯</div>
-            </div>
+          <div class="card-content">
+            <ul class="service-list">
+              <li><span class="service-item">Memory</span></li>
+              <li><span class="service-item">Tic Tac Toe</span></li>
+            </ul>
           </div>
           <div class="card-footer">
             <div class="show-button">
-              <div class="show-button-text">Anzeigen</div>
               <div class="show-button-icon">
                 <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
               </div>
             </div>
           </div>
+          <img class="logo-detail-outline" src="./assets/furtwangen_logo_outline.svg" alt="Logo outline" />
+        </a>
+
+        <!-- Furtwangen Card -->
+        <a href="./pages/furtwangen/furtwangen.html" class="card card-furtwangen">
+          <div class="card-header">
+            <div class="card-image">
+              <img src="./assets/rathaus_image.png" alt="Furtwangen" />
+            </div>
+            <div class="card-title title-furtwangen">Furtwangen</div>
+          </div>
+          <div class="card-content">
+            <ul class="service-list">
+              <li><span class="service-item">Freizeit</span></li>
+              <li><span class="service-item">Bildung</span></li>
+              <li><span class="service-item">Sehenswürdigkeiten</span></li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <div class="show-button">
+              <div class="show-button-icon">
+                <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
+              </div>
+            </div>
+          </div>
+          <img class="logo-detail-outline" src="./assets/furtwangen_logo_outline.svg" alt="Logo outline" />
         </a>
       </div>
     </div>

@@ -16,6 +16,21 @@ html, body {
   margin: 0 auto;
 }
 
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.2) 40%, 
+    rgba(0, 0, 0, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .background-image {
   width: 100%;
   height: 100%;
@@ -23,7 +38,7 @@ html, body {
   top: 0;
   left: 0;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
   transform: scale(1.02);
   animation: subtle-zoom 20s infinite alternate;
 }
@@ -34,7 +49,7 @@ html, body {
   width: 60%;
   height: 120px;
   margin: 20px auto 0 26.6%;
-  background: linear-gradient(to bottom, #09B637, #07859E);
+  background: linear-gradient(99deg, rgba(82, 173, 89, 0.70) 0%, #52AD59 100%);
   border-radius: 16px;
   position: relative;
   z-index: 1;
@@ -119,20 +134,21 @@ html, body {
 
 .logo-section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: absolute;
   margin-top: 20px;
+  margin-left: 1.4rem;
   left: 0;
-  width: 23.4%;
+  width: 24%;
   height: 120px;
-  background: white;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
   z-index: 1;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
   animation: slide-in-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   transition: transform 0.2s ease;
+}
+
+.logo-section img {
+  scale: 1.3;
 }
 
 .logo-section:active {
@@ -155,7 +171,7 @@ html, body {
   border-radius: 50%;
   margin-top: 45px;
   right: 1.8rem;
-  z-index: 1;
+  z-index: 1; 
   background-color: #0CB100;
   box-shadow: 0 4px 12px rgba(12, 177, 0, 0.3);
   cursor: pointer;
@@ -180,15 +196,13 @@ html, body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 65%;
+  height: 70%;
   position: absolute;
   bottom: 0;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
   z-index: 0;
   animation: fade-in 0.8s ease-out 0.3s both;
 }
 
-/* Card improvements */
 .cards-container {
   display: flex;
   width: 95%;
@@ -203,9 +217,9 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 32%;
-  height: 340px;
-  background: linear-gradient(to bottom, #09B637, #07859E);
+  width: 30%;
+  height: 400px;
+  background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
   border-radius: 14px;
   min-width: 260px;
   position: relative;
@@ -247,15 +261,31 @@ html, body {
   z-index: 0;
 }
 
-/* New card structure */
 .card-header {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-top: 15px;
+  height: 230px; 
   position: relative;
   z-index: 1;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  object-fit: fill;
+  margin-top: -10px;
+  margin-bottom: 0.75rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card-title {
@@ -265,7 +295,7 @@ html, body {
   word-wrap: break-word;
   text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-bottom: 0;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   letter-spacing: 0.5px;
   position: relative;
@@ -322,20 +352,18 @@ html, body {
 
 .card-footer {
   width: 100%;
-  padding: 15px 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  padding-right: 10px;
   z-index: 1;
 }
 
-/* Specific card styling */
 .card-icon-container {
   display: flex;
-  width: 75px;
-  height: 70px;
-  padding: 10px 12px;
+  width: 100px;
+  height: 90px;
+  margin-top: 50px;
+  background: #F5F7FA;
   background: #F5F7FA;
   overflow: hidden;
   border-radius: 14px;
@@ -344,7 +372,6 @@ html, body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
   position: relative;
   z-index: 2;
-  margin: 0 auto;
 }
 
 .card-icon {
@@ -355,8 +382,8 @@ html, body {
 }
 
 .card-icon.wide {
-  width: 52px;
-  height: 34px;
+  width: 80px;
+  height: 45px;
 }
 
 .city-image {
@@ -367,7 +394,6 @@ html, body {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Service list improvements */
 .service-list {
   padding-left: 15px;
   font-size: 16px;
@@ -386,7 +412,7 @@ html, body {
   position: absolute;
   left: 0;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .service-list li:last-child {
@@ -398,12 +424,16 @@ html, body {
   padding: 2px 0;
 }
 
-/* Show button styling */
 .show-button {
-  display: inline-flex;
-  padding: 10px 20px;
+  position: absolute;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 0;
+  margin-left: auto;
+  bottom: 10px;
   background: #F5F7FA;
-  border-radius: 10px;
+  border-radius: 50%;
   justify-content: center;
   align-items: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -420,7 +450,7 @@ html, body {
   right: 0;
   bottom: 0;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
-  border-radius: 10px;
+  border-radius: 50%;
   opacity: 0.3;
   z-index: -1;
 }
@@ -429,14 +459,6 @@ html, body {
   background-color: #ffffff;
   transform: scale(0.97);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.show-button-text {
-  color: #0CB100;
-  font-size: 15px;
-  font-weight: 600;
-  word-wrap: break-word;
-  letter-spacing: 0.2px;
 }
 
 .show-button-icon {
@@ -449,43 +471,177 @@ html, body {
   animation: slight-bounce 2s ease-in-out infinite;
 }
 
+.show-button-icon img {
+  width: 32px;
+  height: 16px;
+  object-fit: contain;
+}
+
 .arrow-icon {
   width: 14px;
   height: 8px;
   object-fit: contain;
 }
 
-/* Games preview element */
-.games-preview {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-}
-
-.game-icon {
-  display: flex;
-  font-size: 24px;
-  width: 40px;
-  margin-right: 15px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Card specific styling adjustments */
 .card-buergeramt {
-  background: linear-gradient(135deg, #09B637, #07859E);
+  background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
+}
+
+.card-buergeramt .logo-detail-outline {
+  position: absolute;
+  left: -190px;
+  top: 26%;
+  -webkit-transform: scaleX(-1);
+}
+
+
+.card-spiele {
+  background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
+}
+
+.card-spiele .logo-detail-outline {
+  position: absolute;
+  left: -10px;
+  top: 12%;
+  filter: brightness(1.8);
 }
 
 .card-furtwangen {
-  background: linear-gradient(135deg, #0a9c3b, #07859E);
+  background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
 }
 
-.card-spiele {
-  background: linear-gradient(135deg, #09B637, #066A7F);
+.card-furtwangen .logo-detail-outline {
+  position: absolute;
+  left: -60px;
+  bottom: -15px;
+  -webkit-transform: scaleX(-1) scale(0.8);
+}
+
+.speed-dial {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 100;
+}
+
+.speed-dial-button {
+  width: 85px;
+  height: 85px;
+  border-radius: 12px;
+  background-color: #52AD59;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 102;
+  position: relative;
+}
+
+.speed-dial-button img {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.speed-dial-button:focus {
+  outline: none;
+}
+
+.speed-dial-items {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.speed-dial.active .speed-dial-items {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.speed-dial.active .speed-dial-button {
+  background-color: #3d8d42;
+}
+
+.speed-dial.active .speed-dial-button img {
+  transform: rotate(180deg);
+}
+
+.speed-dial-item {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  border: 1px solid rgba(109, 209, 233, 0.3);
+}
+
+.speed-dial.active .speed-dial-item {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.speed-dial.active .speed-dial-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.speed-dial.active .speed-dial-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.speed-dial.active .speed-dial-item:nth-child(3) {
+  transition-delay: 0s;
+}
+
+.speed-dial-item img {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.2s ease;
+}
+
+.speed-dial-item:active {
+  background-color: #f5f7fa;
+  transform: scale(0.95);
+}
+
+.speed-dial-item {
+  position: relative;
+}
+
+.speed-dial-item::after {
+  position: absolute;
+  left: -125px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 @keyframes header-appear {
