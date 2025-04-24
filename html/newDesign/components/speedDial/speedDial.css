@@ -1,0 +1,125 @@
+.speed-dial {
+  position: absolute;
+  height: 120px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.speed-dial-button {
+  width: 85px;
+  height: 85px;
+  border-radius: 12px;
+  background-color: #52AD59;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 102;
+  position: relative;
+}
+
+.speed-dial-button img {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.speed-dial-button:focus {
+  outline: none;
+}
+
+.speed-dial-items {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.speed-dial.active .speed-dial-items {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.speed-dial.active .speed-dial-button {
+  background-color: #3d8d42;
+}
+
+.speed-dial.active .speed-dial-button img {
+  transform: rotate(180deg);
+}
+
+.speed-dial-item {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  border: 1px solid rgba(109, 209, 233, 0.3);
+}
+
+.speed-dial.active .speed-dial-item {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.speed-dial.active .speed-dial-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.speed-dial.active .speed-dial-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.speed-dial.active .speed-dial-item:nth-child(3) {
+  transition-delay: 0s;
+}
+
+.speed-dial-item img {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.2s ease;
+}
+
+.speed-dial-item:active {
+  background-color: #f5f7fa;
+  transform: scale(0.95);
+}
+
+.speed-dial-item {
+  position: relative;
+}
+
+.speed-dial-item::after {
+  position: absolute;
+  left: -125px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
