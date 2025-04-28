@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+#game-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+#question {
+  font-size: 1.2rem;
+}
+
+#answerButtons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#answerButtons button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#result {
+  font-size: 1.1rem;
+  margin-top: 15px;
+  color: green;
+}
+
+#nextBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
