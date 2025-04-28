@@ -39,3 +39,16 @@
 .opening-hours tr:not(:last-child) td {
   padding-bottom: 15px;
 }
+
+.custom-map-1 {
+  position: absolute;
+  top: -6.5px;
+  left: -10px;
+  transform: rotate(180deg) scaleX(-1) scaleY(-1);
+}
+
+.custom-map-2 {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+}

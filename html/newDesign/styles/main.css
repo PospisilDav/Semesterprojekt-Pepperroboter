@@ -351,9 +351,10 @@ html, body {
 }
 
 .card-footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   display: flex;
-  position: relative;
   padding-right: 10px;
   z-index: 1;
 }
@@ -483,11 +484,11 @@ html, body {
   object-fit: contain;
 }
 
-.card-buergeramt {
+.card-template-1 {
   background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
 }
 
-.card-buergeramt .logo-detail-outline {
+.card-template-1 .logo-detail-outline {
   position: absolute;
   left: -190px;
   top: 26%;
@@ -495,22 +496,22 @@ html, body {
 }
 
 
-.card-spiele {
+.card-template-2 {
   background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
 }
 
-.card-spiele .logo-detail-outline {
+.card-template-2 .logo-detail-outline {
   position: absolute;
   left: -10px;
   top: 12%;
   filter: brightness(1.8);
 }
 
-.card-furtwangen {
+.card-template-3 {
   background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
 }
 
-.card-furtwangen .logo-detail-outline {
+.card-template-3 .logo-detail-outline {
   position: absolute;
   left: -60px;
   bottom: -15px;
