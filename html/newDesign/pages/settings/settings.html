@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="../../styles/subpage.css">
     <link rel="stylesheet" href="./settings.css">
     <link rel="stylesheet" href="settings.css">
-    <!-- <script src="../../js/qilib/qimessaging/2/qimessaging.js"></script> -->
+
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="scripts/jquery-2.2.2.min.js"></script>
+    <script src="scripts/jquery.qimhelpers.js"></script>
     <script src="../../scripts/pepperController.js"></script>
     <script src="../../scripts/settings.js"></script>
 
@@ -44,19 +47,19 @@
                 </div>
 
                 <div class="volume-buttons">
-                    <button id="volumeUpBtn" class="volume-btn">
+                    <button id="volumeUpBtn" class="volume-btn" onclick="volPlus()">
                         <img src="../../assets/icons/volume_up.svg" alt="Lauter" class="volume-icon">
                         <span>Erhöhen</span>
                     </button>
 
-                    <button id="volumeDownBtn" class="volume-btn">
+                    <button id="volumeDownBtn" class="volume-btn" onclick="volMinus()">
                         <img src="../../assets/icons/volume_down.svg" alt="Leiser" class="volume-icon">
                         <span>Verringern</span>
                     </button>
 
                     <button id="muteBtn" class="volume-btn">
                         <img src="../../assets/icons/volume_mute.svg" alt="Stumm" class="volume-icon">
-                        <span>Stummschalten</span>
+                        <span id="muteText">Stummschalten</span>
                     </button>
                 </div>
             </div>
