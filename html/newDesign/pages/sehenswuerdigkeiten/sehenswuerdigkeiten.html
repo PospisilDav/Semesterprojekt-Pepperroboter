@@ -39,52 +39,121 @@
     </div>
 
     <div class="lower-section">
-      <div class="cards-container">
-
-        <!-- Deutsches Uhrenmuseum -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/clock.svg" alt="Uhrenmuseum" class="card-icon" />
-            </div>
+      <!-- Split container with navigation list and content display -->
+      <div class="split-container">
+        <!-- Navigation List -->
+        <div class="navigation-list">
+          <div class="list-item active" data-target="uhrenmuseum">
+            <img src="../../assets/icons/clock.svg" alt="Uhrenmuseum" class="list-item-icon" />
+            <span class="list-item-text">Deutsches Uhrenmuseum</span>
           </div>
-          <div class="card-title title-furtwangen">Deutsches Uhrenmuseum</div>
-          <div class="card-content">
-            <p>Erleben Sie die Geschichte der Zeitmessung – von der Schwarzwälder Kuckucksuhr bis zur Präzisionsuhr.</p>
+          <div class="list-item" data-target="brend">
+            <img src="../../assets/icons/mountain.svg" alt="Brend-Turm" class="list-item-icon" />
+            <span class="list-item-text">Brend-Turm & Aussichtspunkt</span>
           </div>
-        </div>
-
-        <!-- Brend-Turm -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/mountain.svg" alt="Brend-Turm" class="card-icon" />
-            </div>
-          </div>
-          <div class="card-title title-furtwangen">Brend-Turm & Aussichtspunkt</div>
-          <div class="card-content">
-            <p>Der höchste Punkt Furtwangens bietet eine fantastische Aussicht – bei gutem Wetter bis zu den Alpen.</p>
+          <div class="list-item" data-target="guenterfelsen">
+            <img src="../../assets/icons/rocks.svg" alt="Günterfelsen" class="list-item-icon" />
+            <span class="list-item-text">Günterfelsen</span>
           </div>
         </div>
-
-        <!-- Günterfelsen -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/rocks.svg" alt="Günterfelsen" class="card-icon" />
+        
+        <!-- Content Display -->
+        <div class="content-display">
+          <!-- Uhrenmuseum Content -->
+          <div id="uhrenmuseum" class="content-section active">
+            <div class="content-header">
+              <div class="content-title">Deutsches Uhrenmuseum</div>
+            </div>
+            <div class="content-image">
+              <img src="../../assets/uhrenmuseum.jpg" alt="Deutsches Uhrenmuseum" />
+            </div>
+            <div class="content-body">
+              <button class="tell-me-button" id="tell-me-button-uhrenmuseum">
+                <img src="../../assets/pepper_head.svg" alt="Pepper" />
+                Erzähl mir etwas darüber
+              </button>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Günterfelsen</div>
-          <div class="card-content">
-            <p>Ein verstecktes Naturhighlight: die Günterfelsen beeindrucken mit bizarren Formen und echter Wildnis.</p>
+          
+          <!-- Brend-Turm Content -->
+          <div id="brend" class="content-section">
+            <div class="content-header">
+              <div class="content-title">Brend-Turm & Aussichtspunkt</div>
+            </div>
+            <div class="content-image">
+              <img src="../../assets/brend_turm.jpg" alt="Brend-Turm" />
+            </div>
+            <div class="content-body">
+              <button class="tell-me-button" id="tell-me-button-brend">
+                <img src="../../assets/pepper_head.svg" alt="Pepper" />
+                Erzähl mir etwas darüber
+              </button>
+            </div>
+          </div>
+          
+          <!-- Günterfelsen Content -->
+          <div id="guenterfelsen" class="content-section">
+            <div class="content-header">
+              <div class="content-title">Günterfelsen</div>
+            </div>
+            <div class="content-image">
+              <img src="../../assets/günterfelsen.jpg" alt="Günterfelsen" />
+            </div>
+            <div class="content-body">
+              <button class="tell-me-button" id="tell-me-button-guenterfelsen">
+                <img src="../../assets/pepper_head.svg" alt="Pepper" />
+                Erzähl mir etwas darüber
+              </button>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
+  
+  <script src="../../scripts/pepperController.js"></script>
+  <script>
+
+    const texts = {
+      uhrenmuseum: "Eine Reise durch die Zeitmesser der vergangenen Jahre. Die Sammlung des Deutschen Uhrenmuseum besteht seit über 160 Jahren und zählt mehr als 8000 Objekte aus aller Welt.",
+      brend: "Der Brend ist der Hausberg von Furtwangen und ist mit einer Höhe von 1149 m die höchste Erhebung auf der Gemarkung der Stadt. Die Aussicht auf dem 17 m hohen Brendturm ist atemberaubend.",
+      guenterfelsen: "Das Gebiet um den Günterfelsen wurde 1956 zum Naturschutzgebiet erklärt. Der Felsen liegt zwischen Rosseck und Brend und hat eine Größe von etwa 1,7 Hektar. Die Granitblöcke der Günterfelsen entstanden durch Wollsackverwitterung schon vor ca. 65 Millionen Jahren, zu dieser Zeit herrschte im Schwarzwald ein tropisches Klima.",
+      donauquelle: "Die Donau ist der zweitlängste Fluss Europas und in Furtwangen entspringt er. Nördlich von Furtwangen befindet sich die Quelle bei der Martinskapelle und dem Kolmenhof. Die Quelle ist die mündungsfernste Quelle der Donau und ist daher geografisch gesehen der Donauursprung.",
+      museum_gasthaus_arche: "Betritt man die „Wirtschaft“ dieses Gebäudes, wird man unwillkürlich in die 1950er Jahre versetzt. Hier gewinnt man einen Einblick in die Reiseverhältnisse aus dieser Zeit.",
+      stoecklewald: "Auch vom Stöcklewaldturm hat man eine einzigartige Panoramaaussicht. Die Plattform ist über 127 Stufen zu erreichen.",
+      hexenlochmuehle: "Die typische Schwarzwaldmühle ist aus dem Jahr 1825. Sie liegt zwischen St. Märgen und Furtwangen im Hexenloch. Die Mühle besitzt als einzige Mühle im Schwarzwald zwei Wasserräder."
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const listItems = document.querySelectorAll('.list-item');
+      const contentSections = document.querySelectorAll('.content-section');
+
+      document.getElementById('tell-me-button-uhrenmuseum').addEventListener('click', function() {
+        pepperController.animatedSpeak(texts.uhrenmuseum)
+      });
+      document.getElementById('tell-me-button-brend').addEventListener('click', function() {
+        pepperController.animatedSpeak(texts.brend)
+      });
+      document.getElementById('tell-me-button-guenterfelsen').addEventListener('click', function() {
+        pepperController.animatedSpeak(texts.guenterfelsen)
+      });
+
+      for (const item of listItems) {
+        item.addEventListener('click', function() {
+          // Remove active class from all items
+          listItems.forEach(li => li.classList.remove('active'));
+          contentSections.forEach(section => section.classList.remove('active'));
+          
+          // Add active class to clicked item
+          this.classList.add('active');
+          
+          // Show corresponding content
+          const target = this.getAttribute('data-target');
+          document.getElementById(target).classList.add('active');
+        });
+      }
+
+    });
+  </script>
 </body>
 </html>
