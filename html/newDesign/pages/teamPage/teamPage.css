@@ -1,0 +1,294 @@
+.logo-section {
+  position: absolute;
+  justify-content: flex-end !important;
+  top: 10px;
+  right: 10px;
+  left: auto;
+}
+
+.logo-section img {
+  margin-right: 2rem;
+}
+
+.header-section {
+  margin-left: 8rem !important;
+}
+
+.team-container {
+  position: relative;
+  width: 962px;
+  height: 601px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background: linear-gradient(-90deg, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.2) 40%, 
+    rgba(0, 0, 0, 0) 100%);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.team-container.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-content {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.team-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  z-index: -1;
+}
+
+.team-background:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><path fill="%23ffffff" fill-opacity="0.03" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"/></svg>');
+  opacity: 0.3;
+}
+
+.team-header {
+  text-align: center;
+  margin-top: 40px;
+  padding: 0 30px;
+}
+
+.team-header h1 {
+  font-size: 32px;
+  margin: 0;
+  color: #6DD1E9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-header p {
+  font-size: 18px;
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+
+.team-photo-card {
+  width: 48%;
+  height: 100%;
+  background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(7, 133, 158, 0.25);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+}
+
+.team-photo-card.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-photo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  transform: translateX(-100%) skewX(-15deg);
+  animation: shimmer 8s infinite;
+  z-index: 1;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/rathaus_image.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  color: white;
+  z-index: 2;
+}
+
+.team-overlay h2 {
+  font-size: 28px;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.team-overlay p {
+  font-size: 16px;
+  margin: 5px 0 0;
+  opacity: 0.9;
+}
+
+.project-info-card {
+  width: 48%;
+  height: 100%;
+  background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(7, 133, 158, 0.25);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-info-card.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  transform: translateX(-100%) skewX(-15deg);
+  animation: shimmer 8s infinite;
+  z-index: 0;
+}
+
+.project-info-card h2 {
+  font-size: 26px;
+  margin: 0 0 5px;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.info-subtitle {
+  font-size: 16px;
+  margin: 0 0 20px;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.project-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feature-icon {
+  width: 20px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.project-description {
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.navigation-buttons {
+  margin: 20px 0 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.pepper-decoration {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-image: url('../../assets/mini_pepper.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  animation: float-flipped 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+.team-container .header-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  transform: translateX(-100%) skewX(-15deg);
+  animation: shimmer 5s infinite;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-flipped {
+  0%, 100% { transform: translateY(0) scaleX(-1); }
+  50% { transform: translateY(-10px) scaleX(-1); }
+}
