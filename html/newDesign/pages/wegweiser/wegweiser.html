@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=962, height=601, user-scalable=no">
+  <title>Wegweiser - Pepper</title>
+  <link rel="stylesheet" href="../../styles/globals.css">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <link rel="stylesheet" href="../../styles/subpage.css">
+  <link rel="stylesheet" href="./wegweiser.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../citizenOffice/citizenOffice.html" class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../index.html" class="home-button" id="home-button">
+        <img src="../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
+
+    <!-- Speed Dial Button -->
+    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-text-container">
+        <div class="header-title">Wegweiser</div>
+        <div class="header-subtitle">
+          Erfahre mehr über zuständige Ämter, Öffnungszeiten und Standorte.
+        </div>
+      </div>
+    </div>
+
+    <div class="lower-section">
+      <!-- Two-column layout: table + details -->
+      <div class="wegweiser-layout">
+        <!-- Left column: Offices table -->
+        <div class="offices-table">
+          <div class="offices-header">
+            <h2>Ämter in Furtwangen</h2>
+          </div>
+          
+          <div class="offices-list">
+            <div class="office-item active" data-office="buergerbuero">
+              <div class="office-icon">
+                <img src="../../assets/icons/building.svg" alt="Bürgerbüro" />
+              </div>
+              <div class="office-name">Bürgerbüro</div>
+            </div>
+            
+            <div class="office-item" data-office="meldeamt">
+              <div class="office-icon">
+                <img src="../../assets/icons/document.svg" alt="Meldeamt" />
+              </div>
+              <div class="office-name">Meldeamt</div>
+            </div>
+            
+            <div class="office-item" data-office="standesamt">
+              <div class="office-icon">
+                <img src="../../assets/icons/ring.svg" alt="Standesamt" />
+              </div>
+              <div class="office-name">Standesamt</div>
+            </div>
+            
+            <div class="office-item" data-office="ordnungsamt">
+              <div class="office-icon">
+                <img src="../../assets/icons/badge.svg" alt="Ordnungsamt" />
+              </div>
+              <div class="office-name">Ordnungsamt</div>
+            </div>
+            
+            <div class="office-item" data-office="sozialamt">
+              <div class="office-icon">
+                <img src="../../assets/icons/people.svg" alt="Sozialamt" />
+              </div>
+              <div class="office-name">Sozialamt</div>
+            </div>
+            
+            <div class="office-item" data-office="wahlamt">
+              <div class="office-icon">
+                <img src="../../assets/icons/vote.svg" alt="Wahlamt" />
+              </div>
+              <div class="office-name">Wahlamt</div>
+            </div>
+            
+            <div class="office-item" data-office="fundbuero">
+              <div class="office-icon">
+                <img src="../../assets/icons/search.svg" alt="Fundbüro" />
+              </div>
+              <div class="office-name">Fundbüro</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right column: Office details -->
+        <div class="office-details">
+          <div class="office-card" id="buergerbuero-details">
+            <div class="office-header">
+              <h2>Bürgerbüro</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Meldeamt, Standesamt, Ordnungsamt, Sozialamt, Wahlamt, Fundbüro
+                </div>
+              </div>
+            </div>
+            
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/location.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen im Schwarzwald</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mail.svg" alt="E-Mail" />
+                  </div>
+                  <div class="info-content">
+                    <h3>E-Mail & Kontakt</h3>
+                    <p>buergerbuero@furtwangen.de</p>
+                    <p>Tel: (07723) 939-145</p>
+                    <p>Fax: (07723) 939-144</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="office-card" id="meldeamt-details">
+            <div class="office-header">
+              <h2>Bürgerbüro</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Meldeamt, Standesamt, Ordnungsamt, Sozialamt, Wahlamt, Fundbüro
+                </div>
+              </div>
+            </div>
+            
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/location.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen im Schwarzwald</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mail.svg" alt="E-Mail" />
+                  </div>
+                  <div class="info-content">
+                    <h3>E-Mail & Kontakt</h3>
+                    <p>buergerbuero@furtwangen.de</p>
+                    <p>Tel: (07723) 939-145 | Fax: (07723) 939-144</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all office items and details cards
+        const officeItems = document.querySelectorAll('.office-item');
+        const officeCards = document.querySelectorAll('.office-card');
+        
+        // Add click event listeners to office items
+        officeItems.forEach(item => {
+          item.addEventListener('click', function() {
+            // Remove active class from all items
+            officeItems.forEach(office => office.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get the office ID
+            const officeId = this.getAttribute('data-office');
+            
+            // Hide all detail cards
+            officeCards.forEach(card => card.style.display = 'none');
+            
+            // Show the selected office details
+            const selectedCard = document.getElementById(`${officeId}-details`);
+            selectedCard.style.display = 'block';
+            
+            // Add visual feedback for selection
+            selectedCard.classList.add('card-appear');
+            setTimeout(() => {
+              selectedCard.classList.remove('card-appear');
+            }, 300);
+            
+            // Announce selection for accessibility
+            const announcer = document.getElementById('accessibility-announcer') || 
+                             createAnnouncer();
+            announcer.textContent = `${this.querySelector('.office-name').textContent} ausgewählt`;
+          });
+        });
+        
+        // Create accessibility announcer if needed
+        function createAnnouncer() {
+          const announcer = document.createElement('div');
+          announcer.id = 'accessibility-announcer';
+          announcer.setAttribute('aria-live', 'polite');
+          announcer.className = 'sr-only';
+          document.body.appendChild(announcer);
+          return announcer;
+        }
+
+        // Initialize - make sure only the active office is shown
+        officeCards.forEach(card => {
+          card.style.display = 'none';
+        });
+        const activeOffice = document.querySelector('.office-item.active');
+        if (activeOffice) {
+          const activeId = activeOffice.getAttribute('data-office');
+          document.getElementById(`${activeId}-details`).style.display = 'block';
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>
