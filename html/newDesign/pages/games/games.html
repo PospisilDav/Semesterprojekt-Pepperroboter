@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../styles/globals.css">
   <link rel="stylesheet" href="../../styles/main.css">
   <link rel="stylesheet" href="../../styles/subpage.css">
+  <link rel="stylesheet" href="../../components/speedDial/speedDial.css">
   <link rel="stylesheet" href="./games.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -26,7 +27,24 @@
       </a>
     </div>
 
-    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+    <div class="speedDial">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/freeze.svg" alt="Freeze" />
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Header Section -->
     <div class="header-section">
@@ -39,10 +57,10 @@
       </div>
     </div>
 
-    <div class="lower-section">
+    <div class="lower-section games-lower-section">
       <!-- Games Carousel Container -->
       <div class="carousel-container">
-        <button class="carousel-button prev-button">
+        <button class="carousel-button prev-button" aria-label="Vorheriges Spiel">
           <img src="../../assets/icons/game_controller_left.svg" alt="Previous" />
         </button>
 
@@ -147,25 +165,25 @@
               </div>
             </a>
 
-            <!-- Tic Tac Toe Card -->
-            <a href="./tictactoe/tictactoe.html" class="game-card">
+            <!-- Example 4th Game Card (kept for demonstration) -->
+            <a href="#" class="game-card">
               <div class="game-card-header">
                 <div class="game-icon-container">
-                  <img src="../../assets/icons/tic_tac_toe.svg" alt="Tic Tac Toe" class="game-icon" />
+                  <img src="../../assets/icons/tic_tac_toe.svg" alt="Example Game" class="game-icon" />
                 </div>
-                <h3 class="game-title">Tic Tac Toe</h3>
+                <h3 class="game-title">Beispiel Spiel</h3>
               </div>
 
               <div class="game-card-content">
                 <p class="game-description">
-                  Spiele den Klassiker gegen Pepper
+                  Ein weiteres Spiel zum Ausprobieren
                 </p>
                 <div class="difficulty">
                   <span class="difficulty-label">Schwierigkeit:</span>
                   <div class="difficulty-dots">
                     <span class="dot filled"></span>
                     <span class="dot filled"></span>
-                    <span class="dot"></span>
+                    <span class="dot filled"></span>
                   </div>
                 </div>
               </div>
@@ -182,7 +200,7 @@
           </div>
         </div>
 
-        <button class="carousel-button next-button">
+        <button class="carousel-button next-button" aria-label="Nächstes Spiel">
           <img src="../../assets/icons/game_controller_right.svg" alt="Next" />
         </button>
       </div>
@@ -195,6 +213,8 @@
   </div>
 
   <script src="./gamesCarousel.js"></script>
+  <script src="../../components/speedDial/speedDial.js"></script>
+  <script src="../../components/speedDial/speedDialResizer.js"></script>
 </body>
 
 </html>
