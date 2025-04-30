@@ -110,25 +110,20 @@
   flex-direction: column;
 }
 
-.location-header {
-  margin-bottom: 16px;
-}
-
-.location-header h2 {
-  font-size: 24px;
-  color: #0CB100;
-  margin: 0;
-  padding-bottom: 8px;
-  border-bottom: 2px solid rgba(12, 177, 0, 0.2);
-}
-
 .location-image {
   width: 100%;
-  height: 140px;
+  height: 190px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   margin-bottom: 16px;
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .location-info {
@@ -178,7 +173,7 @@
 
 .info-content h3 {
   font-size: 18px;
-  color: #0CB100;
+  color: #00cc32;
   margin: 0 0 6px 0;
 }
 
