@@ -46,7 +46,7 @@
       <div class="cards-container">
         
         <!-- Wegweiser Card -->
-        <a href="./pages/games/games.html" class="card card-template-2">
+        <a href="../wegweiser/wegweiser.html" class="card card-template-2">
           <div class="card-header">
             <div class="card-icon-container">
               <img src="../../assets/icons/mappin.svg" alt="Spiele" class="card-icon wide" />
@@ -98,31 +98,5 @@
       </div>
     </div>
   </div>
-
-  <script>
-    // Add event listener for back button
-    document.querySelector('#back-button').addEventListener('click', function() {
-      window.location.href = '../../index.html';
-    });
-
-    var cards = document.querySelectorAll('.card')
-    for (var i = 0; i < cards.length; i++) {
-      var card = cards[i]
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', function() {
-        const cardTitle = this.querySelector('.card-title').textContent;
-        console.log(`Selected service: ${cardTitle}`);
-        
-        if (cardTitle === 'Wegweiser') {
-          window.location.href = './wegweiser.html';
-        } else if (cardTitle === 'Personalausweis') {
-          window.location.href = './personalausweis.html';
-        } else if (cardTitle === 'Öffnungszeiten') {
-          console.log('Opening appointment scheduler');
-        }
-      });
-    }
-
-  </script>
 </body>
 </html>
