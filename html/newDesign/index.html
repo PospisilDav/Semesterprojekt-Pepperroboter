@@ -9,13 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/globals.css">
   <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./components/speedDial/speedDial.css">
 
   <script src="/libs/qimessaging/2/qimessaging.js"></script>
-  <script src="./scripts/speedDial.js"></script>
   <script src="scripts/jquery-2.2.2.min.js"></script>
   <script src="scripts/jquery.qimhelpers.js"></script>
   <!-- <script src="scripts/jquery.mobile-1.4.5.min.js"></script> -->
-
+  
+  <script src="./components/speedDial/speedDial.js"></script>
   <script src="scripts/pepperController.js"></script>
   <script src="scripts/homepage.js"></script>
 </head>
@@ -40,8 +41,25 @@
       </div>
     </div>
 
-    <!-- Speed Dial Button -->
-    <iframe src="./components/speedDial/speedDial.html" frameborder="0"  class="speedDial"></iframe>
+    <!-- Speed Dial Menu (manually imported)-->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="./assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="./pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="./assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a class="speed-dial-item" target="_parent">
+            <img src="./assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" target="_parent">
+            <img src="./assets/icons/freeze.svg" alt="Freeze" />
+          </a>
+        </div>
+      </div>
+    </div>
 
     <div class="lower-section">
       <!-- Cards Container -->

@@ -253,8 +253,3 @@
     transform: translateX(100%) skewX(-15deg);
   }
 }
-
-.speedDial {
-  top: 75px;
-  right: 15px;
-}

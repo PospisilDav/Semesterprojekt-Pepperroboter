@@ -531,6 +531,17 @@ html, body {
   z-index: 10000;
 }
 
+.speedDialManually {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 115px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+}
+
 @keyframes header-appear {
   0% {
     opacity: 0;
