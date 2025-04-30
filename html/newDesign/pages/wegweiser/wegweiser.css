@@ -5,7 +5,6 @@
 
 .wegweiser-layout {
   display: flex;
-  gap: 20px;
   height: 100%;
   max-height: 400px;
 }
@@ -18,6 +17,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 }
 
 .offices-header {
@@ -172,11 +172,45 @@
 }
 
 .office-info-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto;
-  gap: 15px;
+  flex-wrap: wrap;
   height: calc(100% - 80px);
+}
+
+.info-card {
+  flex: 0 0 calc(50% - 8px);
+  margin-bottom: 15px;
+}
+
+.info-card:nth-child(odd) {
+  margin-right: 15px;
+}
+
+.office-info-compact {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
+.office-info-compact > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.info-row {
+  display: flex;
+  height: 200px;
+}
+
+.info-row > *:not(:last-child) {
+  margin-right: 15px;
+}
+
+.info-item {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.info-item:last-child {
+  margin-right: 0;
 }
 
 .info-card {
@@ -325,15 +359,15 @@
 
 .hours-container {
   display: flex;
-  gap: 20px;
 }
 
 .hours-column {
   flex: 1;
+  margin-right: 20px;
 }
 
-.hours-column p {
-  margin: 0;
+.hours-column:last-child {
+  margin-right: 0;
 }
 
 .contact-item, .hours-item {
