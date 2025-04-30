@@ -1,3 +1,7 @@
+.lower-section {
+  z-index: 10000 !important;
+}
+
 .memory-container {
   width: 95%;
   max-width: 920px;
@@ -174,13 +178,12 @@
 }
 
 .memory-overlay {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   max-width: 962px;
-  height: 70%;
-  max-height: 420px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -47,27 +47,25 @@ function shuffleCards() {
 
 // Initialize game
 function initGame() {
-
-  shuffleCards()
-
   // Clear previous game
   gameBoard.innerHTML = "";
   moves = 0;
   seconds = 0;
   flippedCards = [];
   matchedPairs = 0;
+  
+  // Properly clear the timer first, then set to null
+  if (timer) {
+    clearInterval(timer);
+  }
+  timer = null;
 
   movesDisplay.textContent = moves;
   timerDisplay.textContent = formatTime(seconds);
 
-  //if (timer) clearInterval(timer);
-  //timer = setInterval(updateTimer, 1000);
-
-  // Shuffle cards
-  cardImages.sort(function() {0.5 - Math.random()});
+  shuffleCards();
 
   // Create memory tiles
-
   for (var index = 0; index < cardImages.length; index++) {
     var imagePath = cardImages[index];
     var tile = document.createElement("button");
@@ -129,8 +127,7 @@ function flipCard() {
   }
 
   // Start timer on first card flip
-  if (moves === 0 && flippedCards.length === 0) {
-    if (timer) clearInterval(timer);
+  if (moves === 0 && flippedCards.length === 0 && !timer) {
     timer = setInterval(updateTimer, 1000);
   }
 

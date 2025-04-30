@@ -2,14 +2,16 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=962, height=601, user-scalable=no">
   <title>Memory Spiel mit Pepper</title>
   <link rel="stylesheet" href="../../../styles/globals.css">
   <link rel="stylesheet" href="../../../styles/main.css">
   <link rel="stylesheet" href="../../../styles/subpage.css">
+  <link rel="stylesheet" href="../../../components/speedDial/speedDial.css">
   <link rel="stylesheet" href="./memory.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="./memory.js" defer></script>
+  <script src="../../../components/speedDial/speedDial.js"></script>
 </head>
 <body>
   <div class="container">
@@ -25,19 +27,34 @@
       </a>
     </div>
 
-    <!-- Logo Section -->
-    <div class="logo-section-right">
-      <img src="../../../assets/furtwangen_logo.svg" alt="Logo" />
+    <!-- Speed Dial Menu (manually imported)-->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/freeze.svg" alt="Freeze" />
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Header Section -->
     <div class="header-section">
-      <div class="header-title">Memory</div>
+      <div class="header-title">Spiele mit Pepper</div>
       <div class="header-avatar-container">
         <img class="header-avatar" src="../../../assets/pepper_head.svg" alt="Pepper Avatar" />
       </div>
       <div class="header-subtitle">
-        Finde die passenden Paare und trainiere dein Gedächtnis.
+        Wähle ein Spiel aus und spiele es direkt mit mir.
       </div>
     </div>
 
