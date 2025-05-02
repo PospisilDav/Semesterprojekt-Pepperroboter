@@ -2,25 +2,29 @@ var INACTIVITY_TRIGGER_SECONDS = 10;
 var TIMEOUT_POLLING_INTERVAL = 1000;
 
 function resolve_path_dynamically() {
-  var currentPath = window.location.pathname;
-  var pathParts = currentPath.split("/");
-  var projectRootIndex = -1;
+  // Basis-URL extrahieren (ohne Dateinamen)
+  var baseUrl;
+  var currentUrl = window.location.href;
+  var lastSlashIndex = currentUrl.lastIndexOf('/');
   
-  for (var i = 0; i < pathParts.length; i++) {
-    if (pathParts[i] === "newDesign") {
-      projectRootIndex = i;
-      break;
-    }
+  if (lastSlashIndex !== -1) {
+    baseUrl = currentUrl.substring(0, lastSlashIndex);
+  } else {
+    baseUrl = currentUrl;
   }
   
-  if (projectRootIndex === -1) {
-    console.log("Warning: Could not locate project root directory");
-    return "ScreenSaver.html";
-  }
+  // Finden Sie die Position von "newDesign" im Pfad
+  var newDesignIndex = baseUrl.indexOf('/newDesign');
   
-  var rootPath = pathParts.slice(0, projectRootIndex + 1).join("/");
-  var htmlPath = "file://" + rootPath + "/pages/screenSaver/ScreenSaver.html";
-  return htmlPath;
+  if (newDesignIndex !== -1) {
+    // Extrahieren Sie den Basispfad bis einschließlich "newDesign"
+    var rootPath = baseUrl.substring(0, baseUrl.indexOf('/newDesign') + '/newDesign'.length);
+    return rootPath + '/pages/screenSaver/ScreenSaver.html';
+  } else {
+    // Fallback: Relativer Pfad zur Screensaver-Seite
+    console.log("Warning: Could not locate newDesign in path");
+    return './pages/screenSaver/ScreenSaver.html';
+  }
 }
 
 var last_interaction = Date.now();
@@ -36,9 +40,13 @@ function initScreenSaverTrigger() {
     if (seconds_since_last_interaction >= INACTIVITY_TRIGGER_SECONDS) {
       console.log("Inactivity detected, redirecting to screen saver...");
       try {
-        window.location.href = resolve_path_dynamically();
+        var screenSaverPath = resolve_path_dynamically();
+        console.log("Navigating to screen saver at: " + screenSaverPath);
+        window.location.href = screenSaverPath;
       } catch (e) {
         console.log("Error redirecting to screen saver: " + e.message);
+        // Fallback versuchen
+        window.location.href = './pages/screenSaver/ScreenSaver.html';
       }
     }
   }, TIMEOUT_POLLING_INTERVAL);
