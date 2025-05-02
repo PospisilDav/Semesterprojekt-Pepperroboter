@@ -1,4 +1,4 @@
-var INACTIVITY_TRIGGER_SECONDS = 10;
+var INACTIVITY_TRIGGER_SECONDS = 2000;
 var TIMEOUT_POLLING_INTERVAL = 1000;
 
 function resolve_path_dynamically() {
