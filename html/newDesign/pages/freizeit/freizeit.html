@@ -1,94 +1,136 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=962, height=601, user-scalable=no">
-  <title>Freizeit in Furtwangen</title>
-  <link rel="stylesheet" href="../../styles/globals.css">
-  <link rel="stylesheet" href="../../styles/main.css">
-  <link rel="stylesheet" href="../../styles/subpage.css">
-  <link rel="stylesheet" href="./freizeit.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Freizeit in Furtwangen</title>
 
-    <!-- Back and Home Buttons -->
-    <div class="navigation-buttons-container">
-      <a href="../furtwangen/furtwangen.html" class="back-button" id="back-button">
-        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-      </a>
-      <a href="../../index.html" class="home-button" id="home-button">
-        <img src="../../assets/icons/home.svg" alt="Startseite" />
-      </a>
-    </div>
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="../../scripts/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/jquery.qimhelpers.js"></script>
+    <script src="../../scripts/pepperController.js"></script>
+    <script src="../../scripts/screenSaverTrigger.js"></script>
 
-    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/subpage.css" />
+    <link rel="stylesheet" href="./freizeit.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="background-image"
+        src="../../assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-    <!-- Header Section -->
-    <div class="header-section">
-      <div class="header-title">Freizeit in Furtwangen</div>
-      <div class="header-avatar-container">
-        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
-      </div>
-      <div class="header-subtitle">Entdecken Sie Sport, Natur und Kulinarik</div>
-    </div>
-
-    <div class="lower-section">
-      <!-- Services Container -->
-      <div class="cards-container">
-
-        <!-- Sport & Aktivitäten Card -->
-        <a href="../sport/sport.html" class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/walk.svg" alt="Sport" class="card-icon" />
-            </div>
-          </div>
-          <div class="card-title title-furtwangen">Sport & Aktivitäten</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Wandern & Mountainbike</li>
-              <li>Langlauf & Wintersport</li>
-              <li>Schwimmbad & Sportzentrum</li>
-            </ul>
-          </div>
-	  <div class="show-button">
-            <div class="show-button-text">Anzeigen</div>
-            <div class="show-button-icon">
-              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
-            </div>
-          </div>
+      <!-- Back and Home Buttons -->
+      <div class="navigation-buttons-container">
+        <a
+          href="../furtwangen/furtwangen.html"
+          class="back-button"
+          id="back-button"
+        >
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
         </a>
-
-        <!-- Lokale Küche Card -->
-        <a href="../restaurants/restaurants.html" class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/restaurant.svg" alt="Küche" class="card-icon" />
-            </div>
-          </div>
-          <div class="card-title title-furtwangen">Lokale Küche</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Schwarzwälder Spezialitäten</li>
-              <li>Regionale Gasthöfe</li>
-              <li>Kaffee & Kirschtorte</li>
-            </ul>
-          </div>
-	  <div class="show-button">
-            <div class="show-button-text">Anzeigen</div>
-            <div class="show-button-icon">
-              <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
-            </div>
-          </div>
+        <a href="../../index.html" class="home-button" id="home-button">
+          <img src="../../assets/icons/home.svg" alt="Startseite" />
         </a>
+      </div>
 
+      <iframe
+        src="../../components/speedDial/speedDial.html"
+        frameborder="0"
+        class="speedDial"
+      ></iframe>
+
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">Freizeit in Furtwangen</div>
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="../../assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
+        </div>
+        <div class="header-subtitle">
+          Entdecken Sie Sport, Natur und Kulinarik
+        </div>
+      </div>
+
+      <div class="lower-section">
+        <!-- Services Container -->
+        <div class="cards-container">
+          <!-- Sport & Aktivitäten Card -->
+          <a href="../sport/sport.html" class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/walk.svg"
+                  alt="Sport"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Sport & Aktivitäten</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Wandern & Mountainbike</li>
+                <li>Langlauf & Wintersport</li>
+                <li>Schwimmbad & Sportzentrum</li>
+              </ul>
+            </div>
+            <div class="show-button">
+              <div class="show-button-text">Anzeigen</div>
+              <div class="show-button-icon">
+                <img
+                  src="../../assets/icons/arrow_right.svg"
+                  alt="Arrow"
+                  class="arrow-icon"
+                />
+              </div>
+            </div>
+          </a>
+
+          <!-- Lokale Küche Card -->
+          <a href="../restaurants/restaurants.html" class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/restaurant.svg"
+                  alt="Küche"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Lokale Küche</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Schwarzwälder Spezialitäten</li>
+                <li>Regionale Gasthöfe</li>
+                <li>Kaffee & Kirschtorte</li>
+              </ul>
+            </div>
+            <div class="show-button">
+              <div class="show-button-text">Anzeigen</div>
+              <div class="show-button-icon">
+                <img
+                  src="../../assets/icons/arrow_right.svg"
+                  alt="Arrow"
+                  class="arrow-icon"
+                />
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

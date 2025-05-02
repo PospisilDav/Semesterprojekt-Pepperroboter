@@ -1,100 +1,136 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=962, height=601, user-scalable=no">
-  <title>Sport & Aktivitäten</title>
-  <link rel="stylesheet" href="../../styles/globals.css">
-  <link rel="stylesheet" href="../../styles/main.css">
-  <link rel="stylesheet" href="../../styles/subpage.css">
-  <link rel="stylesheet" href="./sport.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Sport & Aktivitäten</title>
 
-    <!-- Back and Home Buttons -->
-    <div class="navigation-buttons-container">
-      <a href="../freizeit/freizeit.html" class="back-button" id="back-button">
-        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-      </a>
-      <a href="../../index.html" class="home-button" id="home-button">
-        <img src="../../assets/icons/home.svg" alt="Startseite" />
-      </a>
-    </div>
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="../../scripts/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/jquery.qimhelpers.js"></script>
+    <script src="../../scripts/pepperController.js"></script>
+    <script src="../../scripts/screenSaverTrigger.js"></script>
 
-    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/subpage.css" />
+    <link rel="stylesheet" href="./sport.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="background-image"
+        src="../../assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-    <!-- Header Section -->
-    <div class="header-section">
-      <div class="header-title">Sport & Aktivitäten</div>
-      <div class="header-avatar-container">
-        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      <!-- Back and Home Buttons -->
+      <div class="navigation-buttons-container">
+        <a
+          href="../freizeit/freizeit.html"
+          class="back-button"
+          id="back-button"
+        >
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+        </a>
+        <a href="../../index.html" class="home-button" id="home-button">
+          <img src="../../assets/icons/home.svg" alt="Startseite" />
+        </a>
       </div>
-      <div class="header-subtitle">Bewegung in und um Furtwangen</div>
-    </div>
 
-    <div class="lower-section">
-      <!-- Cards Container -->
-      <div class="cards-container">
+      <iframe
+        src="../../components/speedDial/speedDial.html"
+        frameborder="0"
+        class="speedDial"
+      ></iframe>
 
-        <!-- Outdoor & Natur -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/outdoor.svg" alt="Outdoor" class="card-icon" />
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">Sport & Aktivitäten</div>
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="../../assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
+        </div>
+        <div class="header-subtitle">Bewegung in und um Furtwangen</div>
+      </div>
+
+      <div class="lower-section">
+        <!-- Cards Container -->
+        <div class="cards-container">
+          <!-- Outdoor & Natur -->
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/outdoor.svg"
+                  alt="Outdoor"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Outdoor & Natur</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Wanderung zur Brend-Turm-Aussicht</li>
+                <li>Mountainbike-Strecken rund um den Linach-Damm</li>
+                <li>Barfußpfad & Grillstellen im Talwald</li>
+              </ul>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Outdoor & Natur</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Wanderung zur Brend-Turm-Aussicht</li>
-              <li>Mountainbike-Strecken rund um den Linach-Damm</li>
-              <li>Barfußpfad & Grillstellen im Talwald</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Wintersport -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/ski.svg" alt="Winter" class="card-icon" />
+          <!-- Wintersport -->
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/ski.svg"
+                  alt="Winter"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Wintersport</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Langlaufloipen in der Martinskapelle</li>
+                <li>Skilift in Rohrbach</li>
+                <li>Rodeln am Kandel oder in Neukirch</li>
+              </ul>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Wintersport</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Langlaufloipen in der Martinskapelle</li>
-              <li>Skilift in Rohrbach</li>
-              <li>Rodeln am Kandel oder in Neukirch</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Fitness & Hallensport -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/fitness.svg" alt="Fitness" class="card-icon" />
+          <!-- Fitness & Hallensport -->
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/fitness.svg"
+                  alt="Fitness"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Fitness & Hallensport</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Beri Fitness – Kurse, Geräte, Sauna</li>
+                <li>Fit+ Furtwangen – 6-23 Uhr Fitnessstudio</li>
+                <li>Hallenbad & Sporthalle am Otto-Hahn-Gymnasium</li>
+              </ul>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Fitness & Hallensport</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Beri Fitness – Kurse, Geräte, Sauna</li>
-              <li>Fit+ Furtwangen – 6-23 Uhr Fitnessstudio</li>
-              <li>Hallenbad & Sporthalle am Otto-Hahn-Gymnasium</li>
-            </ul>
-          </div>
         </div>
-
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

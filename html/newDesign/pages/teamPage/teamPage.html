@@ -1,116 +1,150 @@
 <!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Team Pepper - Entwicklerteam</title>
+    <link rel="icon" type="image/png" href="../../assets/furtwangen_logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/subpage.css" />
+    <link rel="stylesheet" href="./teamPage.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=962, height=601, user-scalable=no">
-  <title>Team Pepper - Entwicklerteam</title>
-  <link rel="icon" type="image/png" href="../../assets/furtwangen_logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../styles/globals.css">
-  <link rel="stylesheet" href="../../styles/main.css">
-  <link rel="stylesheet" href="../../styles/subpage.css">
-  <link rel="stylesheet" href="./teamPage.css">
-  
-  <script src="/libs/qimessaging/2/qimessaging.js"></script>
-  <script src="../../scripts/jquery-2.2.2.min.js"></script>
-  <script src="../../scripts/jquery.qimhelpers.js"></script>
-</head>
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="../../scripts/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/jquery.qimhelpers.js"></script>
+    <script src="../../scripts/pepperController.js"></script>
+    <script src="../../scripts/screenSaverTrigger.js"></script>
+  </head>
 
-<body>
-  <div class="container team-container">
-    <!-- Background image consistent with other pages -->
-    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
-    
-    <!-- Navigation buttons in consistent style -->
-    <div class="navigation-buttons-container">
-      <a href="../../index.html" class="back-button" id="back-button">
-        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-      </a>
-    </div>
+  <body>
+    <div class="container team-container">
+      <!-- Background image consistent with other pages -->
+      <img
+        class="background-image"
+        src="../../assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-    <!-- Logo section for consistency -->
-    <div class="logo-section">
-      <img src="../../assets/furtwangen_logo.svg" alt="Logo" class="icon" />
-    </div>
-
-    <!-- Header Section -->
-    <div class="header-section">
-      <div class="header-title">Easter Egg entdeckt!</div>
-      <div class="header-avatar-container">
-        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      <!-- Navigation buttons in consistent style -->
+      <div class="navigation-buttons-container">
+        <a href="../../index.html" class="back-button" id="back-button">
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+        </a>
       </div>
-      <div class="header-subtitle">
-        Das Pepper-Entwicklerteam der Hochschule Furtwangen
+
+      <!-- Logo section for consistency -->
+      <div class="logo-section">
+        <img src="../../assets/furtwangen_logo.svg" alt="Logo" class="icon" />
       </div>
-    </div>
-    
-    <!-- Main content in card style -->
-    <div class="lower-section">
-      <div class="team-content">
-        <!-- Team photo with styling similar to cards -->
-        <div class="team-photo-card">
-          <div class="team-photo"></div>
-          <div class="team-overlay">
-            <h2>Unser Team</h2>
-            <p>Sommersemester 2025</p>
-          </div>
+
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">Easter Egg entdeckt!</div>
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="../../assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
         </div>
-        
-        <!-- Project information in similar style to cards -->
-        <div class="project-info-card">
-          <h2>Pepper Infoterminal</h2>
-          <p class="info-subtitle">Ein Projekt der Hochschule Furtwangen</p>
-          
-          <div class="project-features">
-            <div class="feature-item">
-              <img src="../../assets/icons/mappin.svg" alt="Standort" class="feature-icon" />
-              <span>Stadtinformationen</span>
-            </div>
-            <div class="feature-item">
-              <img src="../../assets/icons/game_controller.svg" alt="Spiele" class="feature-icon" />
-              <span>Interaktive Spiele</span>
-            </div>
-          </div>
-
-          <div class="project-features">
-            <div class="feature-item">
-              <img src="../../assets/icons/design.svg" alt="Design" class="feature-icon" />
-              <span>Benutzerfreundliches Design</span>
-            </div>
-            <div class="feature-item">
-              <img src="../../assets/icons/pepper_head.png" alt="Roboter" class="feature-icon" />
-              <span>Pepper-Roboter Integration</span>
-            </div>
-          </div>
-          
-          <p class="project-description">
-            Dieses interaktive Infoterminal wurde als Semesterprojekt entwickelt, um Besuchern, Einwohnern oder auch Touristen einen einfachen Zugang zu wichtigen Informationen zu bieten und gleichzeitig eine unterhaltsame Interaktion mit dem <br/> Pepper-Roboter zu ermöglichen.
-          </p>
+        <div class="header-subtitle">
+          Das Pepper-Entwicklerteam der Hochschule Furtwangen
         </div>
       </div>
-    </div>
-    
-    <!-- Pepper decoration icon -->
-    <div class="pepper-decoration"></div>
-  </div>
 
-  <!-- Inline script for entrance animation -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add appear class after small delay for entrance animation
-      setTimeout(function() {
-        document.querySelector('.team-container').classList.add('appear');
-        
-        // Animate team content elements sequentially
-        var elements = document.querySelectorAll('.team-photo-card, .project-info-card');
-        elements.forEach(function(element, index) {
-          setTimeout(function() {
-            element.classList.add('appear');
-          }, 200 + (index * 150));
-        });
-      }, 100);
-    });
-  </script>
-</body>
+      <!-- Main content in card style -->
+      <div class="lower-section">
+        <div class="team-content">
+          <!-- Team photo with styling similar to cards -->
+          <div class="team-photo-card">
+            <div class="team-photo"></div>
+            <div class="team-overlay">
+              <h2>Unser Team</h2>
+              <p>Sommersemester 2025</p>
+            </div>
+          </div>
+
+          <!-- Project information in similar style to cards -->
+          <div class="project-info-card">
+            <h2>Pepper Infoterminal</h2>
+            <p class="info-subtitle">Ein Projekt der Hochschule Furtwangen</p>
+
+            <div class="project-features">
+              <div class="feature-item">
+                <img
+                  src="../../assets/icons/mappin.svg"
+                  alt="Standort"
+                  class="feature-icon"
+                />
+                <span>Stadtinformationen</span>
+              </div>
+              <div class="feature-item">
+                <img
+                  src="../../assets/icons/game_controller.svg"
+                  alt="Spiele"
+                  class="feature-icon"
+                />
+                <span>Interaktive Spiele</span>
+              </div>
+            </div>
+
+            <div class="project-features">
+              <div class="feature-item">
+                <img
+                  src="../../assets/icons/design.svg"
+                  alt="Design"
+                  class="feature-icon"
+                />
+                <span>Benutzerfreundliches Design</span>
+              </div>
+              <div class="feature-item">
+                <img
+                  src="../../assets/icons/pepper_head.png"
+                  alt="Roboter"
+                  class="feature-icon"
+                />
+                <span>Pepper-Roboter Integration</span>
+              </div>
+            </div>
+
+            <p class="project-description">
+              Dieses interaktive Infoterminal wurde als Semesterprojekt
+              entwickelt, um Besuchern, Einwohnern oder auch Touristen einen
+              einfachen Zugang zu wichtigen Informationen zu bieten und
+              gleichzeitig eine unterhaltsame Interaktion mit dem <br />
+              Pepper-Roboter zu ermöglichen.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pepper decoration icon -->
+      <div class="pepper-decoration"></div>
+    </div>
+
+    <!-- Inline script for entrance animation -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add appear class after small delay for entrance animation
+        setTimeout(function () {
+          document.querySelector(".team-container").classList.add("appear");
+
+          // Animate team content elements sequentially
+          var elements = document.querySelectorAll(
+            ".team-photo-card, .project-info-card"
+          );
+          elements.forEach(function (element, index) {
+            setTimeout(function () {
+              element.classList.add("appear");
+            }, 200 + index * 150);
+          });
+        }, 100);
+      });
+    </script>
+  </body>
 </html>

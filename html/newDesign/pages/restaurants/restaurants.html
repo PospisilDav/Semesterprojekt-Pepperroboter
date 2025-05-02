@@ -1,99 +1,135 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=962, height=601, user-scalable=no">
-  <title>Lokale Küche</title>
-  <link rel="stylesheet" href="../../styles/globals.css">
-  <link rel="stylesheet" href="../../styles/main.css">
-  <link rel="stylesheet" href="../../styles/subpage.css">
-  <link rel="stylesheet" href="./restaurants.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="container">
-    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Lokale Küche</title>
 
-    <!-- Back and Home Buttons -->
-    <div class="navigation-buttons-container">
-      <a href="../freizeit/freizeit.html" class="back-button" id="back-button">
-        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-      </a>
-      <a href="../../index.html" class="home-button" id="home-button">
-        <img src="../../assets/icons/home.svg" alt="Startseite" />
-      </a>
-    </div>
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="../../scripts/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/jquery.qimhelpers.js"></script>
+    <script src="../../scripts/pepperController.js"></script>
+    <script src="../../scripts/screenSaverTrigger.js"></script>
 
-    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/subpage.css" />
+    <link rel="stylesheet" href="./restaurants.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <img
+        class="background-image"
+        src="../../assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-    <!-- Header Section -->
-    <div class="header-section">
-      <div class="header-title">Lokale Küche</div>
-      <div class="header-avatar-container">
-        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      <!-- Back and Home Buttons -->
+      <div class="navigation-buttons-container">
+        <a
+          href="../freizeit/freizeit.html"
+          class="back-button"
+          id="back-button"
+        >
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+        </a>
+        <a href="../../index.html" class="home-button" id="home-button">
+          <img src="../../assets/icons/home.svg" alt="Startseite" />
+        </a>
       </div>
-      <div class="header-subtitle">Essen & Trinken in Furtwangen</div>
-    </div>
 
-    <div class="lower-section">
-      <div class="cards-container">
+      <iframe
+        src="../../components/speedDial/speedDial.html"
+        frameborder="0"
+        class="speedDial"
+      ></iframe>
 
-        <!-- Regionale Küche -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/restaurant.svg" alt="Regionale Küche" class="card-icon" />
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">Lokale Küche</div>
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="../../assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
+        </div>
+        <div class="header-subtitle">Essen & Trinken in Furtwangen</div>
+      </div>
+
+      <div class="lower-section">
+        <div class="cards-container">
+          <!-- Regionale Küche -->
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/restaurant.svg"
+                  alt="Regionale Küche"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Regionale Küche</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Höhengasthaus Kolmenhof</li>
+                <li>Gasthaus Bad</li>
+                <li>Gasthaus Staude</li>
+              </ul>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Regionale Küche</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Höhengasthaus Kolmenhof</li>
-              <li>Gasthaus Bad</li>
-              <li>Gasthaus Staude</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Internationale Küche -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/international.svg" alt="Internationale Küche" class="card-icon" />
+          <!-- Internationale Küche -->
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/international.svg"
+                  alt="Internationale Küche"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Internationale Küche</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Ristorante Pizzeria Europa</li>
+                <li>City Kebap</li>
+                <li>Kebap Treff</li>
+              </ul>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Internationale Küche</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Ristorante Pizzeria Europa</li>
-              <li>City Kebap</li>
-              <li>Kebap Treff</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Cafés & Bäckereien -->
-        <div class="card">
-          <div class="card-background"></div>
-          <div class="card-icon-container">
-            <div class="card-icon">
-              <img src="../../assets/icons/coffee.svg" alt="Cafés & Bäckereien" class="card-icon" />
+          <!-- Cafés & Bäckereien -->
+          <div class="card">
+            <div class="card-background"></div>
+            <div class="card-icon-container">
+              <div class="card-icon">
+                <img
+                  src="../../assets/icons/coffee.svg"
+                  alt="Cafés & Bäckereien"
+                  class="card-icon"
+                />
+              </div>
+            </div>
+            <div class="card-title title-furtwangen">Cafés & Bäckereien</div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li>Confiserie Mayerhöfer</li>
+                <li>Eiscafé Edelweiss</li>
+                <li>Hexenlochmühle</li>
+              </ul>
             </div>
           </div>
-          <div class="card-title title-furtwangen">Cafés & Bäckereien</div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li>Confiserie Mayerhöfer</li>
-              <li>Eiscafé Edelweiss</li>
-              <li>Hexenlochmühle</li>
-            </ul>
-          </div>
         </div>
-
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

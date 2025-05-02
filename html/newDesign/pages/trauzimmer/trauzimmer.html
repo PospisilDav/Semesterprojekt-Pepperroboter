@@ -1,184 +1,232 @@
 <!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Trauzimmer - Pepper</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=962, height=601, user-scalable=no">
-  <title>Trauzimmer - Pepper</title>
-  <link rel="stylesheet" href="../../styles/globals.css">
-  <link rel="stylesheet" href="../../styles/main.css">
-  <link rel="stylesheet" href="../../styles/subpage.css">
-  <link rel="stylesheet" href="./trauzimmer.css">
-</head>
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="../../scripts/jquery-2.2.2.min.js"></script>
+    <script src="../../scripts/jquery.qimhelpers.js"></script>
+    <script src="../../scripts/pepperController.js"></script>
+    <script src="../../scripts/screenSaverTrigger.js"></script>
 
-<body>
-  <div class="container">
-    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/subpage.css" />
+    <link rel="stylesheet" href="./trauzimmer.css" />
+  </head>
 
-    <!-- Back and Home Buttons -->
-    <div class="navigation-buttons-container">
-      <a href="../citizenOffice/citizenOffice.html" class="back-button" id="back-button">
-        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-      </a>
-      <a href="../../index.html" class="home-button" id="home-button">
-        <img src="../../assets/icons/home.svg" alt="Startseite" />
-      </a>
-    </div>
+  <body>
+    <div class="container">
+      <img
+        class="background-image"
+        src="../../assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-    <!-- Speed Dial Button -->
-    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
-
-    <!-- Header Section -->
-    <div class="header-section">
-      <div class="header-avatar-container">
-        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      <!-- Back and Home Buttons -->
+      <div class="navigation-buttons-container">
+        <a
+          href="../citizenOffice/citizenOffice.html"
+          class="back-button"
+          id="back-button"
+        >
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+        </a>
+        <a href="../../index.html" class="home-button" id="home-button">
+          <img src="../../assets/icons/home.svg" alt="Startseite" />
+        </a>
       </div>
-      <div class="header-text-container">
-        <div class="header-title">Trauzimmer</div>
-        <div class="header-subtitle">
-          Hier kannst du dich über die Trauzimmer in Furtwangen informieren.
+
+      <!-- Speed Dial Button -->
+      <iframe
+        src="../../components/speedDial/speedDial.html"
+        frameborder="0"
+        class="speedDial"
+      ></iframe>
+
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="../../assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
+        </div>
+        <div class="header-text-container">
+          <div class="header-title">Trauzimmer</div>
+          <div class="header-subtitle">
+            Hier kannst du dich über die Trauzimmer in Furtwangen informieren.
+          </div>
+        </div>
+      </div>
+
+      <div class="lower-section">
+        <div class="trauzimmer-layout">
+          <!-- Left column: Locations table -->
+          <div class="locations-table">
+            <div class="locations-header">
+              <h2>Trauungsorte</h2>
+            </div>
+
+            <div class="locations-list">
+              <div class="location-item active" data-location="furtwangen">
+                <div class="location-icon">
+                  <img
+                    src="../../assets/icons/buergersaal-icon.svg"
+                    alt="Bürgersaal"
+                  />
+                </div>
+                <div class="location-name">Furtwanger Bürgersaal</div>
+              </div>
+
+              <div class="location-item" data-location="roessle">
+                <div class="location-icon">
+                  <img src="../../assets/icons/roessle-icon.svg" alt="Rössle" />
+                </div>
+                <div class="location-name">Rösslekeller in Neukirch</div>
+              </div>
+
+              <div class="location-item" data-location="museum_arche">
+                <div class="location-icon">
+                  <img
+                    src="../../assets/icons/museum-icon.svg"
+                    alt="Museum Arche"
+                  />
+                </div>
+                <div class="location-name">
+                  Museum Gasthaus Arche in Furtwangen
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: Location details -->
+          <div class="location-details">
+            <!-- Trauzimmer: Furtwanger Bürgersaal-->
+            <div class="location-card" id="furtwangen-details">
+              <div class="location-image">
+                <img
+                  src="../../assets/images/buergersaal_furtwangen.jpg"
+                  alt="Trauzimmer in Furtwangen"
+                />
+              </div>
+
+              <div class="location-info">
+                <div class="info-row">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                    </div>
+                    <div class="info-content">
+                      <h3>Adresse</h3>
+                      <p>Marktpl. 2, 78120 Furtwangen im Schwarzwald</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-row">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <img src="../../assets/icons/person.svg" alt="Kontakt" />
+                    </div>
+                    <div class="info-content">
+                      <h3>Ansprechpartner</h3>
+                      <p>Frau Ute Weißer</p>
+                      <p>
+                        <a href="mailto:max.mustermann@furtwangen.de"
+                          >max.mustermann@furtwangen.de</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trauzimmer: Rösslekeller Neukirch-->
+            <div class="location-card" id="roessle-details">
+              <div class="location-image">
+                <img
+                  src="../../assets/images/roesslekeller_neukirch.jpg"
+                  alt="Trauzimmer in Neukirch"
+                />
+              </div>
+
+              <div class="location-info">
+                <div class="info-row">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                    </div>
+                    <div class="info-content">
+                      <h3>Adresse</h3>
+                      <p>Hauptstraße 10, 78120 Furtwangen im Schwarzwald</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-row">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <img src="../../assets/icons/person.svg" alt="Kontakt" />
+                    </div>
+                    <div class="info-content">
+                      <h3>Ansprechpartner</h3>
+                      <p>Frau Ute Weißer</p>
+                      <p>max.mustermann@furtwangen.de</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trauzimmer: Museum Gasthaus Arche-->
+            <div class="location-card" id="museum_arche-details">
+              <div class="location-image">
+                <img
+                  src="../../assets/images/museum_gasthaus_arche_furtwangen.jpg"
+                  alt="Trauzimmer im Museum Arche"
+                />
+              </div>
+
+              <div class="location-info">
+                <div class="info-row">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                    </div>
+                    <div class="info-content">
+                      <h3>Adresse</h3>
+                      <p>
+                        Katzensteigstraße 1, 78120 Furtwangen im Schwarzwald
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-row">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <img src="../../assets/icons/person.svg" alt="Kontakt" />
+                    </div>
+                    <div class="info-content">
+                      <h3>Ansprechpartner</h3>
+                      <p>Frau Ute Weißer</p>
+                      <p>
+                        <a href="mailto:max.mustermann@furtwangen.de"
+                          >max.mustermann@furtwangen.de</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="lower-section">
-      <div class="trauzimmer-layout">
-        <!-- Left column: Locations table -->
-        <div class="locations-table">
-          <div class="locations-header">
-            <h2>Trauungsorte</h2>
-          </div>
-          
-          <div class="locations-list">
-            <div class="location-item active" data-location="furtwangen">
-              <div class="location-icon">
-                <img src="../../assets/icons/buergersaal-icon.svg" alt="Bürgersaal" />
-              </div>
-              <div class="location-name">Furtwanger Bürgersaal</div>
-            </div>
-            
-            <div class="location-item" data-location="roessle">
-              <div class="location-icon">
-                <img src="../../assets/icons/roessle-icon.svg" alt="Rössle" />
-              </div>
-              <div class="location-name">Rösslekeller in Neukirch</div>
-            </div>
-            
-            <div class="location-item" data-location="museum_arche">
-              <div class="location-icon">
-                <img src="../../assets/icons/museum-icon.svg" alt="Museum Arche" />
-              </div>
-              <div class="location-name">Museum Gasthaus Arche in Furtwangen</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Right column: Location details -->
-        <div class="location-details">
-
-          <!-- Trauzimmer: Furtwanger Bürgersaal-->
-          <div class="location-card" id="furtwangen-details">
-            <div class="location-image">
-              <img src="../../assets/images/buergersaal_furtwangen.jpg" alt="Trauzimmer in Furtwangen" />
-            </div>
-            
-            <div class="location-info">
-              <div class="info-row">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
-                  </div>
-                  <div class="info-content">
-                    <h3>Adresse</h3>
-                    <p>Marktpl. 2, 78120 Furtwangen im Schwarzwald</p>
-                  </div>
-                </div>
-              </div>
-              <div class="info-row">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <img src="../../assets/icons/person.svg" alt="Kontakt" />
-                  </div>
-                  <div class="info-content">
-                    <h3>Ansprechpartner</h3>
-                    <p>Frau Ute Weißer</p>
-                    <p><a href="mailto:max.mustermann@furtwangen.de">max.mustermann@furtwangen.de</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Trauzimmer: Rösslekeller Neukirch-->
-          <div class="location-card" id="roessle-details">
-            <div class="location-image">
-              <img src="../../assets/images/roesslekeller_neukirch.jpg" alt="Trauzimmer in Neukirch" />
-            </div>
-            
-            <div class="location-info">
-              <div class="info-row">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
-                  </div>
-                  <div class="info-content">
-                    <h3>Adresse</h3>
-                    <p>Hauptstraße 10, 78120 Furtwangen im Schwarzwald</p>
-                  </div>
-                </div>
-              </div>
-              <div class="info-row">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <img src="../../assets/icons/person.svg" alt="Kontakt" />
-                  </div>
-                  <div class="info-content">
-                    <h3>Ansprechpartner</h3>
-                    <p>Frau Ute Weißer</p>
-                    <p>max.mustermann@furtwangen.de</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Trauzimmer: Museum Gasthaus Arche-->
-          <div class="location-card" id="museum_arche-details">
-            <div class="location-image">
-              <img src="../../assets/images/museum_gasthaus_arche_furtwangen.jpg" alt="Trauzimmer im Museum Arche" />
-            </div>
-            
-            <div class="location-info">
-              <div class="info-row">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
-                  </div>
-                  <div class="info-content">
-                    <h3>Adresse</h3>
-                    <p>Katzensteigstraße 1, 78120 Furtwangen im Schwarzwald</p>
-                  </div>
-                </div>
-              </div>
-              <div class="info-row">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <img src="../../assets/icons/person.svg" alt="Kontakt" />
-                  </div>
-                  <div class="info-content">
-                    <h3>Ansprechpartner</h3>
-                    <p>Frau Ute Weißer</p>
-                    <p><a href="mailto:max.mustermann@furtwangen.de">max.mustermann@furtwangen.de</a></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="./trauzimmer.js"></script>
-</body>
+    <script src="./trauzimmer.js"></script>
+  </body>
 </html>

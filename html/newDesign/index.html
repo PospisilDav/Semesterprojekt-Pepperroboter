@@ -1,148 +1,191 @@
 <!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Infoterminal Pepper</title>
+    <link rel="icon" type="image/png" href="./assets/furtwangen_logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./components/speedDial/speedDial.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=962, height=601, user-scalable=no">
-  <title>Infoterminal Pepper</title>
-  <link rel="icon" type="image/png" href="./assets/furtwangen_logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/globals.css">
-  <link rel="stylesheet" href="./styles/main.css">
-  <link rel="stylesheet" href="./components/speedDial/speedDial.css">
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="scripts/jquery-2.2.2.min.js"></script>
+    <script src="scripts/jquery.qimhelpers.js"></script>
+    <script src="scripts/pepperController.js"></script>
+    <script src="scripts/screenSaverTrigger.js"></script>
+    <!-- <script src="scripts/jquery.mobile-1.4.5.min.js"></script> -->
 
-  <script src="/libs/qimessaging/2/qimessaging.js"></script>
-  <script src="scripts/jquery-2.2.2.min.js"></script>
-  <script src="scripts/jquery.qimhelpers.js"></script>
-  <!-- <script src="scripts/jquery.mobile-1.4.5.min.js"></script> -->
-  
-  <script src="./components/speedDial/speedDial.js"></script>
-  <script src="scripts/pepperController.js"></script>
-  <script src="scripts/homepage.js"></script>
-  <script src="scripts/main.js"></script>
-  <script src="scripts/easterEgg.js"></script>
-</head>
+    <script src="./components/speedDial/speedDial.js"></script>
+    <script src="scripts/homepage.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/easterEgg.js"></script>
+  </head>
 
-<body>
-  <div class="container">
-    <img class="background-image" src="./assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+  <body>
+    <div class="container">
+      <img
+        class="background-image"
+        src="./assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-    <!-- Logo Section -->
-    <div class="logo-section">
-      <img src="./assets/furtwangen_logo.svg" alt="Logo" class="icon" />
-    </div>
-
-    <!-- Header Section -->
-    <div class="header-section">
-      <div class="header-title">Hallo! Ich bin Pepper</div>
-      <div class="header-avatar-container">
-        <img class="header-avatar" src="./assets/pepper_head.svg" alt="Pepper Avatar" />
+      <!-- Logo Section -->
+      <div class="logo-section">
+        <img src="./assets/furtwangen_logo.svg" alt="Logo" class="icon" />
       </div>
-      <div class="header-subtitle">
-        Wählen Sie eine der Optionen unten oder tippen Sie auf meinen Bildschirm um zu beginnen.
-      </div>
-    </div>
 
-    <!-- Speed Dial Menu (manually imported)-->
-    <div class="speedDialManually">
-      <div class="speed-dial">
-        <button class="speed-dial-button main-button">
-          <img src="./assets/icons/menu.svg" alt="Menü" />
-        </button>
-        <div class="speed-dial-items">
-          <a href="./pages/settings/settings.html" class="speed-dial-item" target="_parent">
-            <img src="./assets/icons/settings.svg" alt="Einstellungen" />
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">Hallo! Ich bin Pepper</div>
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="./assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
+        </div>
+        <div class="header-subtitle">
+          Wählen Sie eine der Optionen unten oder tippen Sie auf meinen
+          Bildschirm um zu beginnen.
+        </div>
+      </div>
+
+      <!-- Speed Dial Menu (manually imported)-->
+      <div class="speedDialManually">
+        <div class="speed-dial">
+          <button class="speed-dial-button main-button">
+            <img src="./assets/icons/menu.svg" alt="Menü" />
+          </button>
+          <div class="speed-dial-items">
+            <a
+              href="./pages/settings/settings.html"
+              class="speed-dial-item"
+              target="_parent"
+            >
+              <img src="./assets/icons/settings.svg" alt="Einstellungen" />
+            </a>
+            <a class="speed-dial-item" id="muteBtn" target="_parent">
+              <img src="./assets/icons/volume_mute.svg" alt="Mute" />
+            </a>
+            <a class="speed-dial-item" target="_parent">
+              <img src="./assets/icons/freeze.svg" alt="Freeze" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lower-section">
+        <!-- Cards Container -->
+        <div class="cards-container">
+          <!-- Bürgeramt Card -->
+          <a
+            href="./pages/citizenOffice/citizenOffice.html"
+            class="card card-template-1"
+          >
+            <div class="card-header">
+              <div class="card-image">
+                <img src="./assets/rathaus_image.png" alt="Bürgeramt" />
+              </div>
+              <div class="card-title title-burgeramt">Stadtverwaltung</div>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><span class="service-item">Öffnungszeiten</span></li>
+                <li><span class="service-item">Zuständige Ämter</span></li>
+                <li><span class="service-item">Standorte Trauzimmer</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="show-button">
+                <div class="show-button-icon">
+                  <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
+                </div>
+              </div>
+            </div>
+            <img
+              class="logo-detail-outline"
+              src="./assets/furtwangen_logo_outline.svg"
+              alt="Logo outline"
+            />
           </a>
-          <a class="speed-dial-item" target="_parent">
-            <img src="./assets/icons/volume_mute.svg" alt="Mute" />
+
+          <!-- Spiele Card -->
+          <a href="./pages/games/games.html" class="card card-template-2">
+            <div class="card-header">
+              <div class="card-icon-container">
+                <img
+                  src="./assets/icons/game_controller.svg"
+                  alt="Spiele"
+                  class="card-icon wide"
+                />
+              </div>
+              <div class="card-title title-spiele">Spiele</div>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><span class="service-item">Memory</span></li>
+                <li><span class="service-item">Tic Tac Toe</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="show-button">
+                <div class="show-button-icon">
+                  <img
+                    src="./assets/icons/arrow_right.svg"
+                    alt="Arrow"
+                    class="arrow-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <img
+              class="logo-detail-outline"
+              src="./assets/furtwangen_logo_outline.svg"
+              alt="Logo outline"
+            />
           </a>
-          <a class="speed-dial-item" target="_parent">
-            <img src="./assets/icons/freeze.svg" alt="Freeze" />
+
+          <!-- Furtwangen Card -->
+          <a
+            href="./pages/furtwangen/furtwangen.html"
+            class="card card-template-3"
+          >
+            <div class="card-header">
+              <div class="card-image">
+                <img src="./assets/rathaus_image.png" alt="Furtwangen" />
+              </div>
+              <div class="card-title title-furtwangen">Furtwangen</div>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><span class="service-item">Historie</span></li>
+                <li>
+                  <span class="service-item">Freizeit (Essen & Sport)</span>
+                </li>
+                <li><span class="service-item">Sehenswürdigkeiten</span></li>
+                <li><span class="service-item">Bildung</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="show-button">
+                <div class="show-button-icon">
+                  <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
+                </div>
+              </div>
+            </div>
+            <img
+              class="logo-detail-outline"
+              src="./assets/furtwangen_logo_outline.svg"
+              alt="Logo outline"
+            />
           </a>
         </div>
       </div>
     </div>
-
-    <div class="lower-section">
-      <!-- Cards Container -->
-      <div class="cards-container">
-
-        <!-- Bürgeramt Card -->
-        <a href="./pages/citizenOffice/citizenOffice.html" class="card card-template-1">
-          <div class="card-header">
-            <div class="card-image">
-              <img src="./assets/rathaus_image.png" alt="Bürgeramt" />
-            </div>
-            <div class="card-title title-burgeramt">Stadtverwaltung</div>
-          </div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li><span class="service-item">Öffnungszeiten</span></li>
-              <li><span class="service-item">Zuständige Ämter</span></li>
-              <li><span class="service-item">Standorte Trauzimmer</span></li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <div class="show-button">
-              <div class="show-button-icon">
-                <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
-              </div>
-            </div>
-          </div>
-          <img class="logo-detail-outline" src="./assets/furtwangen_logo_outline.svg" alt="Logo outline" />
-        </a>
-
-        <!-- Spiele Card -->
-        <a href="./pages/games/games.html" class="card card-template-2">
-          <div class="card-header">
-            <div class="card-icon-container">
-              <img src="./assets/icons/game_controller.svg" alt="Spiele" class="card-icon wide" />
-            </div>
-            <div class="card-title title-spiele">Spiele</div>
-          </div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li><span class="service-item">Memory</span></li>
-              <li><span class="service-item">Tic Tac Toe</span></li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <div class="show-button">
-              <div class="show-button-icon">
-                <img src="./assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
-              </div>
-            </div>
-          </div>
-          <img class="logo-detail-outline" src="./assets/furtwangen_logo_outline.svg" alt="Logo outline" />
-        </a>
-
-        <!-- Furtwangen Card -->
-        <a href="./pages/furtwangen/furtwangen.html" class="card card-template-3">
-          <div class="card-header">
-            <div class="card-image">
-              <img src="./assets/rathaus_image.png" alt="Furtwangen" />
-            </div>
-            <div class="card-title title-furtwangen">Furtwangen</div>
-          </div>
-          <div class="card-content">
-            <ul class="service-list">
-              <li><span class="service-item">Historie</span></li>
-              <li><span class="service-item">Freizeit (Essen & Sport)</span></li>
-              <li><span class="service-item">Sehenswürdigkeiten</span></li>
-              <li><span class="service-item">Bildung</span></li>
-            </ul>
-          </div>
-          <div class="card-footer">
-            <div class="show-button">
-              <div class="show-button-icon">
-                <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
-              </div>
-            </div>
-          </div>
-          <img class="logo-detail-outline" src="./assets/furtwangen_logo_outline.svg" alt="Logo outline" />
-        </a>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
