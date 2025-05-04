@@ -546,10 +546,22 @@ html, body {
   -webkit-transform: scaleX(-1) scale(0.8);
 }
 
+.speedDialManually {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 105px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .speedDial {
   position: absolute;
-  top: 15px;
-  right: 0;
+  top: 12px;
+  right: -2px;
   width: 115px;
   height: 100%;
   display: flex;
@@ -559,15 +571,12 @@ html, body {
   z-index: 10000;
 }
 
-.speedDialManually {
-  position: absolute;
-  top: 80px;
-  right: 0;
-  width: 115px;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  justify-content: center;
+.speed-dial {
+  position: unset !important;
+}
+
+.speed-dial-items {
+  right: 22.5px !important;
 }
 
 @keyframes header-appear {
