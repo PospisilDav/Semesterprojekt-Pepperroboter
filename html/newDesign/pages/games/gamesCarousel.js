@@ -1,29 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Main carousel elements
   var carousel = document.querySelector('.games-carousel');
-  var carouselViewport = document.querySelector('.games-carousel-viewport');
+  var gameCards = document.querySelectorAll('.game-card');
   var prevButton = document.querySelector('.prev-button');
   var nextButton = document.querySelector('.next-button');
-  var gameCards = document.querySelectorAll('.game-card');
   var paginationContainer = document.querySelector('.pagination-dots');
 
   // Carousel state and configuration
   var currentPage = 0;
-  var visibleCards = 3; // Number of cards visible at once
+  var visibleCards = 2.5; // Number of cards visible at once
   var totalCards = gameCards.length;
-  var totalPages = Math.max(1, Math.ceil(totalCards / visibleCards));
-
-  // Debug output
-  console.log("Total cards:", totalCards);
-  console.log("Total pages:", totalPages);
+  var totalPages = Math.ceil(totalCards - visibleCards + 1);
 
   // Ensure the carousel has proper width based on the number of cards
-  carousel.style.width = (totalCards * 100 / visibleCards) + '%';
-
-  // Make each card take an equal portion of the carousel width
-  for (var i = 0; i < gameCards.length; i++) {
-    gameCards[i].style.flex = '0 0 ' + (100 / totalCards) + '%';
-  }
+  carousel.style.width = (totalCards * (100 / visibleCards)) + '%';
 
   // Clear and recreate pagination dots
   paginationContainer.innerHTML = '';
@@ -43,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
    * Updates the carousel position and styles
    */
   function updateCarousel() {
-    // Calculate slide percentage based on viewport width and current page
-    var slidePercentage = (100 / totalPages) * currentPage;
+    // Calculate slide percentage based on the current page
+    var slidePercentage = (100 / visibleCards) * currentPage;
     carousel.style.webkitTransform = 'translateX(-' + slidePercentage + '%)';
     carousel.style.transform = 'translateX(-' + slidePercentage + '%)';
 
@@ -52,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update pagination dots
     for (var i = 0; i < dots.length; i++) {
-      dots[i].classList.toggle('active', i === currentPage);
+      dots[i].classList.toggle('active', i === Math.floor(currentPage));
     }
 
     // Update button states
@@ -68,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
    */
   function goToPrevPage() {
     if (currentPage > 0) {
-      currentPage--;
+      currentPage -= 1;
       updateCarousel();
     }
   }
@@ -77,47 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
    * Navigate to the next page
    */
   function goToNextPage() {
-    console.log("Next button clicked");
     if (currentPage < totalPages - 1) {
-      currentPage++;
-      updateCarousel();
-    }
-  }
-
-  /**
-   * Navigate to a specific page
-   */
-  function goToPage(pageIndex) {
-    if (pageIndex >= 0 && pageIndex < totalPages) {
-      currentPage = pageIndex;
+      currentPage += 1;
       updateCarousel();
     }
   }
 
   // Event listeners for navigation buttons
-  if (prevButton.addEventListener) {
-    prevButton.addEventListener('click', function (e) {
-      e.preventDefault();
-      goToPrevPage();
-    });
-  } else if (prevButton.attachEvent) {
-    prevButton.attachEvent('onclick', function (e) {
-      e.preventDefault();
-      goToPrevPage();
-    });
-  }
+  prevButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    goToPrevPage();
+  });
 
-  if (nextButton.addEventListener) {
-    nextButton.addEventListener('click', function (e) {
-      e.preventDefault();
-      goToNextPage();
-    });
-  } else if (nextButton.attachEvent) {
-    nextButton.attachEvent('onclick', function (e) {
-      e.preventDefault();
-      goToNextPage();
-    });
-  }
+  nextButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    goToNextPage();
+  });
 
   // Initialize carousel
   updateCarousel();

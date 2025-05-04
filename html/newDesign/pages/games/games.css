@@ -65,8 +65,8 @@
 }
 
 .game-card {
-  flex: 0 0 calc(33.333% - 20px);
-  min-width: 275px;
+  flex: 0 0 calc(28% - 10px);
+  width: 250px;
   height: 100%;
   margin: 0 10px;
   background: linear-gradient(135deg, #52AD59 70%, #6DD1E9 100%);
