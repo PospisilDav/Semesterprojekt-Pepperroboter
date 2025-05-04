@@ -6,13 +6,13 @@ function toggleMute() {
     window.pepperController.playSound(0);
     document.getElementById("muteText").textContent = "Stummschalten";
     document.querySelector("#muteBtn img").src =
-      "../assets/icons/volume_mute.svg";
+      "../../assets/icons/volume_mute.svg";
   } else {
-    window.pepperController.setMute();
     window.pepperController.playSound(0);
+    window.pepperController.setMute();
     document.getElementById("muteText").textContent = "Entstummen";
     document.querySelector("#muteBtn img").src =
-      "../assets/icons/volume_on.png";
+      "../../assets/icons/volume_on.png";
   }
 
   isMuted = !isMuted;
@@ -30,20 +30,6 @@ function volMinus() {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("muteBtn").addEventListener("click", function () {
-    if (isMuted) {
-      window.pepperController.setUnmute();
-      window.pepperController.playSound(0);
-      document.getElementById("muteText").textContent = "Stummschalten";
-      document.querySelector("#muteBtn img").src =
-        "../../assets/icons/volume_mute.svg";
-    } else {
-      window.pepperController.setMute();
-      window.pepperController.playSound(0);
-      document.getElementById("muteText").textContent = "Entstummen";
-      document.querySelector("#muteBtn img").src =
-        "../../assets/icons/volume_on.png";
-    }
-
-    isMuted = !isMuted;
+    toggleMute();
   });
 });

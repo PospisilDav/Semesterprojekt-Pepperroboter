@@ -9,7 +9,9 @@
     <script src="../../../scripts/jquery-2.2.2.min.js"></script>
     <script src="../../../scripts/jquery.qimhelpers.js"></script>
     <script src="../../../scripts/pepperController.js"></script>
-    <script>window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html"</script>
+    <script>
+      window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html";
+    </script>
     <script src="../../../scripts/screenSaverTrigger.js"></script>
 
     <link rel="stylesheet" href="../../../styles/globals.css" />
@@ -17,10 +19,7 @@
     <link rel="stylesheet" href="../../../styles/subpage.css" />
     <link rel="stylesheet" href="../../../components/speedDial/speedDial.css" />
     <link rel="stylesheet" href="./memory.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="../../../assets/fonts/Roboto2.css" rel="stylesheet" />
     <script src="./memory.js" defer></script>
     <script src="../../../components/speedDial/speedDial.js"></script>
   </head>
@@ -62,8 +61,8 @@
             <a class="speed-dial-item" target="_parent">
               <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
             </a>
-            <a class="speed-dial-item" target="_parent">
-              <img src="../../../assets/icons/freeze.svg" alt="Freeze" />
+            <a class="speed-dial-item" id="stopBtn" target="_parent">
+              <img src="../../../assets/icons/stop-button.png" alt="Freeze" />
             </a>
           </div>
         </div>

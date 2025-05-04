@@ -1,7 +1,38 @@
+"use strict";
+
+var pepperController = window.pepperController;
+
+function wegweiserFullyLoaded(e) {
+  window.console.log("wegweiser initialized");
+
+  pepperController.shutUpAndContinue();
+
+  setTimeout(function () {
+    pepperController.animatedSpeak(
+      "Boy",
+      "Hier finden Sie Adressen, Kontakte und Öffnungszeiten der Ämter in Furtwangen."
+    );
+  }, 800);
+}
+
+window.addEventListener("load", wegweiserFullyLoaded, false);
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get all office items and details cards
   var officeItems = document.querySelectorAll(".office-item");
   var officeCards = document.querySelectorAll(".office-card");
+  const headerAvatar = document.querySelector(".header-avatar");
+
+  if (headerAvatar) {
+    headerAvatar.addEventListener("click", function () {
+      setTimeout(function () {
+        pepperController.animatedSpeak(
+          "Boy",
+          "Hier finden Sie Adressen, Kontakte und Öffnungszeiten der Ämter in Furtwangen."
+        );
+      }, 800);
+    });
+  }
 
   // Add click event listeners to office items
   for (var i = 0; i < officeItems.length; i++) {

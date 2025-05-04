@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=962, height=601, user-scalable=no" />
     <title>Infoterminal Pepper</title>
     <link rel="icon" type="image/png" href="./assets/furtwangen_logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="assets/fonts/Roboto.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./components/speedDial/speedDial.css" />
     <link rel="stylesheet" href="./styles/main.css" />
@@ -18,7 +15,9 @@
     <script src="scripts/jquery.qimhelpers.js"></script>
     <script src="scripts/pepperController.js"></script>
 
-    <script>window.CUSTOM_SCREENSAVER_PATH = "./pages/screenSaver/screenSaver.html"</script>
+    <script>
+      window.CUSTOM_SCREENSAVER_PATH = "./pages/screenSaver/screenSaver.html";
+    </script>
     <script src="scripts/screenSaverTrigger.js"></script>
     <!-- <script src="scripts/jquery.mobile-1.4.5.min.js"></script> -->
 
@@ -74,8 +73,8 @@
             <a class="speed-dial-item" id="muteBtn" target="_parent">
               <img src="./assets/icons/volume_mute.svg" alt="Mute" />
             </a>
-            <a class="speed-dial-item" target="_parent">
-              <img src="./assets/icons/freeze.svg" alt="Freeze" />
+            <a class="speed-dial-item" id="stopBtn" target="_parent">
+              <img src="./assets/icons/stop-button.png" alt="Freeze" />
             </a>
           </div>
         </div>
@@ -159,7 +158,11 @@
           >
             <div class="card-header">
               <div class="card-image">
-                <img src="./assets/images/furtwangen.jpg" alt="Furtwangen" style="object-fit: fill;"/>
+                <img
+                  src="./assets/images/furtwangen.jpg"
+                  alt="Furtwangen"
+                  style="object-fit: fill"
+                />
               </div>
               <div class="card-title title-furtwangen">Furtwangen</div>
             </div>

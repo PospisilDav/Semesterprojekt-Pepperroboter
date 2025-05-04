@@ -1,6 +1,37 @@
-document.addEventListener('DOMContentLoaded', function () {
+"use strict";
+
+var pepperController = window.pepperController;
+
+function teamPageFullyLoaded(e) {
+  window.console.log("teamPage initialized");
+
+  pepperController.shutUpAndContinue();
+
+  setTimeout(function () {
+    pepperController.animatedSpeak(
+      "Boy",
+      "Hier sehen Sie das Entwicklerteam dieses Projekts."
+    );
+  }, 800);
+}
+
+window.addEventListener("load", teamPageFullyLoaded, false);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const headerAvatar = document.querySelector(".header-avatar");
+
+  if (headerAvatar) {
+    headerAvatar.addEventListener("click", function () {
+      setTimeout(function () {
+        pepperController.animatedSpeak(
+          "Boy",
+          "Hier sehen Sie das Entwicklerteam dieses Projekts."
+        );
+      }, 800);
+    });
+  }
   // Animate the developer cards with a staggered delay
-  const developerCards = document.querySelectorAll('.developer-card');
+  const developerCards = document.querySelectorAll(".developer-card");
   developerCards.forEach((card, index) => {
     card.style.animationDelay = `${index * 0.2}s`;
   });
@@ -10,14 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function createConfetti() {
     // Create confetti container
-    const confettiContainer = document.createElement('div');
-    confettiContainer.className = 'confetti-container';
+    const confettiContainer = document.createElement("div");
+    confettiContainer.className = "confetti-container";
     document.body.appendChild(confettiContainer);
 
     // Create confetti pieces
-    for (let i = 0; i < 50; i++) { // Reduced number of confetti for smaller screens
-      const confetti = document.createElement('div');
-      confetti.className = 'confetti';
+    for (let i = 0; i < 50; i++) {
+      // Reduced number of confetti for smaller screens
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
       confetti.style.left = `${Math.random() * 100}%`;
       confetti.style.animationDelay = `${Math.random() * 3}s`; // Shortened animation delay
       confetti.style.backgroundColor = getRandomColor();
@@ -26,12 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function getRandomColor() {
-    const colors = ['#6DD1E9', '#52AD59', '#FFC107', '#FF5722', '#9C27B0'];
+    const colors = ["#6DD1E9", "#52AD59", "#FFC107", "#FF5722", "#9C27B0"];
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
   // Add confetti styles
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.textContent = `
     .confetti-container {
       position: fixed;

@@ -1,7 +1,38 @@
+"use strict";
+
+var pepperController = window.pepperController;
+
+function trauzimmerFullyLoaded(e) {
+  window.console.log("trauzimmer initialized");
+
+  pepperController.shutUpAndContinue();
+
+  setTimeout(function () {
+    pepperController.animatedSpeak(
+      "Boy",
+      "Hier finden Sie Informationen zu den Trauorten in Furtwangen."
+    );
+  }, 800);
+}
+
+window.addEventListener("load", trauzimmerFullyLoaded, false);
+
 document.addEventListener("DOMContentLoaded", function () {
   // Get all location items and details cards
   var locationItems = document.querySelectorAll(".location-item");
   var locationCards = document.querySelectorAll(".location-card");
+  const headerAvatar = document.querySelector(".header-avatar");
+
+  if (headerAvatar) {
+    headerAvatar.addEventListener("click", function () {
+      setTimeout(function () {
+        pepperController.animatedSpeak(
+          "Boy",
+          "Hier finden Sie Informationen zu den Trauorten in Furtwangen."
+        );
+      }, 800);
+    });
+  }
 
   // Add click event listeners to location items
   for (var i = 0; i < locationItems.length; i++) {

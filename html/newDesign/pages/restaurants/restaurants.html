@@ -10,13 +10,15 @@
     <script src="../../scripts/jquery.qimhelpers.js"></script>
     <script src="../../scripts/pepperController.js"></script>
     <script src="../../scripts/screenSaverTrigger.js"></script>
+    
+    <script src="restaurants.js"></script>
 
     <link rel="stylesheet" href="../../styles/globals.css" />
     <link rel="stylesheet" href="../../styles/main.css" />
     <link rel="stylesheet" href="../../styles/subpage.css" />
     <link rel="stylesheet" href="./restaurants.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="../../assets/fonts/Roboto2.css"
       rel="stylesheet"
     />
   </head>
@@ -58,13 +60,13 @@
             alt="Pepper Avatar"
           />
         </div>
-        <div class="header-subtitle">Essen & Trinken in Furtwangen</div>
+        <div class="header-subtitle">Entdecken Sie kulinarische Angebote in und um Furtwangen.</div>
       </div>
 
       <div class="lower-section">
         <div class="cards-container">
           <!-- Regionale Küche -->
-          <div class="card">
+          <div class="card" id="regional">
             <div class="card-background"></div>
             <div class="card-icon-container">
               <div class="card-icon">
@@ -86,7 +88,7 @@
           </div>
 
           <!-- Internationale Küche -->
-          <div class="card">
+          <div class="card" id="international">
             <div class="card-background"></div>
             <div class="card-icon-container">
               <div class="card-icon">
@@ -108,7 +110,7 @@
           </div>
 
           <!-- Cafés & Bäckereien -->
-          <div class="card">
+          <div class="card" id="cafe">
             <div class="card-background"></div>
             <div class="card-icon-container">
               <div class="card-icon">

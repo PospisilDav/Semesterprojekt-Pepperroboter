@@ -11,14 +11,13 @@
     <script src="../../scripts/pepperController.js"></script>
     <script src="../../scripts/screenSaverTrigger.js"></script>
 
+    <script src="sport.js"></script>
+
     <link rel="stylesheet" href="../../styles/globals.css" />
     <link rel="stylesheet" href="../../styles/main.css" />
     <link rel="stylesheet" href="../../styles/subpage.css" />
     <link rel="stylesheet" href="./sport.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="../../assets/fonts/Roboto2.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
@@ -58,14 +57,16 @@
             alt="Pepper Avatar"
           />
         </div>
-        <div class="header-subtitle">Bewegung in und um Furtwangen</div>
+        <div class="header-subtitle">
+          Entdecken Sie sportliche Angebote in und um Furtwangen.
+        </div>
       </div>
 
       <div class="lower-section">
         <!-- Cards Container -->
         <div class="cards-container">
           <!-- Outdoor & Natur -->
-          <div class="card">
+          <div class="card" id="OutdoorNatur">
             <div class="card-background"></div>
             <div class="card-icon-container">
               <div class="card-icon">
@@ -87,7 +88,7 @@
           </div>
 
           <!-- Wintersport -->
-          <div class="card">
+          <div class="card" id="Wintersport">
             <div class="card-background"></div>
             <div class="card-icon-container">
               <div class="card-icon">
@@ -109,7 +110,7 @@
           </div>
 
           <!-- Fitness & Hallensport -->
-          <div class="card">
+          <div class="card" id="FitnessHallensport">
             <div class="card-background"></div>
             <div class="card-icon-container">
               <div class="card-icon">
