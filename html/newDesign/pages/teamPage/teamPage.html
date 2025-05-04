@@ -69,7 +69,7 @@
             </div>
           </div>
 
-          <!-- Project information in similar style to cards -->
+          <!-- Project information -->
           <div class="project-info-card">
             <h2>Pepper Infoterminal</h2>
             <p class="info-subtitle">Ein Projekt der Hochschule Furtwangen</p>
@@ -132,13 +132,16 @@
       document.addEventListener("DOMContentLoaded", function () {
         // Add appear class after small delay for entrance animation
         setTimeout(function () {
-          document.querySelector(".team-container").classList.add("appear");
+          var teamContainer = document.querySelector(".team-container");
+          if (teamContainer) {
+            teamContainer.classList.add("appear");
+          }
 
           // Animate team content elements sequentially
           var elements = document.querySelectorAll(
             ".team-photo-card, .project-info-card"
           );
-          elements.forEach(function (element, index) {
+          Array.prototype.forEach.call(elements, function (element, index) {
             setTimeout(function () {
               element.classList.add("appear");
             }, 200 + index * 150);
