@@ -159,7 +159,7 @@
   display: flex;
   align-items: flex-start;
   margin-top: 5px;
-}
+} 
 
 .services-label {
   font-weight: 500;
@@ -272,19 +272,6 @@
   font-size: 16px;
   line-height: 1.4;
   flex: 1;
-}
-
-.office-info-compact {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  height: 200px;
-}
-
-.info-row {
-  display: flex;
-  gap: 15px;
-  height: 200px;
 }
 
 .info-item {

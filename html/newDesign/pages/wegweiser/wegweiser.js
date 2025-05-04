@@ -1,29 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Get all office items and details cards
-  const officeItems = document.querySelectorAll(".office-item");
-  const officeCards = document.querySelectorAll(".office-card");
+  var officeItems = document.querySelectorAll(".office-item");
+  var officeCards = document.querySelectorAll(".office-card");
 
   // Add click event listeners to office items
-  officeItems.forEach((item) => {
-    item.addEventListener("click", function () {
+  for (var i = 0; i < officeItems.length; i++) {
+    officeItems[i].addEventListener("click", function () {
       // Remove active class from all items
-      officeItems.forEach((office) => office.classList.remove("active"));
+      for (var j = 0; j < officeItems.length; j++) {
+        officeItems[j].classList.remove("active");
+      }
 
       // Add active class to clicked item
       this.classList.add("active");
 
       // Get the office ID and show corresponding details
-      const officeId = this.getAttribute("data-office");
-      officeCards.forEach((card) => (card.style.display = "none"));
-      document.getElementById(`${officeId}-details`).style.display = "block";
+      var officeId = this.getAttribute("data-office");
+      for (var k = 0; k < officeCards.length; k++) {
+        officeCards[k].style.display = "none";
+      }
+      var detailsCard = document.getElementById(officeId + "-details");
+      if (detailsCard) {
+        detailsCard.style.display = "block";
+      }
     });
-  });
+  }
 
   // Initialize - make sure only the active office is shown
-  officeCards.forEach((card) => (card.style.display = "none"));
-  const activeOffice = document.querySelector(".office-item.active");
+  for (var l = 0; l < officeCards.length; l++) {
+    officeCards[l].style.display = "none";
+  }
+  var activeOffice = document.querySelector(".office-item.active");
   if (activeOffice) {
-    const activeId = activeOffice.getAttribute("data-office");
-    document.getElementById(`${activeId}-details`).style.display = "block";
+    var activeId = activeOffice.getAttribute("data-office");
+    var activeDetailsCard = document.getElementById(activeId + "-details");
+    if (activeDetailsCard) {
+      activeDetailsCard.style.display = "block";
+    }
   }
 });
