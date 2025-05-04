@@ -15,4 +15,6 @@ body {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
