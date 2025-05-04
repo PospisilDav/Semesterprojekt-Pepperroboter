@@ -10,7 +10,9 @@
     <script src="../../../scripts/jquery.qimhelpers.js"></script>
     <script src="../../../scripts/pepperController.js"></script>
     <script src="../../../scripts/screenSaverTrigger.js"></script>
+    <script src="../../../components/speedDial/speedDial.js"></script>
 
+    <link rel="stylesheet" href="../../../components/speedDial/speedDial.css" />
     <link rel="stylesheet" href="../../../styles/globals.css" />
     <link rel="stylesheet" href="../../../styles/main.css" />
     <link rel="stylesheet" href="../../../styles/subpage.css" />
@@ -26,32 +28,44 @@
 
       <!-- Back and Home Buttons -->
       <div class="navigation-buttons-container">
-        <a
-          href="../games.html"
-          class="back-button"
-          id="back-button"
-          aria-label="Zurück zur Spieleübersicht"
-        >
+        <a href="../games.html" class="back-button" id="back-button">
           <img src="../../../assets/icons/arrow_left.svg" alt="Zurück" />
         </a>
-        <a
-          href="../../../index.html"
-          class="home-button"
-          id="home-button"
-          aria-label="Zur Startseite"
-        >
+        <a href="../../../index.html" class="home-button" id="home-button">
           <img src="../../../assets/icons/home.svg" alt="Startseite" />
         </a>
       </div>
 
-      <!-- Logo Section -->
-      <div class="logo-section-right">
-        <img src="../../../assets/furtwangen_logo.svg" alt="Logo" />
+      <!-- Speed Dial Menu (manually imported)-->
+      <div class="speedDialManually">
+        <div class="speed-dial">
+          <button class="speed-dial-button main-button">
+            <img src="../../../assets/icons/menu.svg" alt="Menü" />
+          </button>
+          <div class="speed-dial-items">
+            <a
+              href="../../../pages/settings/settings.html"
+              class="speed-dial-item"
+              target="_parent"
+            >
+              <img
+                src="../../../assets/icons/settings.svg"
+                alt="Einstellungen"
+              />
+            </a>
+            <a class="speed-dial-item" target="_parent">
+              <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
+            </a>
+            <a class="speed-dial-item" target="_parent">
+              <img src="../../../assets/icons/freeze.svg" alt="Freeze" />
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Header Section -->
       <div class="header-section">
-        <div class="header-title">Tic Tac Toe</div>
+        <div class="header-title">Spiele mit Pepper</div>
         <div class="header-avatar-container">
           <img
             class="header-avatar"
@@ -60,7 +74,7 @@
           />
         </div>
         <div class="header-subtitle">
-          Setze deine Zeichen und fordere Pepper heraus!
+          Wähle ein Spiel aus und spiele es direkt mit mir.
         </div>
       </div>
 

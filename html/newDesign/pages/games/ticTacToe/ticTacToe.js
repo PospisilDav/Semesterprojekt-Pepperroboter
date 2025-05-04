@@ -26,7 +26,7 @@ var winningCombinations = [
 ];
 
 // Initialize the game when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Get references to DOM elements
     board = document.getElementById("board");
     statusDisplay = document.getElementById("status");
@@ -36,37 +36,37 @@ document.addEventListener('DOMContentLoaded', function() {
     aiScoreDisplay = document.getElementById("ai-score");
     easyBtn = document.getElementById("easyBtn");
     hardBtn = document.getElementById("hardBtn");
-    
+
     createBoard();
-    
+
     // Difficulty toggle handlers
-    easyBtn.addEventListener("click", function() {
+    easyBtn.addEventListener("click", function () {
         isHardMode = false;
-        easyBtn.classList.add("active");
-        hardBtn.classList.remove("active");
+        easyBtn.className += " active";
+        hardBtn.className = hardBtn.className.replace(" active", "");
         easyBtn.setAttribute("aria-pressed", "true");
         hardBtn.setAttribute("aria-pressed", "false");
         restartGame();
     });
-    
-    hardBtn.addEventListener("click", function() {
+
+    hardBtn.addEventListener("click", function () {
         isHardMode = true;
-        hardBtn.classList.add("active");
-        easyBtn.classList.remove("active");
+        hardBtn.className += " active";
+        easyBtn.className = easyBtn.className.replace(" active", "");
         hardBtn.setAttribute("aria-pressed", "true");
         easyBtn.setAttribute("aria-pressed", "false");
         restartGame();
     });
-    
+
     // Game control buttons
-    restartBtn.addEventListener("click", function() {
+    restartBtn.addEventListener("click", function () {
         isGameActive = true;
         statusDisplay.textContent = "Dein Zug (❌)";
         statusDisplay.className = "status-message";
         createBoard();
     });
-    
-    newGameBtn.addEventListener("click", function() {
+
+    newGameBtn.addEventListener("click", function () {
         isGameActive = true;
         playerScore = 0;
         aiScore = 0;
@@ -93,7 +93,7 @@ function restartGame() {
  */
 function createBoard() {
     board.innerHTML = "";
-    
+
     for (var i = 0; i < 9; i++) {
         var cell = document.createElement("div");
         cell.className = "board-cell";
@@ -104,13 +104,13 @@ function createBoard() {
         board.appendChild(cell);
     }
     cells = document.querySelectorAll(".board-cell");
-    
+
     for (var i = 0; i < cells.length; i++) {
         // Mouse click handling
         cells[i].addEventListener("click", handlePlayerMove);
-        
+
         // Keyboard accessibility
-        cells[i].addEventListener("keydown", function(e) {
+        cells[i].addEventListener("keydown", function (e) {
             if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
                 handlePlayerMove(e);
@@ -125,19 +125,19 @@ function createBoard() {
 function handlePlayerMove(e) {
     var cell = e.target;
     var index = parseInt(cell.getAttribute("data-index"));
-    
+
     if (!isGameActive || cell.hasAttribute("data-player")) return;
-    
+
     makeMove(index, PLAYER);
-    
+
     if (isGameActive) {
         // Prevent multiple moves while AI is "thinking"
         disableAllCells();
-        
+
         // Visual feedback during AI turn
         statusDisplay.textContent = "Pepper denkt...";
         statusDisplay.className = "status-message thinking";
-        
+
         setTimeout(handleAIMove, 600);
     }
 }
@@ -148,9 +148,9 @@ function handlePlayerMove(e) {
 function disableAllCells() {
     for (var i = 0; i < cells.length; i++) {
         if (!cells[i].hasAttribute("data-player")) {
-            cells[i].classList.add("temporarily-disabled");
+            cells[i].className += " temporarily-disabled";
             cells[i].setAttribute("aria-disabled", "true");
-            
+
             // Store and remove tabindex for accessibility
             cells[i].setAttribute("data-old-tabindex", cells[i].getAttribute("tabindex") || "0");
             cells[i].removeAttribute("tabindex");
@@ -163,10 +163,10 @@ function disableAllCells() {
  */
 function enableAvailableCells() {
     for (var i = 0; i < cells.length; i++) {
-        if (cells[i].classList.contains("temporarily-disabled")) {
-            cells[i].classList.remove("temporarily-disabled");
+        if (cells[i].className.indexOf("temporarily-disabled") !== -1) {
+            cells[i].className = cells[i].className.replace(" temporarily-disabled", "");
             cells[i].removeAttribute("aria-disabled");
-            
+
             // Restore tabindex
             var oldTabindex = cells[i].getAttribute("data-old-tabindex");
             if (oldTabindex) {
@@ -191,9 +191,9 @@ function makeMove(index, player) {
     if (winCombo) {
         // Highlight the winning combination
         for (var i = 0; i < winCombo.length; i++) {
-            cells[winCombo[i]].classList.add("winner");
+            cells[winCombo[i]].className += " winner";
         }
-        
+
         // Update scores and UI for win condition
         if (player === PLAYER) {
             statusDisplay.textContent = "Du hast gewonnen! 🎉";
@@ -207,7 +207,7 @@ function makeMove(index, player) {
             aiScore++;
             aiScoreDisplay.textContent = aiScore;
         }
-        
+
         isGameActive = false;
         return;
     }
@@ -220,14 +220,14 @@ function makeMove(index, player) {
             break;
         }
     }
-    
+
     if (allTaken) {
         statusDisplay.textContent = "Unentschieden!";
         statusDisplay.className = "status-message draw";
         isGameActive = false;
         return;
     }
-    
+
     // Continue game with next player's turn
     statusDisplay.textContent = (player === PLAYER) ? "Pepper denkt..." : "Dein Zug (❌)";
 }
@@ -242,7 +242,7 @@ function checkWinner(player) {
         var dataPlayer = cells[i].getAttribute("data-player");
         values[i] = dataPlayer === "X" ? PLAYER : (dataPlayer === "O" ? AI : "");
     }
-    
+
     for (var i = 0; i < winningCombinations.length; i++) {
         var comb = winningCombinations[i];
         var win = true;
@@ -264,30 +264,30 @@ function checkWinner(player) {
  */
 function handleAIMove() {
     if (!isGameActive) return;
-    
+
     var values = [];
     for (var i = 0; i < cells.length; i++) {
         var dataPlayer = cells[i].getAttribute("data-player");
         values[i] = dataPlayer === "X" ? PLAYER : (dataPlayer === "O" ? AI : "");
     }
-    
+
     var available = [];
     for (var i = 0; i < values.length; i++) {
         if (values[i] === "") {
             available.push(i);
         }
     }
-    
+
     if (available.length === 0) return;
-    
+
     var moveIndex;
-    
+
     if (isHardMode) {
         // Hard mode: Use minimax for optimal moves
         moveIndex = getBestMove(values);
     } else {
         // Easy mode: Mix of strategic moves and randomness
-        
+
         // 1. If AI can win, do it.
         for (var i = 0; i < available.length; i++) {
             var index = available[i];
@@ -299,7 +299,7 @@ function handleAIMove() {
             }
             values[index] = "";
         }
-        
+
         // 2. Block if player can win (but only 80% of the time to make it easier)
         if (Math.random() < 0.8) {
             for (var i = 0; i < available.length; i++) {
@@ -313,7 +313,7 @@ function handleAIMove() {
                 values[index] = "";
             }
         }
-        
+
         // 3. Otherwise, choose a mix of strategic and random moves
         if (Math.random() < 0.7) {
             // Strategic moves
@@ -331,14 +331,14 @@ function handleAIMove() {
             moveIndex = available[Math.floor(Math.random() * available.length)];
         }
     }
-    
+
     if (moveIndex === undefined && available.length > 0) {
         moveIndex = available[Math.floor(Math.random() * available.length)];
     }
-    
+
     makeMove(moveIndex, AI);
     enableAvailableCells();
-    
+
     // At the end, update status and restore class
     statusDisplay.textContent = "Dein Zug (❌)";
     statusDisplay.className = "status-message";
@@ -368,7 +368,7 @@ function isWinning(values, player) {
 function getBestMove(board) {
     var bestScore = -Infinity;
     var bestMove;
-    
+
     for (var i = 0; i < 9; i++) {
         // Check if the spot is available
         if (board[i] === "") {
@@ -381,7 +381,7 @@ function getBestMove(board) {
             }
         }
     }
-    
+
     return bestMove;
 }
 
@@ -392,7 +392,7 @@ function minimax(board, depth, isMaximizing) {
     // Check terminal states
     if (isWinning(board, AI)) return 10 - depth;
     if (isWinning(board, PLAYER)) return depth - 10;
-    
+
     // Check if the board is full (draw)
     var isFull = true;
     for (var i = 0; i < 9; i++) {
@@ -402,7 +402,7 @@ function minimax(board, depth, isMaximizing) {
         }
     }
     if (isFull) return 0;
-    
+
     if (isMaximizing) {
         var bestScore = -Infinity;
         for (var i = 0; i < 9; i++) {
@@ -434,18 +434,18 @@ function minimax(board, depth, isMaximizing) {
 function createConfetti() {
     var confettiContainer = document.getElementById("confetti-container");
     confettiContainer.innerHTML = '';
-    
+
     var colors = ['#52AD59', '#6DD1E9', '#07859E', '#09B637', '#FFD700'];
-    
+
     for (var i = 0; i < 100; i++) {
         var confetti = document.createElement('div');
         confetti.className = 'confetti';
-        
+
         // Randomize confetti appearance
         var color = colors[Math.floor(Math.random() * colors.length)];
         var size = Math.random() * 10 + 5;
         var left = Math.random() * 100;
-        
+
         confetti.style.backgroundColor = color;
         confetti.style.width = size + 'px';
         confetti.style.height = size + 'px';
@@ -453,11 +453,11 @@ function createConfetti() {
         confetti.style.top = '-10px';
         confetti.style.opacity = '1';
         confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
-        
+
         // Add animation
         confetti.style.animation = 'fall ' + (Math.random() * 3 + 2) + 's linear forwards';
         confetti.style.animationDelay = Math.random() * 2 + 's';
-        
+
         confettiContainer.appendChild(confetti);
     }
 }
