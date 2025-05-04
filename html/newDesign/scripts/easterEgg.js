@@ -229,7 +229,7 @@
           '  left: -20px;',
           '  width: 75px;',
           '  height: 75px;',
-          '  background-image: url("./assets/mini_pepper.png");',
+          '  background-image: url("./assets/mini_pepper.jpg");',
           '  background-size: contain;',
           '  background-repeat: no-repeat;',
           '  background-position: center;',
