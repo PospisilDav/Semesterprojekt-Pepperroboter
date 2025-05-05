@@ -1,4 +1,4 @@
-const questions = [
+var questions = [
   {
     question: "In welcher Region liegt Furtwangen?",
     answers: ["Allgäu", "Schwarzwald", "Bodensee", "Odenwald"],
@@ -47,17 +47,17 @@ const questions = [
 ];
 
 var currentIndex = 0;
-let startTime = Date.now(); // Track the start time
-let resultTimeout; // Variable to store the timeout ID
+var startTime = new Date().getTime(); // Track the start time
+var resultTimeout; // Variable to store the timeout ID
 
-const questionEl = document.getElementById("question");
-const answerButtons = document.getElementById("answerButtons");
-const resultEl = document.getElementById("result");
-const nextBtn = document.getElementById("nextBtn");
-const resultOverlay = document.getElementById("resultOverlay");
-const resultContainer = document.getElementById("resultContainer");
-const resultMessage = document.getElementById("resultMessage");
-const resultIcon = document.getElementById("resultIcon");
+var questionEl = document.getElementById("question");
+var answerButtons = document.getElementById("answerButtons");
+var resultEl = document.getElementById("result");
+var nextBtn = document.getElementById("nextBtn");
+var resultOverlay = document.getElementById("resultOverlay");
+var resultContainer = document.getElementById("resultContainer");
+var resultMessage = document.getElementById("resultMessage");
+var resultIcon = document.getElementById("resultIcon");
 
 function showQuestion() {
   // Add fade-out animation to the current question
@@ -65,26 +65,44 @@ function showQuestion() {
   answerButtons.classList.add("fade-out");
 
   // Wait for the fade-out animation to complete before updating the content
-  setTimeout(() => {
+  setTimeout(function() {
     questionEl.classList.remove("fade-out");
     answerButtons.classList.remove("fade-out");
 
-    const q = questions[currentIndex];
+    var q = questions[currentIndex];
 
     // Shuffle the answers array
-    const shuffledAnswers = q.answers
-      .map((answer, index) => ({ answer, index })) // Pair answers with their original indices
-      .sort(() => Math.random() - 0.5); // Shuffle the array randomly
+    var answersWithIndices = [];
+    for (var i = 0; i < q.answers.length; i++) {
+      answersWithIndices.push({
+        answer: q.answers[i],
+        index: i
+      });
+    }
+    
+    // Fisher-Yates shuffle algorithm
+    for (var i = answersWithIndices.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = answersWithIndices[i];
+      answersWithIndices[i] = answersWithIndices[j];
+      answersWithIndices[j] = temp;
+    }
 
     questionEl.textContent = q.question;
     answerButtons.innerHTML = "";
 
-    for (const { answer, index } of shuffledAnswers) {
-      const btn = document.createElement("button");
-      btn.textContent = answer;
-      btn.onclick = function () {
-        checkAnswer(index); // Pass the original index to checkAnswer
-      };
+    for (var i = 0; i < answersWithIndices.length; i++) {
+      var answerData = answersWithIndices[i];
+      var btn = document.createElement("button");
+      btn.textContent = answerData.answer;
+      
+      // Use an IIFE to create closure for index
+      (function(idx) {
+        btn.onclick = function() {
+          checkAnswer(idx); // Pass the original index to checkAnswer
+        };
+      })(answerData.index);
+      
       answerButtons.appendChild(btn);
     }
 
@@ -93,7 +111,7 @@ function showQuestion() {
     answerButtons.classList.add("fade-in");
 
     // Remove the fade-in class after the animation completes
-    setTimeout(() => {
+    setTimeout(function() {
       questionEl.classList.remove("fade-in");
       answerButtons.classList.remove("fade-in");
     }, 300);
@@ -101,7 +119,7 @@ function showQuestion() {
 }
 
 // Event listener to the result container to hide it on click
-resultContainer.onclick = function () {
+resultContainer.onclick = function() {
   // Clear the timeout to prevent duplicate actions
   clearTimeout(resultTimeout);
 
@@ -111,7 +129,9 @@ resultContainer.onclick = function () {
   }
 
   // Hide the result container and overlay
-  resultContainer.classList.remove("visible", "correct", "wrong");
+  resultContainer.classList.remove("visible");
+  resultContainer.classList.remove("correct");
+  resultContainer.classList.remove("wrong");
   resultContainer.classList.add("hidden");
   resultOverlay.classList.remove("visible");
   resultOverlay.classList.add("hidden");
@@ -119,24 +139,31 @@ resultContainer.onclick = function () {
 
 function showResultMessage(isCorrect) {
   resultMessage.innerHTML = isCorrect
-    ? `<div class="result-message correct">
-         <div class="result-text">Gut gemacht!</div>
-         <p>Das war richtig!</p>
-       </div>`
-    : `<div class="result-message wrong">
-         <div class="result-text">Leider falsch!</div>
-         <p>Versuch es nochmal.</p>
-       </div>`;
+    ? '<div class="result-message correct">' +
+      '<div class="result-text">Gut gemacht!</div>' +
+      '<p>Das war richtig!</p>' +
+      '</div>'
+    : '<div class="result-message wrong">' +
+      '<div class="result-text">Leider falsch!</div>' +
+      '<p>Versuch es nochmal.</p>' +
+      '</div>';
 
   // Show the result container and overlay
   resultContainer.classList.remove("hidden");
-  resultContainer.classList.add("visible", isCorrect ? "correct" : "wrong");
+  resultContainer.classList.add("visible");
+  if (isCorrect) {
+    resultContainer.classList.add("correct");
+  } else {
+    resultContainer.classList.add("wrong");
+  }
   resultOverlay.classList.remove("hidden");
   resultOverlay.classList.add("visible");
 
   // Set a timeout to hide the result container and proceed to the next question
-  resultTimeout = setTimeout(() => {
-    resultContainer.classList.remove("visible", "correct", "wrong");
+  resultTimeout = setTimeout(function() {
+    resultContainer.classList.remove("visible");
+    resultContainer.classList.remove("correct");
+    resultContainer.classList.remove("wrong");
     resultContainer.classList.add("hidden");
     resultOverlay.classList.remove("visible");
     resultOverlay.classList.add("hidden");
@@ -149,49 +176,59 @@ function showResultMessage(isCorrect) {
 }
 
 function checkAnswer(index) {
-  const correct = questions[currentIndex].correct;
-  const isCorrect = index === correct;
+  var correct = questions[currentIndex].correct;
+  var isCorrect = index === correct;
 
   showResultMessage(isCorrect);
 
   if (isCorrect) {
     // Disable all buttons if the answer is correct
-    for (const btn of answerButtons.children) {
-      btn.disabled = true;
+    var buttons = answerButtons.children;
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
     }
   } else {
-    // Highlight the wrong answer for better feedback
-    answerButtons.children[index].classList.add("wrong-answer");
-    setTimeout(() => {
-      answerButtons.children[index].classList.remove("wrong-answer");
-    }, 1000);
+    // Find the button with the wrong answer
+    var buttons = answerButtons.children;
+    for (var i = 0; i < buttons.length; i++) {
+      // Check if this button matches the clicked index
+      if (buttons[i].textContent === questions[currentIndex].answers[index]) {
+        buttons[i].classList.add("wrong-answer");
+        setTimeout(function(element) {
+          return function() {
+            element.classList.remove("wrong-answer");
+          };
+        }(buttons[i]), 1000);
+        break;
+      }
+    }
   }
 }
 
-nextBtn.onclick = function () {
+nextBtn.onclick = function() {
   currentIndex++;
   if (currentIndex >= questions.length) {
-    const endTime = Date.now(); // Calculate the end time
-    const totalTime = Math.floor((endTime - startTime) / 1000); // Time in seconds
+    var endTime = new Date().getTime(); // Calculate the end time
+    var totalTime = Math.floor((endTime - startTime) / 1000); // Time in seconds
 
     // Display the end message with total time
-    questionEl.textContent = `🎉 Du hast alle Fragen beantwortet!`;
-    answerButtons.innerHTML = `
-      <p>Deine Zeit: <strong>${totalTime} Sekunden</strong></p>
-      <button id="restartBtn" class="control-btn">Quiz neu starten</button>
-      <button id="backToGamesBtn" class="control-btn">Zurück zu den Spielen</button>
-    `;
+    questionEl.textContent = "🎉 Du hast alle Fragen beantwortet!";
+    answerButtons.innerHTML =
+      '<p>Deine Zeit: <strong>' + totalTime + ' Sekunden</strong></p>' +
+      '<button id="restartBtn" class="control-btn">Quiz neu starten</button>' +
+      '<button id="backToGamesBtn" class="control-btn">Zurück zu den Spielen</button>';
     resultEl.textContent = "";
     nextBtn.style.display = "none"; // Hide the next button
 
     // Add event listeners for the new buttons
-    document.getElementById("restartBtn").onclick = function () {
+    document.getElementById("restartBtn").onclick = function() {
       currentIndex = 0;
-      startTime = Date.now(); // Reset the start time
+      startTime = new Date().getTime(); // Reset the start time
       showQuestion();
+      nextBtn.style.display = ""; // Show the next button again
     };
 
-    document.getElementById("backToGamesBtn").onclick = function () {
+    document.getElementById("backToGamesBtn").onclick = function() {
       window.location.href = "../../../pages/games/games.html"; // Redirect to the games menu
     };
   } else {
