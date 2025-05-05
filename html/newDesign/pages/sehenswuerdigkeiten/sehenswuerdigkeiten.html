@@ -228,7 +228,7 @@
 
     <script src="../../scripts/pepperController.js"></script>
     <script>
-      const texts = {
+      var texts = {
         uhrenmuseum:
           "Eine Reise durch die Zeitmesser der vergangenen Jahre. Die Sammlung des Deutschen Uhrenmuseum besteht seit über 160 Jahren und zählt mehr als 8000 Objekte aus aller Welt.",
         brend:
@@ -238,7 +238,7 @@
         donauquelle:
           "Die Donau ist der zweitlängste Fluss Europas und in Furtwangen entspringt er. Nördlich von Furtwangen befindet sich die Quelle bei der Martinskapelle und dem Kolmenhof. Die Quelle ist die mündungsfernste Quelle der Donau und ist daher geografisch gesehen der Donauursprung.",
         museum_gasthaus_arche:
-          "Betritt man die „Wirtschaft“ dieses Gebäudes, wird man unwillkürlich in die 1950er Jahre versetzt. Hier gewinnt man einen Einblick in die Reiseverhältnisse aus dieser Zeit.",
+          "Betritt man die `Wirtschaft` dieses Gebäudes, wird man unwillkürlich in die 1950er Jahre versetzt. Hier gewinnt man einen Einblick in die Reiseverhältnisse aus dieser Zeit.",
         stoecklewald:
           "Auch vom Stöcklewaldturm hat man eine einzigartige Panoramaaussicht. Die Plattform ist über 127 Stufen zu erreichen.",
         hexenlochmuehle:
@@ -246,8 +246,8 @@
       };
 
       document.addEventListener("DOMContentLoaded", function () {
-        const listItems = document.querySelectorAll(".list-item");
-        const contentSections = document.querySelectorAll(".content-section");
+        var listItems = document.querySelectorAll(".list-item");
+        var contentSections = document.querySelectorAll(".content-section");
 
         document
           .getElementById("tell-me-button-uhrenmuseum")
@@ -259,35 +259,37 @@
           .addEventListener("click", function () {
             pepperController.animatedSpeak(texts.brend);
           });
-          document
+        document
           .getElementById("tell-me-button-guenterfelsen")
           .addEventListener("click", function () {
             pepperController.animatedSpeak(texts.guenterfelsen);
           });
-          document
+        document
           .getElementById("tell-me-button-donauquelle")
           .addEventListener("click", function () {
             pepperController.animatedSpeak(texts.donauquelle);
           });
-          document
+        document
           .getElementById("tell-me-button-museum_gasthaus_arche")
           .addEventListener("click", function () {
             pepperController.animatedSpeak(texts.museum_gasthaus_arche);
           });
 
-        for (const item of listItems) {
-          item.addEventListener("click", function () {
+        for (var i = 0; i < listItems.length; i++) {
+          listItems[i].addEventListener("click", function () {
             // Remove active class from all items
-            listItems.forEach((li) => li.classList.remove("active"));
-            contentSections.forEach((section) =>
-              section.classList.remove("active")
-            );
+            for (var j = 0; j < listItems.length; j++) {
+              listItems[j].classList.remove("active");
+            }
+            for (var k = 0; k < contentSections.length; k++) {
+              contentSections[k].classList.remove("active");
+            }
 
             // Add active class to clicked item
             this.classList.add("active");
 
             // Show corresponding content
-            const target = this.getAttribute("data-target");
+            var target = this.getAttribute("data-target");
             document.getElementById(target).classList.add("active");
           });
         }

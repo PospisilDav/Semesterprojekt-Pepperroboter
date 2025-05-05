@@ -10,7 +10,7 @@ function sehenswuerdigkeitenFullyLoaded(e) {
   setTimeout(function () {
     pepperController.animatedSpeak(
       "Boy",
-      "Hier erfahren Sie mehr über das Deutsche Uhrenmuseum und weitere Highlights."
+      "Hier erfahren Sie mehr über das Deutsche Uhrenmus e um und weitere Highlights."
     );
   }, 800);
 }
@@ -18,14 +18,14 @@ function sehenswuerdigkeitenFullyLoaded(e) {
 window.addEventListener("load", sehenswuerdigkeitenFullyLoaded, false);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const headerAvatar = document.querySelector(".header-avatar");
+  var headerAvatar = document.querySelector(".header-avatar");
 
   if (headerAvatar) {
     headerAvatar.addEventListener("click", function () {
       setTimeout(function () {
         pepperController.animatedSpeak(
           "Boy",
-          "Hier erfahren Sie mehr über das Deutsche Uhrenmuseum und weitere Highlights."
+          "Hier erfahren Sie mehr über das Deutsche Uhrenmus e um und weitere Highlights."
         );
       }, 800);
     });
