@@ -91,6 +91,22 @@
               />
               <span class="list-item-text">Günterfelsen</span>
             </div>
+            <div class="list-item" data-target="donauquelle">
+              <img
+                src="../../assets/icons/water_drop.svg"
+                alt="Donauquelle"
+                class="list-item-icon"
+              />
+              <span class="list-item-text">Donauquelle</span>
+            </div>
+            <div class="list-item" data-target="museum_gasthaus_arche">
+              <img
+                src="../../assets/icons/museum.svg"
+                alt="museum_gasthaus_arche"
+                class="list-item-icon"
+              />
+              <span class="list-item-text">Museum Gasthaus Arche</span>
+            </div>
           </div>
 
           <!-- Content Display -->
@@ -166,6 +182,45 @@
                 </button>
               </div>
             </div>
+
+            <!-- Donauquelle Content -->
+            <div id="donauquelle" class="content-section">
+              <div class="content-header">
+                <div class="content-title">donauquelle</div>
+              </div>
+              <div class="content-image">
+                <img src="../../assets/donauquelle.jpg" alt="donauquelle" />
+              </div>
+              <div class="content-body">
+                <button class="tell-me-button styled-button" id="tell-me-button-donauquelle">
+                  <img src="../../assets/pepper_head.svg" alt="Pepper" class="button-icon" />
+                  <span>Erzähl mir etwas darüber</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Arche Content -->
+            <div id="museum_gasthaus_arche" class="content-section">
+              <div class="content-header">
+                <div class="content-title">Museum Gasthaus Arche</div>
+              </div>
+              <div class="content-image">
+                <img src="../../assets/museum_gasthaus_arche.jpeg" alt="Arche" />
+              </div>
+              <div class="content-body">
+                <button
+                  class="tell-me-button styled-button"
+                  id="tell-me-button-museum_gasthaus_arche"
+                >
+                  <img
+                    src="../../assets/pepper_head.svg"
+                    alt="Pepper"
+                    class="button-icon"
+                  />
+                  <span>Erzähl mir etwas darüber</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -204,10 +259,20 @@
           .addEventListener("click", function () {
             pepperController.animatedSpeak(texts.brend);
           });
-        document
+          document
           .getElementById("tell-me-button-guenterfelsen")
           .addEventListener("click", function () {
             pepperController.animatedSpeak(texts.guenterfelsen);
+          });
+          document
+          .getElementById("tell-me-button-donauquelle")
+          .addEventListener("click", function () {
+            pepperController.animatedSpeak(texts.donauquelle);
+          });
+          document
+          .getElementById("tell-me-button-museum_gasthaus_arche")
+          .addEventListener("click", function () {
+            pepperController.animatedSpeak(texts.museum_gasthaus_arche);
           });
 
         for (const item of listItems) {

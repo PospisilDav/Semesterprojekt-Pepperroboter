@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=962, height=601, user-scalable=no" />
-    <title>Furtwangen - Informationen</title>
+    <title>Historie von Furtwangen</title>
 
     <script src="/libs/qimessaging/2/qimessaging.js"></script>
     <script src="../../scripts/jquery-2.2.2.min.js"></script>
@@ -11,13 +11,13 @@
     <script src="../../scripts/pepperController.js"></script>
     <script src="../../scripts/screenSaverTrigger.js"></script>
     
-    <script src="furtwangen.js"></script>
+    <script src="historie.js"></script>
 
     <link rel="stylesheet" href="../../styles/globals.css" />
     <link rel="stylesheet" href="../../styles/main.css" />
     <link rel="stylesheet" href="../../styles/subpage.css" />
     <link rel="stylesheet" href="../../components/speedDial/speedDial.css" />
-    <link rel="stylesheet" href="./furtwangen.css" />
+    <link rel="stylesheet" href="./historie.css" />
 
     <script src="../../components/speedDial/speedDial.js"></script>
     
@@ -66,7 +66,7 @@
 
       <!-- Header Section -->
       <div class="header-section">
-        <div class="header-title">Stadt Furtwangen</div>
+        <div class="header-title">Historie von Furtwangen</div>
         <div class="header-avatar-container">
           <img
             class="header-avatar"
@@ -75,45 +75,33 @@
           />
         </div>
         <div class="header-subtitle">
-          Wählen Sie eine Kategorie, um Furtwangen näher kennenzulernen.
+          Hier erfahren Sie etwas über die Geschichte von Furtwangen.
         </div>
       </div>
 
       <div class="lower-section">
         <!-- Cards Container -->
         <div class="cards-container">
-          <!-- Freizeit Card -->
-          <a href="../freizeit/freizeit.html" class="card card-template-1" id="freizeit-card">
+          <!-- Gründung Card -->
+          <a href="../historie/historie.html" class="card card-template-1">
             <div class="card-header">
               <div class="card-icon-container">
                 <img
-                  src="../../assets/icons/walk.svg"
-                  alt="Freizeit"
+                  src="../../assets/icons/book_open.svg"
                   class="card-icon wide"
                 />
               </div>
-              <div class="card-title title-furtwangen">Freizeit</div>
+              <div class="card-title title-historie">Gründung</div>
             </div>
 
             <div class="card-content">
               <ul class="service-list">
-                <li><span class="service-item">Sport</span></li>
-                <li><span class="service-item">Aktivitäten</span></li>
-                <li><span class="service-item">Lokale Küche</span></li>
+                <li><span class="service-item">Stadtrechte 5. Mai 1998 (125 Jahre)</span></li>
+                <li><span class="service-item">Umbau Gasthaus Adler zum Rathaus 1867</span></li>
               </ul>
             </div>
 
-            <div class="card-footer">
-              <div class="show-button">
-                <div class="show-button-icon">
-                  <img
-                    src="../../assets/icons/arrow_right.svg"
-                    alt="Arrow"
-                    class="arrow-icon"
-                  />
-                </div>
-              </div>
-            </div>
+            
             <img
               class="logo-detail-outline"
               src="../../assets/furtwangen_logo_outline.svg"
@@ -122,37 +110,25 @@
           </a>
 
           <!-- Bildung Card -->
-          <a href="../bildung/bildung.html" class="card card-template-2" id="bildung-card">
+          <a href="../historie/historie.html" class="card card-template-2">
             <div class="card-header">
               <div class="card-icon-container">
                 <img
-                  src="../../assets/icons/graduate_cap.svg"
-                  alt="Bildung"
+                  src="../../assets/icons/clock.svg"
                   class="card-icon wide"
                 />
               </div>
-              <div class="card-title title-furtwangen">Bildung</div>
+              <div class="card-title title-historie">Vergangenheit</div>
             </div>
 
             <div class="card-content">
               <ul class="service-list">
-                <li><span class="service-item">Hochschule Furtwangen</span></li>
-                <li><span class="service-item">Studiengänge & Fakultäten</span></li>
-                <li><span class="service-item">Campusleben & Internationales</span></li>
+                <li><span class="service-item">Wirtschaftlicher Aufschwung durch Uhren und Uhrmacherschule (1850)</span></li>
+                <li><span class="service-item">Uhrmacherschule wurde zur Hochschule Furtwangen</span></li>
               </ul>
             </div>
 
-            <div class="card-footer">
-              <div class="show-button">
-                <div class="show-button-icon">
-                  <img
-                    src="../../assets/icons/arrow_right.svg"
-                    alt="Arrow"
-                    class="arrow-icon"
-                  />
-                </div>
-              </div>
-            </div>
+            
             <img
               class="logo-detail-outline"
               src="../../assets/furtwangen_logo_outline.svg"
@@ -160,48 +136,6 @@
             />
           </a>
 
-          <!-- Sehenswürdigkeiten Card -->
-          <a
-            href="../sehenswuerdigkeiten/sehenswuerdigkeiten.html"
-            class="card card-template-3"
-            id="sehenswuerdigkeiten-card"
-          >
-            <div class="card-header">
-              <div class="card-icon-container">
-                <img
-                  src="../../assets/icons/camera_on_rectangle.svg"
-                  alt="Sehenswürdigkeiten"
-                  class="card-icon wide"
-                />
-              </div>
-              <div class="card-title title-furtwangen">Sehenswürdigkeiten</div>
-            </div>
-
-            <div class="card-content">
-              <ul class="service-list">
-                <li><span class="service-item">Uhrenmuseum</span></li>
-                <li><span class="service-item">Aussichtsturm Brend</span></li>
-                <li><span class="service-item">Günterfelsen</span></li>
-              </ul>
-            </div>
-
-            <div class="card-footer">
-              <div class="show-button">
-                <div class="show-button-icon">
-                  <img
-                    src="../../assets/icons/arrow_right.svg"
-                    alt="Arrow"
-                    class="arrow-icon"
-                  />
-                </div>
-              </div>
-            </div>
-            <img
-              class="logo-detail-outline"
-              src="../../assets/furtwangen_logo_outline.svg"
-              alt="Logo outline"
-            />
-          </a>
         </div>
       </div>
     </div>

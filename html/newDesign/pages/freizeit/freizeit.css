@@ -97,3 +97,66 @@
   font-size: 12px;
   border-radius: 50%;
 }
+.cards-container {
+  justify-content: center !important;
+}
+
+.card {
+  margin-left: 3.25rem !important;
+  margin-right: 3.25rem !important;
+}
+
+.card-content.compact {
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-content.opening-hours-content {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.opening-hours {
+  width: 85%;
+  border-spacing: 0;
+  font-size: 22px;
+  margin-top: 1.5rem;
+}
+
+.opening-hours td {
+  padding: 8px 0;
+  vertical-align: top;
+}
+
+.opening-hours td:first-child {
+  white-space: nowrap;
+  padding-right: 15px;
+  font-weight: 500;
+}
+
+.opening-hours strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.opening-hours tr:not(:last-child) td {
+  padding-bottom: 15px;
+}
+
+.custom-map-1 {
+  position: absolute;
+  top: -6.5px;
+  left: -10px;
+  transform: rotate(180deg) scaleX(-1) scaleY(-1);
+}
+
+.custom-map-2 {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+}
