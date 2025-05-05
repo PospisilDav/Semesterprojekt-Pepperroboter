@@ -14,7 +14,8 @@ function initScreenSaverTrigger() {
     );
 
     if (seconds_since_last_interaction >= INACTIVITY_TRIGGER_SECONDS) {
-      window.location.href = window.CUSTOM_SCREENSAVER_PATH || DEFAULT_PATH;
+      //window.location.href = window.CUSTOM_SCREENSAVER_PATH || DEFAULT_PATH;
+      window.location.href = location.origin + "/pages/screenSaver/screenSaver.html"
     }
   }, TIMEOUT_POLLING_INTERVAL);
 
