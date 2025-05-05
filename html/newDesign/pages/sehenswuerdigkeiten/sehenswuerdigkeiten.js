@@ -18,7 +18,7 @@ function sehenswuerdigkeitenFullyLoaded(e) {
 window.addEventListener("load", sehenswuerdigkeitenFullyLoaded, false);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const headerAvatar = document.querySelector(".header-avatar");
+  var headerAvatar = document.querySelector(".header-avatar");
 
   if (headerAvatar) {
     headerAvatar.addEventListener("click", function () {
