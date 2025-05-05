@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Difficulty toggle handlers
     easyBtn.addEventListener("click", function () {
         isHardMode = false;
-        easyBtn.className += " active";
+        easyBtn.classList.add("active");
         hardBtn.className = hardBtn.className.replace(" active", "");
         easyBtn.setAttribute("aria-pressed", "true");
         hardBtn.setAttribute("aria-pressed", "false");
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     hardBtn.addEventListener("click", function () {
         isHardMode = true;
-        hardBtn.className += " active";
+        hardBtn.classList.add("active");
         easyBtn.className = easyBtn.className.replace(" active", "");
         hardBtn.setAttribute("aria-pressed", "true");
         easyBtn.setAttribute("aria-pressed", "false");
@@ -148,7 +148,7 @@ function handlePlayerMove(e) {
 function disableAllCells() {
     for (var i = 0; i < cells.length; i++) {
         if (!cells[i].hasAttribute("data-player")) {
-            cells[i].className += " temporarily-disabled";
+            cells[i].classList.add("temporarily-disabled");
             cells[i].setAttribute("aria-disabled", "true");
 
             // Store and remove tabindex for accessibility
@@ -191,7 +191,7 @@ function makeMove(index, player) {
     if (winCombo) {
         // Highlight the winning combination
         for (var i = 0; i < winCombo.length; i++) {
-            cells[winCombo[i]].className += " winner";
+            cells[winCombo[i]].classList.add("winner");
         }
 
         // Update scores and UI for win condition
