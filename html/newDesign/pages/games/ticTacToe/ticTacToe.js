@@ -105,14 +105,6 @@ function createBoard() {
     for (var i = 0; i < cells.length; i++) {
         // Mouse click handling
         cells[i].addEventListener("click", handlePlayerMove);
-
-        // Keyboard accessibility
-        cells[i].addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handlePlayerMove(e);
-            }
-        });
     }
 }
 
