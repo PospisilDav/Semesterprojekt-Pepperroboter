@@ -10,7 +10,7 @@ function sehenswuerdigkeitenFullyLoaded(e) {
   setTimeout(function () {
     pepperController.animatedSpeak(
       "Boy",
-      "Hier erfahren Sie mehr über das Deutsche Uhrenmuseum und weitere Highlights."
+      "Hier erfahren Sie mehr über das Deutsche Uhrenmus e um und weitere Highlights."
     );
   }, 800);
 }
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         pepperController.animatedSpeak(
           "Boy",
-          "Hier erfahren Sie mehr über das Deutsche Uhrenmuseum und weitere Highlights."
+          "Hier erfahren Sie mehr über das Deutsche Uhrenmus e um und weitere Highlights."
         );
       }, 800);
     });
