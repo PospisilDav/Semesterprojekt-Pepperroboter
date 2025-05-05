@@ -219,7 +219,7 @@ nextBtn.onclick = function() {
     // Display the end message with total time
     questionEl.textContent = "🎉 Du hast alle Fragen beantwortet!";
     answerButtons.innerHTML =
-      '<p>Deine Zeit: <strong>' + minutes + ":" + seconds. + ' Sekunden</strong></p>' +
+      '<p>Deine Zeit: <strong>' + minutes + ":" + seconds + ' Sekunden</strong></p>' +
       '<button id="restartBtn" class="control-btn">Quiz neu starten</button>' +
       '<button id="backToGamesBtn" class="control-btn">Zurück zu den Spielen</button>';
     resultEl.textContent = "";

@@ -1,7 +1,7 @@
-const INACTIVITY_TRIGGER_SECONDS = 5000;
+const INACTIVITY_TRIGGER_SECONDS = 10;
 const TIMEOUT_POLLING_INTERVAL = 1000;
 
-const DEFAULT_PATH = "./../screenSaver/ScreenSaver.html";
+const DEFAULT_PATH = "../screenSaver/ScreenSaver.html";
 
 var last_interaction = Date.now();
 var inactivityTimer = null;
