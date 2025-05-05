@@ -25,57 +25,54 @@ var winningCombinations = [
   [0, 4, 8], [2, 4, 6]             // Diagonals
 ];
 
-// Initialize the game when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-    // Get references to DOM elements
-    board = document.getElementById("board");
-    statusDisplay = document.getElementById("status");
-    restartBtn = document.getElementById("restartBtn");
-    newGameBtn = document.getElementById("newGameBtn");
-    playerScoreDisplay = document.getElementById("player-score");
-    aiScoreDisplay = document.getElementById("ai-score");
-    easyBtn = document.getElementById("easyBtn");
-    hardBtn = document.getElementById("hardBtn");
+// Get references to DOM elements
+board = document.getElementById("board");
+statusDisplay = document.getElementById("status");
+restartBtn = document.getElementById("restartBtn");
+newGameBtn = document.getElementById("newGameBtn");
+playerScoreDisplay = document.getElementById("player-score");
+aiScoreDisplay = document.getElementById("ai-score");
+easyBtn = document.getElementById("easyBtn");
+hardBtn = document.getElementById("hardBtn");
 
+createBoard();
+
+// Difficulty toggle handlers
+easyBtn.addEventListener("click", function () {
+    isHardMode = false;
+    easyBtn.classList.add("active");
+    hardBtn.className = hardBtn.className.replace(" active", "");
+    easyBtn.setAttribute("aria-pressed", "true");
+    hardBtn.setAttribute("aria-pressed", "false");
+    restartGame();
+});
+
+hardBtn.addEventListener("click", function () {
+    isHardMode = true;
+    hardBtn.classList.add("active");
+    easyBtn.className = easyBtn.className.replace(" active", "");
+    hardBtn.setAttribute("aria-pressed", "true");
+    easyBtn.setAttribute("aria-pressed", "false");
+    restartGame();
+});
+
+// Game control buttons
+restartBtn.addEventListener("click", function () {
+    isGameActive = true;
+    statusDisplay.textContent = "Dein Zug (❌)";
+    statusDisplay.className = "status-message";
     createBoard();
+});
 
-    // Difficulty toggle handlers
-    easyBtn.addEventListener("click", function () {
-        isHardMode = false;
-        easyBtn.classList.add("active");
-        hardBtn.className = hardBtn.className.replace(" active", "");
-        easyBtn.setAttribute("aria-pressed", "true");
-        hardBtn.setAttribute("aria-pressed", "false");
-        restartGame();
-    });
-
-    hardBtn.addEventListener("click", function () {
-        isHardMode = true;
-        hardBtn.classList.add("active");
-        easyBtn.className = easyBtn.className.replace(" active", "");
-        hardBtn.setAttribute("aria-pressed", "true");
-        easyBtn.setAttribute("aria-pressed", "false");
-        restartGame();
-    });
-
-    // Game control buttons
-    restartBtn.addEventListener("click", function () {
-        isGameActive = true;
-        statusDisplay.textContent = "Dein Zug (❌)";
-        statusDisplay.className = "status-message";
-        createBoard();
-    });
-
-    newGameBtn.addEventListener("click", function () {
-        isGameActive = true;
-        playerScore = 0;
-        aiScore = 0;
-        playerScoreDisplay.textContent = "0";
-        aiScoreDisplay.textContent = "0";
-        statusDisplay.textContent = "Dein Zug (❌)";
-        statusDisplay.className = "status-message";
-        createBoard();
-    });
+newGameBtn.addEventListener("click", function () {
+    isGameActive = true;
+    playerScore = 0;
+    aiScore = 0;
+    playerScoreDisplay.textContent = "0";
+    aiScoreDisplay.textContent = "0";
+    statusDisplay.textContent = "Dein Zug (❌)";
+    statusDisplay.className = "status-message";
+    createBoard();
 });
 
 /**
