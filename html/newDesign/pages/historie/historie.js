@@ -15,7 +15,7 @@ function historieFullyLoaded(e) {
   }, 800);
 }
 
-window.addEventListener("load", furtwangenFullyLoaded, false);
+window.addEventListener("load", historieFullyLoaded, false);
 
 document.addEventListener("DOMContentLoaded", function () {
   const headerAvatar = document.querySelector(".header-avatar");
