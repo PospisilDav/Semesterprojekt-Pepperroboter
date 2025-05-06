@@ -1,67 +1,57 @@
 /**
  * Easter Egg - Mini Pepper that appears after being active for a set time
- * WebView 48 Compatible Version
  */
 (function() {
-  // Wait for DOM to be ready using browser-compatible approach
+  // Initialize when DOM is ready
   function domReadyHandler() {
     // Activity tracking variables
     var activeTime = 0;
     var lastActivityTime = new Date().getTime();
     var activityInterval = null;
     
-    // Constants
-    var ACTIVITY_CHECK_FREQUENCY = 1000; // Updates counter every second
-    var ACTIVITY_REQUIREMENT_MINUTES = 1; // Pepper appears after 2 minutes of active usage
-    var MAX_INACTIVITY_TIME = 90000; // User must interact at least every 1.5 minutes (90s)
+    // Configuration
+    var ACTIVITY_CHECK_FREQUENCY = 1000; // Check interval in ms
+    var ACTIVITY_REQUIREMENT_MINUTES = 1; // Minutes before Pepper appears
+    var MAX_INACTIVITY_TIME = 90000; // Max inactivity time in ms (1.5 min)
     
-    // Pepper icon element reference
     var pepperIcon = null;
     
-    /**
-     * Sets up monitoring of user activity
-     */
+    // Start tracking user activity
     function setupActivityMonitoring() {
-      // Create timestamp of last activity
       lastActivityTime = new Date().getTime();
       
-      // Monitor user activity
       activityInterval = window.setInterval(function() {
         var currentTime = new Date().getTime();
         var timeSinceLastActivity = currentTime - lastActivityTime;
         
-        // If user has been inactive for more than a minute, reset the counter
+        // Reset on inactivity
         if (timeSinceLastActivity > MAX_INACTIVITY_TIME) {
           window.console && console.log("Inactive for too long, resetting counter");
           activeTime = 0;
           updateDebugInfo();
-          hideSmallPepper(); // Hide pepper icon if it was showing
+          hideSmallPepper();
           return;
         }
         
-        // Increment active time counter
         activeTime = activeTime + 1;
         updateDebugInfo();
         
-        // Check if it's time to show the easter egg
+        // Show Easter egg when time requirement met
         if (activeTime >= ACTIVITY_REQUIREMENT_MINUTES * 60) {
           showSmallPepper();
         }
       }, ACTIVITY_CHECK_FREQUENCY);
       
-      // Register activity events (use older event attachment for compatibility)
+      // Register user interaction events
       addEventListeners(['click', 'mousemove', 'keypress', 'touchstart', 'scroll'], recordUserActivity);
     }
     
-    /**
-     * Helper function to add event listeners with better compatibility
-     */
+    // Add events with cross-browser support
     function addEventListeners(events, handler) {
       for (var i = 0; i < events.length; i++) {
         if (document.addEventListener) {
           document.addEventListener(events[i], handler, false);
         } else if (document.attachEvent) {
-          // For older IE
           document.attachEvent('on' + events[i], handler);
         } else {
           document['on' + events[i]] = handler;
@@ -69,29 +59,23 @@
       }
     }
     
-    /**
-     * Record that the user was active
-     */
+    // Track user activity
     function recordUserActivity() {
       lastActivityTime = new Date().getTime();
     }
     
-    /**
-     * Show the small Pepper icon
-     */
+    // Display the Pepper icon
     function showSmallPepper() {
-      // If already showing, do nothing
       if (pepperIcon && document.body.contains(pepperIcon)) {
         return;
       }
       
       try {
-        // Create the small pepper icon if it doesn't exist
         pepperIcon = document.createElement('div');
         pepperIcon.className = 'easter-egg-pepper-icon';
         pepperIcon.setAttribute('title', 'Klick mich!');
         
-        // Add click event to navigate to team page
+        // Add navigation on click
         if (pepperIcon.addEventListener) {
           pepperIcon.addEventListener('click', function() {
             triggerEasterEgg('pepper-icon');
@@ -106,25 +90,22 @@
           };
         }
         
-        // Add icon to body
         document.body.appendChild(pepperIcon);
         
-        // Animate entrance (compatible approach)
+        // Animate entrance
         window.setTimeout(function() {
           pepperIcon.style.opacity = '1';
           pepperIcon.style.transform = 'translateX(15px) rotate(90deg)';
-          pepperIcon.style.webkitTransform = 'translateX(15px) rotate(90deg)'; // Safari/WebKit support
-          pepperIcon.style.MozTransform = 'translateX(15px) rotate(90deg)'; // Firefox support
-          pepperIcon.style.msTransform = 'translateX(15px) rotate(90deg)'; // IE support
+          pepperIcon.style.webkitTransform = 'translateX(15px) rotate(90deg)';
+          pepperIcon.style.MozTransform = 'translateX(15px) rotate(90deg)';
+          pepperIcon.style.msTransform = 'translateX(15px) rotate(90deg)';
         }, 100);
       } catch (e) {
         window.console && console.log("Error showing Pepper icon: " + e.message);
       }
     }
     
-    /**
-     * Hide the small Pepper icon
-     */
+    // Remove the Pepper icon
     function hideSmallPepper() {
       if (pepperIcon && document.body.contains(pepperIcon)) {
         pepperIcon.style.opacity = '0';
@@ -145,15 +126,12 @@
       }
     }
     
-    /**
-     * Update debug info display
-     */
+    // Update debug display
     function updateDebugInfo() {
       var debugElement = document.getElementById('easter-egg-debug');
       if (debugElement) {
         var minutesActive = Math.floor(activeTime / 60);
         var secondsActive = activeTime % 60;
-        // Set content in compatibility mode
         if (typeof debugElement.textContent !== 'undefined') {
           debugElement.textContent = 'Active time: ' + minutesActive + 'm ' + secondsActive + 's';
         } else {
@@ -162,37 +140,30 @@
       }
     }
     
-    /**
-     * Trigger the easter egg and navigate to team page
-     */
+    // Handle Easter egg activation
     function triggerEasterEgg(method) {
       window.console && console.log('Easter egg triggered by: ' + method);
       
       try {
-        // Create a transition effect
+        // Create transition effect
         var overlay = document.createElement('div');
         overlay.className = 'easter-egg-overlay';
         document.body.appendChild(overlay);
         
-        // Resolve the path dynamically
         var path = resolveTeamPagePath();
         
-        // Navigate after a small delay
         window.setTimeout(function() {
           window.location.href = path;
         }, 800);
       } catch (e) {
         window.console && console.log("Error triggering easter egg: " + e.message);
-        // Fallback: direct navigation
         window.location.href = './pages/teamPage/teamPage.html';
       }
     }
     
-    /**
-     * Resolve the path to the team page dynamically
-     */
+    // Get path to team page from current location
     function resolveTeamPagePath() {
-      // Basis-URL extrahieren (ohne Dateinamen)
+      // Get base URL
       var baseUrl;
       var currentUrl = window.location.href;
       var lastSlashIndex = currentUrl.lastIndexOf('/');
@@ -203,22 +174,18 @@
         baseUrl = currentUrl;
       }
       
-      // Finden Sie die Position von "newDesign" im Pfad
+      // Find project root
       var newDesignIndex = baseUrl.indexOf('/newDesign');
       
       if (newDesignIndex !== -1) {
-        // Extrahieren Sie den Basispfad bis einschließlich "newDesign"
-        var rootPath = baseUrl.substring(0, baseUrl.indexOf('/newDesign') + '/newDesign'.length);
+        var rootPath = baseUrl.substring(0, newDesignIndex + '/newDesign'.length);
         return rootPath + '/pages/teamPage/teamPage.html';
       } else {
-        // Fallback: Relativer Pfad
         return './pages/teamPage/teamPage.html';
       }
     }
     
-    /**
-     * Add required CSS styles
-     */
+    // Add CSS for Easter egg elements
     function addEasterEggStyles() {
       try {
         var styleElement = document.createElement('style');
@@ -229,7 +196,7 @@
           '  left: -20px;',
           '  width: 75px;',
           '  height: 75px;',
-          '  background-image: url("./assets/mini_pepper.jpg");',
+          '  background-image: url("./assets/mini_pepper.png");',
           '  background-size: contain;',
           '  background-repeat: no-repeat;',
           '  background-position: center;',
@@ -270,7 +237,6 @@
           '}'
         ].join('\n');
     
-        // Use older APIs for better compatibility
         if (styleElement.styleSheet) {
           styleElement.styleSheet.cssText = cssText;
         } else {
@@ -281,7 +247,6 @@
         if (head) {
           head.appendChild(styleElement);
         } else {
-          // Fallback if head is not available
           document.body.appendChild(styleElement);
         }
       } catch (e) {
@@ -289,9 +254,7 @@
       }
     }
     
-    /**
-     * Initialize Easter Egg functionality
-     */
+    // Start functionality
     function init() {
       try {
         addEasterEggStyles();
@@ -301,11 +264,10 @@
       }
     }
     
-    // Start the Easter Egg functionality
     init();
   }
 
-  // Cross-browser DOMContentLoaded
+  // Cross-browser DOM ready handler
   if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", domReadyHandler);
   } else if (document.attachEvent) {
@@ -315,7 +277,6 @@
       }
     });
   } else {
-    // Fallback method
     var oldonload = window.onload;
     window.onload = function() {
       if (typeof oldonload === 'function') {
@@ -325,7 +286,7 @@
     };
   }
 
-  // Also initialize immediately if document is already complete
+  // Immediate initialization if document is already loaded
   if (document.readyState === "complete" || document.readyState === "interactive") {
     setTimeout(domReadyHandler, 1);
   }
