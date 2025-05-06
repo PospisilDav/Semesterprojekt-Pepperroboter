@@ -89,3 +89,18 @@
   font-size: 12px;
   border-radius: 50%;
 }
+
+.carousel-wrapper {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+  margin: 0 auto;
+  touch-action: pan-y;
+}
+
+.furtwangen-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  user-select: none;
+}

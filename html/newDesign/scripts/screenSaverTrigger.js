@@ -1,4 +1,4 @@
-const INACTIVITY_TRIGGER_SECONDS = 10;
+const INACTIVITY_TRIGGER_SECONDS = 120;
 const TIMEOUT_POLLING_INTERVAL = 1000;
 
 const DEFAULT_PATH = "../screenSaver/screenSaver.html";
