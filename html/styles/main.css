@@ -600,6 +600,26 @@ body {
   right: 22.5px !important;
 }
 
+.card, .show-button, .header-avatar-container, .logo-section, .action-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.touch-active {
+  position: relative;
+}
+
+.touch-active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 @keyframes header-appear {
   0% {
     opacity: 0;
@@ -791,5 +811,51 @@ body {
   100% {
     transform: scale(1) rotate(0deg);
     box-shadow: 0 0 10px rgba(109, 209, 233, 0.5);
+  }
+}
+
+@media (pointer: coarse) {
+  /* Remove default tap highlight */
+  .touch-element {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+  }
+  
+  .card.touch-active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(7, 133, 158, 0.25);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  
+  .show-button.touch-active {
+    background-color: #ffffff;
+    transform: scale(0.97);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-avatar-container.touch-active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: #52ad59;
+  }
+  
+  .logo-section.touch-active {
+    transform: scale(0.98);
+  }
+  
+  .action-button.touch-active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(12, 177, 0, 0.3);
+    background-color: #09a000;
+  }
+
+  .show-button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .action-button {
+    width: 90px;
+    height: 90px;
   }
 }
