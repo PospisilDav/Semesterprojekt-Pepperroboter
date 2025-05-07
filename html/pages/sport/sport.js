@@ -67,10 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         pepperController.animatedSpeak(
           "Boy",
-          "In Furtwangen gibt es vielseitige Fitnessangebote. Beri Fitness bietet moderne Geräte und Kurse für alle \
-          Trainingslevel. Im fit+ Furtwangen trainierst du flexibel innerhalb der großzügigen Öffnungszeiten. Für Schwimmer und \
-          Wassersportler gibt es das Hallenbad am Otto-Hahn-Gymnasium. Direkt daneben lädt die Sporthalle zu vielfältigen \
-          Sport- und Fitnessaktivitäten ein."
+          "Furtwangen bietet zahlreiche Möglichkeiten, aktiv und fit zu bleiben. \
+          Beri Fitness überzeugt mit modernen Geräten und Kursen für alle Trainingsniveaus. \
+          Im fit+ Furtwangen trainierst du flexibel und unabhängig von klassischen Öffnungszeiten. \
+          In den Sommermonaten lädt das Freibad zum Schwimmen und Entspannen ein. \
+          Direkt daneben bietet die Sporthalle Raum für vielfältige Sport- und Fitnessaktivitäten."
         );
       }, 800);
     });
