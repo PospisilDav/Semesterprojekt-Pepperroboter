@@ -65,68 +65,109 @@
       </div>
 
       <div class="lower-section">
-        <!-- Split container with navigation list and content display -->
+        <!-- Split container with improved touch-friendly navigation list and content display -->
         <div class="split-container">
-          <!-- Navigation List -->
+          <!-- Navigation List - Now more touch-friendly -->
           <div class="navigation-list">
             <div class="list-item active" data-target="uhrenmuseum">
-              <img
-                src="../../assets/icons/clock.svg"
-                alt="Uhrenmuseum"
-                class="list-item-icon"
-              />
-              <span class="list-item-text">Deutsches Uhrenmuseum</span>
+              <div class="list-item-content">
+                <div class="list-item-icon-container">
+                  <img
+                    src="../../assets/icons/clock.svg"
+                    alt="Uhrenmuseum"
+                    class="list-item-icon"
+                  />
+                </div>
+                <span class="list-item-text">Deutsches Uhrenmuseum</span>
+              </div>
+              <div class="active-indicator"></div>
             </div>
+            
             <div class="list-item" data-target="brend">
-              <img
-                src="../../assets/icons/mountain.svg"
-                alt="Brend-Turm"
-                class="list-item-icon"
-              />
-              <span class="list-item-text">Brend-Turm & Aussichtspunkt</span>
+              <div class="list-item-content">
+                <div class="list-item-icon-container">
+                  <img
+                    src="../../assets/icons/mountain.svg"
+                    alt="Brend-Turm"
+                    class="list-item-icon"
+                  />
+                </div>
+                <span class="list-item-text">Brend-Turm</span>
+              </div>
+              <div class="active-indicator"></div>
             </div>
+            
             <div class="list-item" data-target="guenterfelsen">
-              <img
-                src="../../assets/icons/rocks.svg"
-                alt="Günterfelsen"
-                class="list-item-icon"
-              />
-              <span class="list-item-text">Günterfelsen</span>
+              <div class="list-item-content">
+                <div class="list-item-icon-container">
+                  <img
+                    src="../../assets/icons/rocks.svg"
+                    alt="Günterfelsen"
+                    class="list-item-icon"
+                  />
+                </div>
+                <span class="list-item-text">Günterfelsen</span>
+              </div>
+              <div class="active-indicator"></div>
             </div>
+            
             <div class="list-item" data-target="donauquelle">
-              <img
-                src="../../assets/icons/water_drop.svg"
-                alt="Donauquelle"
-                class="list-item-icon"
-              />
-              <span class="list-item-text">Donauquelle</span>
+              <div class="list-item-content">
+                <div class="list-item-icon-container">
+                  <img
+                    src="../../assets/icons/water_drop.svg"
+                    alt="Donauquelle"
+                    class="list-item-icon"
+                  />
+                </div>
+                <span class="list-item-text">Donauquelle</span>
+              </div>
+              <div class="active-indicator"></div>
             </div>
+            
             <div class="list-item" data-target="museum_gasthaus_arche">
-              <img
-                src="../../assets/icons/museum.svg"
-                alt="museum_gasthaus_arche"
-                class="list-item-icon"
-              />
-              <span class="list-item-text">Museum Gasthaus Arche</span>
+              <div class="list-item-content">
+                <div class="list-item-icon-container">
+                  <img
+                    src="../../assets/icons/museum.svg"
+                    alt="Museum Gasthaus Arche"
+                    class="list-item-icon"
+                  />
+                </div>
+                <span class="list-item-text">Museum Gasthaus Arche</span>
+              </div>
+              <div class="active-indicator"></div>
             </div>
           </div>
 
-          <!-- Content Display -->
+          <!-- Content Display - Enhanced for touch interactions -->
           <div class="content-display">
             <!-- Uhrenmuseum Content -->
             <div id="uhrenmuseum" class="content-section active">
               <div class="content-header">
                 <div class="content-title">Deutsches Uhrenmuseum</div>
+                <div class="location-badge">
+                  <img src="../../assets/icons/mappin.svg" alt="Location" class="badge-icon" />
+                  <span>Furtwangen</span>
+                </div>
               </div>
+              
               <div class="content-image">
                 <img
                   src="../../assets/uhrenmuseum.jpg"
                   alt="Deutsches Uhrenmuseum"
                 />
+                <div class="image-overlay">
+                  <div class="image-caption">Eine Reise durch die Zeit</div>
+                </div>
               </div>
+              
               <div class="content-body">
+                <p class="content-description">
+                  Eine Sammlung mit über 8000 Objekten aus aller Welt, die seit mehr als 160 Jahren besteht.
+                </p>
                 <button
-                  class="tell-me-button styled-button"
+                  class="tell-me-button styled-button ripple-effect"
                   id="tell-me-button-uhrenmuseum"
                 >
                   <img
@@ -143,13 +184,25 @@
             <div id="brend" class="content-section">
               <div class="content-header">
                 <div class="content-title">Brend-Turm & Aussichtspunkt</div>
+                <div class="location-badge">
+                  <img src="../../assets/icons/mappin.svg" alt="Location" class="badge-icon" />
+                  <span>Furtwangen</span>
+                </div>
               </div>
+              
               <div class="content-image">
                 <img src="../../assets/brend_turm.jpg" alt="Brend-Turm" />
+                <div class="image-overlay">
+                  <div class="image-caption">Atemberaubende Aussicht</div>
+                </div>
               </div>
+              
               <div class="content-body">
+                <p class="content-description">
+                  Der Hausberg Furtwangens mit einer Höhe von 1149 m und einem 17 m hohen Aussichtsturm.
+                </p>
                 <button
-                  class="tell-me-button styled-button"
+                  class="tell-me-button styled-button ripple-effect"
                   id="tell-me-button-brend"
                 >
                   <img
@@ -166,13 +219,25 @@
             <div id="guenterfelsen" class="content-section">
               <div class="content-header">
                 <div class="content-title">Günterfelsen</div>
+                <div class="location-badge">
+                  <img src="../../assets/icons/mappin.svg" alt="Location" class="badge-icon" />
+                  <span>Naturschutzgebiet</span>
+                </div>
               </div>
+              
               <div class="content-image">
                 <img src="../../assets/guenterfelsen.jpg" alt="Günterfelsen" />
+                <div class="image-overlay">
+                  <div class="image-caption">65 Millionen Jahre Geschichte</div>
+                </div>
               </div>
+              
               <div class="content-body">
+                <p class="content-description">
+                  Seit 1956 ein Naturschutzgebiet mit beeindruckenden 1,7 Hektar Granitblöcken.
+                </p>
                 <button
-                  class="tell-me-button styled-button"
+                  class="tell-me-button styled-button ripple-effect"
                   id="tell-me-button-guenterfelsen"
                 >
                   <img
@@ -189,12 +254,24 @@
             <div id="donauquelle" class="content-section">
               <div class="content-header">
                 <div class="content-title">Donauquelle</div>
+                <div class="location-badge">
+                  <img src="../../assets/icons/mappin.svg" alt="Location" class="badge-icon" />
+                  <span>Nördlich von Furtwangen</span>
+                </div>
               </div>
+              
               <div class="content-image">
                 <img src="../../assets/donauquelle.jpg" alt="donauquelle" />
+                <div class="image-overlay">
+                  <div class="image-caption">Ursprung des zweitlängsten Flusses Europas</div>
+                </div>
               </div>
+              
               <div class="content-body">
-                <button class="tell-me-button styled-button" id="tell-me-button-donauquelle">
+                <p class="content-description">
+                  Die mündungsfernste Quelle der Donau, gelegen bei der Martinskapelle und dem Kolmenhof.
+                </p>
+                <button class="tell-me-button styled-button ripple-effect" id="tell-me-button-donauquelle">
                   <img src="../../assets/pepper_head.svg" alt="Pepper" class="button-icon" />
                   <span>Erzähl mir etwas darüber</span>
                 </button>
@@ -205,13 +282,25 @@
             <div id="museum_gasthaus_arche" class="content-section">
               <div class="content-header">
                 <div class="content-title">Museum Gasthaus Arche</div>
+                <div class="location-badge">
+                  <img src="../../assets/icons/mappin.svg" alt="Location" class="badge-icon" />
+                  <span>Furtwangen</span>
+                </div>
               </div>
+              
               <div class="content-image">
                 <img src="../../assets/museum_gasthaus_arche.jpeg" alt="Arche" />
+                <div class="image-overlay">
+                  <div class="image-caption">Zeitreise in die 1950er Jahre</div>
+                </div>
               </div>
+              
               <div class="content-body">
+                <p class="content-description">
+                  Ein Einblick in die Reiseverhältnisse der 1950er Jahre mit authentischer Einrichtung.
+                </p>
                 <button
-                  class="tell-me-button styled-button"
+                  class="tell-me-button styled-button ripple-effect"
                   id="tell-me-button-museum_gasthaus_arche"
                 >
                   <img

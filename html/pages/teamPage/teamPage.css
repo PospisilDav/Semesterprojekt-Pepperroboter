@@ -51,7 +51,10 @@
   justify-content: space-between;
   align-items: flex-start;
   margin: 20px;
-  gap: 20px;
+}
+
+.team-content > *:not(:last-child) {
+  margin-right: 20px;
 }
 
 .team-background {
@@ -195,14 +198,17 @@
 .project-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   padding: 10px;
+}
+
+.project-features > * {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 10px;
   font-size: 14px;
   color: #333;
 }
@@ -210,6 +216,7 @@
 .feature-icon {
   width: 24px;
   height: 24px;
+  margin-right: 10px;
 }
 
 .project-description {

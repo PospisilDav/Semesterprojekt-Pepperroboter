@@ -76,7 +76,6 @@
   transform: scale(0.97);
 }
 
-/* Result container styling */
 .result-container {
   position: fixed;
   top: 50%;
@@ -116,12 +115,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
 }
 
 .result-content img {
   width: 60px;
   height: 60px;
+  margin-bottom: 20px;
 }
 
 .result-content p {
@@ -129,10 +128,9 @@
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: inherit; /* Inherit the color from the parent container */
+  color: inherit;
 }
 
-/* Add a blurred background overlay */
 .result-overlay {
   position: fixed;
   top: 0;
@@ -156,14 +154,12 @@
   display: none;
 }
 
-/* Add styling for wrong answers */
 .wrong-answer {
   background: linear-gradient(135deg, #d9534f, #c9302c);
   color: white;
   animation: shake 0.3s ease;
 }
 
-/* Shake animation for wrong answers */
 @keyframes shake {
   0%, 100% {
     transform: translateX(0);
