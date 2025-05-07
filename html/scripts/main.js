@@ -1,35 +1,17 @@
-
-
-function textOnClick(meinText){
-  window.console.log("Text: " + meinText);
-  $.raiseALMemoryEvent("SBR/Test/Tablet/TextEvent", meinText);
-}
-
-function textAusgabe(meinText){
-  window.console.log("Text-Ausgabe: ", meinText);
-  // $.raiseALMemoryEvent("SBR/Test/Tablet/TextEvent", meinText);
-}
-
-// var element = document.getElementById("ain");
-// element.addEventListener("click", textOnClick("Dies ist jetzt A I N"), false);
-// document.getElementById("ain").addEventListener("click", textAusgabe, false);
-
-var myPepperController = new pepperController();
-var myPage01Controller = new page01Controller();
-// $(controller.onLoaded);
-
-function pageFullyLoaded(e) {
-    // window.console.log("Initializing Controllers");
-    myPepperController.init();
-    myPage01Controller.init(myPepperController);
-}
-
-window.console.log("page01Controller.js gestartet");
-window.addEventListener("load", pageFullyLoaded, false);
-
-
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the avatar container
+  const avatarContainer = document.querySelector('.header-avatar-container');
+  
+  // Add click event listener
+  if (avatarContainer) {
+    avatarContainer.addEventListener('click', function() {
+      // Add the clicked class to trigger animation
+      this.classList.add('clicked');
+      
+      // Remove the class after animation completes to allow it to be triggered again
+      setTimeout(() => {
+        this.classList.remove('clicked');
+      }, 800); // Match this to the animation duration
+    });
+  }
+});

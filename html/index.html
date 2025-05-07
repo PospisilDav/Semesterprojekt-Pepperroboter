@@ -1,241 +1,196 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-	<head>
-		<meta charset="utf-8">
-		<title>Intro-Seite vor Hauptauswahl</title>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+    <title>Infoterminal Pepper</title>
+    <link rel="icon" type="image/png" href="./assets/furtwangen_logo.png" />
+    <link href="assets/fonts/Roboto.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./components/speedDial/speedDial.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
 
-		<!--		<meta name="viewport" content="initial-scale=1, user-scalable=no, width=device-with">
-		-->
-		<meta name="viewport" content="width=1280, user-scalable=no" />
-		<link rel="stylesheet" href="themeVSbasic/VSbasic.min.css" />
-		<link rel="stylesheet" href="themeVSbasic/jquery.mobile.icons.min.css" />
-		<link rel="stylesheet" href="scripts/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+    <script src="scripts/jquery-2.2.2.min.js"></script>
+    <script src="scripts/jquery.qimhelpers.js"></script>
+    <script src="scripts/pepperController.js"></script>
 
-		<script src="/libs/qimessaging/2/qimessaging.js"></script>
-		<script src="scripts/jquery-2.2.2.min.js"></script>
-		<script src="scripts/jquery.qimhelpers.js"></script>
-		<script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+      window.CUSTOM_SCREENSAVER_PATH = "./pages/screenSaver/screenSaver.html";
+    </script>
+    <script src="scripts/screenSaverTrigger.js"></script>
+    <!-- <script src="scripts/jquery.mobile-1.4.5.min.js"></script> -->
 
-		<script src="scripts/pepperController.js"></script>
-		<script src="scripts/page01Controller.js"></script>
+    <script src="./components/speedDial/speedDial.js"></script>
+    <script src="scripts/homepage.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/easterEgg.js"></script>
+  </head>
 
-		<STYLE TYPE="text/css">
-			<!--
-			P { color: #ff2200; font-size: 24pt; font-weight: bold }
-			PX { color: #000000; font-size: 36pt; font-weight: bold }
-			PF { color: #ccccdd; font-size: 20pt }
-			H1 { color: #000000; font-family: "Helvetica", "Arial", sans-serif; font-style: normal }
-			-->
-		</STYLE>
-		<style>
-			.imageButton {
-				width: 150px;
-				height: 180px;
-				display: inline-block;
-				padding: 10px 5px;
-				font-size: 20px;
-				cursor: pointer;
-				text-align: center;
-				text-decoration: none;
-				font-weight: bold;
-				outline: none;
-				color: #fff;
-				background-color: #6CcF70;
-				border: 2px solid #5CaF50; /* Green */
-				border-radius: 15px;
-				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);
-			}
-			.imageButton:hover {
-				background-color: #3e8e41
-			}
-			.imageButton:active {
-				background-color: #3e8e41;
-				box-shadow: 0 5px #666;
-				transform: translateY(4px);
-			}
+  <body>
+    <div class="container">
+      <img
+        class="background-image"
+        src="./assets/backgrounds/furtwangen_background.jpg"
+        alt="Background"
+      />
 
-			.playButton {
-				width: 140px;
-				height: 100px;
-				display: inline-block;
-				padding: 10px 5px;
-				font-size: 20px;
-				cursor: pointer;
-				text-align: center;
-				text-decoration: none;
-				font-weight: bold;
-				outline: none;
-				color: #fff;
-				background-color: #4e67c8;
-				border: 2px solid #5e77d8; /* Green */
-				border-radius: 5px;
-				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);
-			}
-			.playButton:hover {
-				background-color: #214be7;
-			}
-			.playButton:active {
-				background-color: #1532a0;
-				box-shadow: 0 5px #666;
-				transform: translateY(4px);
-			}
-			.weiterButton {
-				font-size: 24px;
-			}
-		</style>
-	</head>
+      <!-- Logo Section -->
+      <div class="logo-section">
+        <img src="./assets/furtwangen_logo.svg" alt="Logo" class="icon" />
+      </div>
 
-	<BODY>
-		<div data-role="page" id="index">
-			<!-- Intro-Seite noch vor Hauptauswhal -->
-			<div data-role="header" >
-				<CENTER >
-					<TABLE WIDTH=100% BORDER=0 BGCOLOR="#ccffff" CELLPADDING=0 CELLSPACING=0>
-						<COL WIDTH=256*>
-						<TR>
-							<TD WIDTH=100% HEIGHT=167 VALIGN=TOP>
-							<P ALIGN=CENTER><IMG SRC="bilder/skylineVS.png" NAME="Grafik3" ALIGN=MIDDLE WIDTH=726 BORDER=0>
-							</P></TD>
-						</TR>
-					</TABLE>
-				</CENTER>
-			</div>
+      <!-- Header Section -->
+      <div class="header-section">
+        <div class="header-title">Hallo! Ich bin Pepper</div>
+        <div class="header-avatar-container">
+          <img
+            class="header-avatar"
+            src="./assets/pepper_head.svg"
+            alt="Pepper Avatar"
+          />
+        </div>
+        <div class="header-subtitle">
+          Wählen Sie eine der Optionen unten oder tippen Sie auf meinen
+          Bildschirm um zu beginnen.
+        </div>
+      </div>
 
-			<div data-role="content">
-				<CENTER>
-					<TABLE WIDTH=625 BORDER=0 CELLPADDING=4 CELLSPACING=0>
-						<COL WIDTH=200>
-						<COL WIDTH=40>
-						<COL WIDTH=406>
-						<TR VALIGN=TOP>
-							<TD WIDTH=190 STYLE="background: #73c9e7"><IMG SRC="bilder/pepperHead.png" NAME="Grafik1"  WIDTH=187 BORDER=0>
-							<BR>
-							</TD>
-							<TD>
-							<BR>
-							</TD>
-							<TD WIDTH=406><H1 ALIGN=CENTER STYLE="background: #73c9e7"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-weight: normal">
-										<BR>
-										Herzlich
-										willkommen zu:</SPAN></FONT></FONT><FONT COLOR="#000000"> </FONT><FONT COLOR="#000000"><FONT FACE="Arial Black, sans-serif"><B>
-									<BR>
-									</B></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Arial Black, sans-serif"><FONT SIZE=7 STYLE="font-size: 32pt"><B>VS!digital</B></FONT></FONT></FONT></H1>
-							<p align=right>
-								<button id="gotoHauptauswahl"  class="weiterButton" onclick="window.location.href = 'page02.html';">
-									weiter >>
-								</button>
-								<button id="speaker"  class="weiterButton" >
-									test Speaker
-								</button>
-							</p></TD>
-						</TR>
-					</TABLE>
-				</CENTER>
-			</div>
+      <!-- Speed Dial Menu (manually imported)-->
+      <div class="speedDialManually">
+        <div class="speed-dial">
+          <button class="speed-dial-button main-button">
+            <img src="./assets/icons/menu.svg" alt="Menü" />
+          </button>
+          <div class="speed-dial-items">
+            <a
+              href="./pages/settings/settings.html"
+              class="speed-dial-item"
+              target="_parent"
+            >
+              <img src="./assets/icons/settings.svg" alt="Einstellungen" />
+            </a>
+            <a class="speed-dial-item" id="muteBtn" target="_parent">
+              <img src="./assets/icons/volume_mute.svg" alt="Mute" />
+            </a>
+            <a class="speed-dial-item" id="stopBtn" target="_parent">
+              <img src="./assets/icons/stop-button.png" alt="Freeze" />
+            </a>
+          </div>
+        </div>
+      </div>
 
-			<div data-role="footer" data-position="fixed">
-				<div data-role="navbar">
-					<ul>
-						<li>
-							<!-- Zur Setup-Seite -->
-							<a data-icon="gear" id="gotoPageSetup">
-							<pf>
-								Setup
-							</pf></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Ende von Intro-Seite -->
+      <div class="lower-section">
+        <!-- Cards Container -->
+        <div class="cards-container">
+          <!-- Bürgeramt Card -->
+          <a
+            href="./pages/citizenOffice/citizenOffice.html"
+            class="card card-template-1"
+          >
+            <div class="card-header">
+              <div class="card-image">
+                <img src="./assets/rathaus_image.jpg" alt="Bürgeramt" />
+              </div>
+              <div class="card-title title-burgeramt">Stadtverwaltung</div>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><span class="service-item">Öffnungszeiten</span></li>
+                <li><span class="service-item">Zuständige Ämter</span></li>
+                <li><span class="service-item">Standorte Trauzimmer</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="show-button">
+                <div class="show-button-icon">
+                  <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
+                </div>
+              </div>
+            </div>
+            <img
+              class="logo-detail-outline"
+              src="./assets/furtwangen_logo_outline.svg"
+              alt="Logo outline"
+            />
+          </a>
 
-		<div id="setup" data-role="page">
-			<header data-role="header" data-add-back-btn="true" data-back-btn-text="Zurück">
-				<CENTER>
-					<p>
-						<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-weight: bold"> Einige Einstellungen... </FONT>
-					</p>
-				</CENTER>
-			</header>
-			<div data-role="content">
-				<center>
-					<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 >
-						<COL WIDTH=140>
-						<COL WIDTH=30>
-						<COL WIDTH=90>
-						<COL WIDTH=30>
-						<COL WIDTH=140>
-						<TR VALIGN=TOP>
-							<TD WIDTH=85 style="vertical-align:middle">
-							<P ALIGN=CENTER>
-								<button class="playButton" id="volMinus">
-									<img src="bilder/volMinus.png" width="70px">
-								</button>
-							</p></TD>
-							<TD WIDTH=18>
-							<BR>
-							</TD>
-							<TD WIDTH=85 style="vertical-align:middle">
-							<PX ALIGN=CENTER>
-								Lautstärke
-							</px></TD>
-							<TD WIDTH=18>
-							<BR>
-							</TD>
-							<TD WIDTH=85 style="vertical-align:middle">
-							<P ALIGN=CENTER>
-								<button class="playButton" id="volPlus">
-									<img src="bilder/volPlus.png" width="70px">
-								</button>
-							</p></TD>
-						</tr>
-						<TR VALIGN=TOP>
-							<TD WIDTH=85 style="vertical-align:middle">
-							<P ALIGN=CENTER>
-								<button class="playButton" id="mute">
-									<img id='muteImg' src='bilder/muteGrey.png' width='70px'>
-								</button>
-							</p></TD>
-							<TD WIDTH=18>
-							<BR>
-							</TD>
-							<TD WIDTH=85 style="vertical-align:middle">
-							<PX ALIGN=CENTER>
-								<center>
-									Mute
-								</center>
-							</px></TD>
-							<TD WIDTH=18>
-							<BR>
-							</TD>
-							<TD WIDTH=85 style="vertical-align:middle">
-							<P ALIGN=CENTER>
-								<button class="playButton" id="unmute">
-									<img id='unmuteImg' src='bilder/unmuteGrey.png' width='70px'>
-								</button>
-							</p></TD>
-						</tr>
-					</table>
-				</center>
-			</div>
+          <!-- Spiele Card -->
+          <a href="./pages/games/games.html" class="card card-template-2">
+            <div class="card-header">
+              <div class="card-icon-container">
+                <img
+                  src="./assets/icons/game_controller.svg"
+                  alt="Spiele"
+                  class="card-icon wide"
+                />
+              </div>
+              <div class="card-title title-spiele">Spiele</div>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><span class="service-item">Memory</span></li>
+                <li><span class="service-item">Tic Tac Toe</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="show-button">
+                <div class="show-button-icon">
+                  <img
+                    src="./assets/icons/arrow_right.svg"
+                    alt="Arrow"
+                    class="arrow-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <img
+              class="logo-detail-outline"
+              src="./assets/furtwangen_logo_outline.svg"
+              alt="Logo outline"
+            />
+          </a>
 
-			<div data-role="footer" data-position="fixed" >
-				<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Smart Home Labor der Fakultät Informatik, HFU, 2020
-				<BR>
-				<BR>
-				<div data-role="navbar">
-					<ul>
-						<li>
-							<a data-icon="home" id="gotoPageIndex">
-							<pf>
-								Home
-							</pf></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-	</BODY>
-</HTML>
+          <!-- Furtwangen Card -->
+          <a
+            href="./pages/furtwangen/furtwangen.html"
+            class="card card-template-3"
+          >
+            <div class="card-header">
+              <div class="card-image">
+                <img
+                  src="./assets/images/furtwangen.jpg"
+                  alt="Furtwangen"
+                  style="object-fit: fill"
+                />
+              </div>
+              <div class="card-title title-furtwangen">Furtwangen</div>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><span class="service-item">Historie</span></li>
+                <li>
+                  <span class="service-item">Freizeit (Essen & Sport)</span>
+                </li>
+                <li><span class="service-item">Sehenswürdigkeiten</span></li>
+                <li><span class="service-item">Bildung</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="show-button">
+                <div class="show-button-icon">
+                  <img src="./assets/icons/arrow_right.svg" alt="Arrow" />
+                </div>
+              </div>
+            </div>
+            <img
+              class="logo-detail-outline"
+              src="./assets/furtwangen_logo_outline.svg"
+              alt="Logo outline"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
