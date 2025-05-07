@@ -27,21 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
       element.classList.add('touch-element');
       
       // Start touch - add active class
-      element.addEventListener('touchstart', function(e) {
-        this.classList.add('touch-active');
-        // Prevent default only for elements that aren't links or have special behavior
-        if (!this.href && !this.classList.contains('header-avatar-container')) {
-          e.preventDefault();
-        }
-      });
+      //element.addEventListener('touchstart', function(e) {
+      //  this.classList.add('touch-active');
+      //  // Prevent default only for elements that aren't links or have special behavior
+      //  if (!this.href && !this.classList.contains('header-avatar-container')) {
+      //    e.preventDefault();
+      //  }
+      //});
       
       // End touch - remove active class after delay
       element.addEventListener('touchend', function() {
         var el = this;
+        el.classList.add("clicked")
         // Keep active state visible briefly for visual feedback
         setTimeout(function() {
-          el.classList.remove('touch-active');
-        }, 300);
+          el.classList.remove('clicked');
+        }, 500);
       });
       
       // Cancel touch - remove active class immediately

@@ -66,10 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
       updateCarousel();
     }
   }
-
-  function getPositionX(e) {
-    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-  }
   
   carousel.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function(e) {
