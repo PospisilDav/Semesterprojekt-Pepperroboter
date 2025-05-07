@@ -67,58 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function handleDragStart(e) {
-    isDragging = true;
-    startPosX = getPositionX(e);
-    startTranslateX = currentTranslateX;
-    carousel.style.transition = 'none';
-    e.preventDefault();
-  }
-
-  function handleDragMove(e) {
-    if (!isDragging) return;
-    
-    var currentPosition = getPositionX(e);
-    var diff = currentPosition - startPosX;
-    var newTranslateX = startTranslateX + (diff / carouselWrapper.offsetWidth) * 100;
-    
-    var maxScroll = -((100 / visibleCards) * (totalCards - visibleCards));
-    newTranslateX = Math.max(Math.min(newTranslateX, 10), maxScroll - 10);
-    
-    carousel.style.transform = 'translateX(' + newTranslateX + '%)';
-    e.preventDefault();
-  }
-
-  function handleDragEnd(e) {
-    if (!isDragging) return;
-    isDragging = false;
-    
-    carousel.style.transition = 'transform 0.5s ease-in-out';
-    
-    var currentPosition = getPositionX(e);
-    var diff = currentPosition - startPosX;
-    
-    if (Math.abs(diff) > carouselWrapper.offsetWidth / 10) {
-      (diff > 0) ? goToPrevPage() : goToNextPage();
-    } else {
-      updateCarousel();
-    }
-    
-    e.preventDefault();
-  }
-
   function getPositionX(e) {
     return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
   }
-
-  carousel.addEventListener('mousedown', handleDragStart);
-  carousel.addEventListener('touchstart', handleDragStart);
-  
-  window.addEventListener('mousemove', handleDragMove);
-  window.addEventListener('touchmove', handleDragMove);
-  
-  window.addEventListener('mouseup', handleDragEnd);
-  window.addEventListener('touchend', handleDragEnd);
   
   carousel.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -135,10 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     goToNextPage();
   });
-
-  carousel.style.cursor = 'grab';
-  carousel.addEventListener('mousedown', function() { carousel.style.cursor = 'grabbing'; });
-  carousel.addEventListener('mouseup', function() { carousel.style.cursor = 'grab'; });
 
   updateCarousel();
 });

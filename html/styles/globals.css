@@ -11,6 +11,7 @@ body {
   width: 962px;
   height: 601px;
   overflow: hidden;
+  user-select: none;
 }
 
 *, *:before, *:after {
