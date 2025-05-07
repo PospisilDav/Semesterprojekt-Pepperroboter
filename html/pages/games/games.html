@@ -1,281 +1,219 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
-    <title>Spiele mit Pepper</title>
 
-    <script src="/libs/qimessaging/2/qimessaging.js"></script>
-    <script src="../../scripts/jquery-2.2.2.min.js"></script>
-    <script src="../../scripts/jquery.qimhelpers.js"></script>
-    <script src="../../scripts/pepperController.js"></script>
-    <script src="../../scripts/screenSaverTrigger.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+  <title>Spiele mit Pepper</title>
 
-    <script src="games.js"></script>
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../scripts/pepperController.js"></script>
+  <script src="../../scripts/screenSaverTrigger.js"></script>
 
-    <link rel="stylesheet" href="../../styles/globals.css" />
-    <link rel="stylesheet" href="../../styles/main.css" />
-    <link rel="stylesheet" href="../../styles/subpage.css" />
-    <link rel="stylesheet" href="../../components/speedDial/speedDial.css" />
-    <link rel="stylesheet" href="./games.css" />
-    <link href="../../assets/fonts/Roboto2.css" rel="stylesheet" />
-  </head>
+  <script src="games.js"></script>
 
-  <body>
-    <div class="container">
-      <img
-        class="background-image"
-        src="../../assets/backgrounds/card_background.jpg"
-        alt="Background"
-      />
+  <link rel="stylesheet" href="../../styles/globals.css" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="../../styles/subpage.css" />
+  <link rel="stylesheet" href="../../components/speedDial/speedDial.css" />
+  <link rel="stylesheet" href="./games.css" />
+  <link href="../../assets/fonts/Roboto2.css" rel="stylesheet" />
+</head>
 
-      <!-- Back and Home Buttons -->
-      <div class="navigation-buttons-container">
-        <a href="../../index.html" class="back-button" id="back-button">
-          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-        </a>
-        <a href="../../index.html" class="home-button" id="home-button">
-          <img src="../../assets/icons/home.svg" alt="Startseite" />
-        </a>
-      </div>
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/backgrounds/card_background.jpg" alt="Background" />
 
-      <!-- Speed Dial Menu (manually imported)-->
-      <div class="speedDialManually">
-        <div class="speed-dial">
-          <button class="speed-dial-button main-button">
-            <img src="../../assets/icons/menu.svg" alt="Menü" />
-          </button>
-          <div class="speed-dial-items">
-            <a
-              href="../../pages/settings/settings.html"
-              class="speed-dial-item"
-              target="_parent"
-            >
-              <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
-            </a>
-            <a class="speed-dial-item" id="muteBtn" target="_parent">
-              <img src="../../assets/icons/volume_mute.svg" alt="Mute" />
-            </a>
-            <a class="speed-dial-item" id="stopBtn" target="_parent">
-              <img src="../../assets/icons/stop-button.png" alt="Freeze" />
-            </a>
-          </div>
-        </div>
-      </div>
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../../index.html" class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../index.html" class="home-button" id="home-button">
+        <img src="../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
 
-      <!-- Header Section -->
-      <div class="header-section">
-        <div class="header-title">Spiele mit Pepper</div>
-        <div class="header-avatar-container">
-          <img
-            class="header-avatar"
-            src="../../assets/pepper_head.svg"
-            alt="Pepper Avatar"
-          />
-        </div>
-        <div class="header-subtitle">
-          Lust auf ein Spiel? Wählen Sie eines aus, und spielen Sie direkt mit
-          mir!
-        </div>
-      </div>
-
-      <div class="lower-section games-lower-section">
-        <!-- Games Carousel Container -->
-        <div class="carousel-container">
-          <button
-            class="carousel-button prev-button"
-            aria-label="Vorheriges Spiel"
-          >
-            <img
-              src="../../assets/icons/game_controller_left.svg"
-              alt="Previous"
-            />
-          </button>
-
-          <div class="games-carousel-viewport">
-            <div class="games-carousel">
-              <!-- Memory Game Card -->
-              <a href="./memory/memory.html" class="game-card">
-                <div class="game-card-header">
-                  <div class="game-icon-container">
-                    <img
-                      src="../../assets/icons/brain.svg"
-                      alt="Memory Game"
-                      class="game-icon"
-                    />
-                  </div>
-                  <h3 class="game-title">Memory</h3>
-                </div>
-
-                <div class="game-card-content">
-                  <p class="game-description">
-                    Finde passende Bildpaare und trainiere dein Gedächtnis
-                  </p>
-                  <div class="difficulty">
-                    <span class="difficulty-label">Schwierigkeit:</span>
-                    <div class="difficulty-dots">
-                      <span class="dot filled"></span>
-                      <span class="dot filled"></span>
-                      <span class="dot"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="game-card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Quiz Game Card -->
-              <a href="./quiz/quiz.html" class="game-card">
-                <div class="game-card-header">
-                  <div class="game-icon-container">
-                    <img
-                      src="../../assets/icons/questionmark_diamond.svg"
-                      alt="Quiz Game"
-                      class="game-icon"
-                    />
-                  </div>
-                  <h3 class="game-title">Quiz & Rechnen</h3>
-                </div>
-
-                <div class="game-card-content">
-                  <p class="game-description">
-                    Teste dein Wissen und Rechenfähigkeiten
-                  </p>
-                  <div class="difficulty">
-                    <span class="difficulty-label">Schwierigkeit:</span>
-                    <div class="difficulty-dots">
-                      <span class="dot filled"></span>
-                      <span class="dot"></span>
-                      <span class="dot"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="game-card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Tic Tac Toe Card -->
-              <a href="./ticTacToe/ticTacToe.html" class="game-card">
-                <div class="game-card-header">
-                  <div class="game-icon-container">
-                    <img
-                      src="../../assets/icons/square_grid_3x3.svg"
-                      alt="Tic Tac Toe"
-                      class="game-icon"
-                    />
-                  </div>
-                  <h3 class="game-title">Tic Tac Toe</h3>
-                </div>
-
-                <div class="game-card-content">
-                  <p class="game-description">
-                    Spiele den Klassiker gegen Pepper
-                  </p>
-                  <div class="difficulty">
-                    <span class="difficulty-label">Schwierigkeit:</span>
-                    <div class="difficulty-dots">
-                      <span class="dot filled"></span>
-                      <span class="dot filled"></span>
-                      <span class="dot"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="game-card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <!-- Example 4th Game Card (kept for demonstration) -->
-              <a class="game-card">
-                <div class="game-card-header">
-                  <div class="game-icon-container">
-                    <img
-                      src="../../assets/icons/tic_tac_toe.svg"
-                      alt="Example Game"
-                      class="game-icon"
-                    />
-                  </div>
-                  <h3 class="game-title">Beispiel Spiel</h3>
-                </div>
-
-                <div class="game-card-content">
-                  <p class="game-description">
-                    Ein weiteres Spiel zum Ausprobieren
-                  </p>
-                  <div class="difficulty">
-                    <span class="difficulty-label">Schwierigkeit:</span>
-                    <div class="difficulty-dots">
-                      <span class="dot filled"></span>
-                      <span class="dot filled"></span>
-                      <span class="dot filled"></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="game-card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <button
-            class="carousel-button next-button"
-            aria-label="Nächstes Spiel"
-          >
-            <img
-              src="../../assets/icons/game_controller_right.svg"
-              alt="Next"
-            />
-          </button>
-        </div>
-
-        <div class="pagination-dots">
-          <span class="pagination-dot active" data-index="0"></span>
-          <span class="pagination-dot" data-index="1"></span>
+    <!-- Speed Dial Menu (manually imported)-->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a class="speed-dial-item" id="muteBtn" target="_parent">
+            <img src="../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" id="stopBtn" target="_parent">
+            <img src="../../assets/icons/stop-button.png" alt="Freeze" />
+          </a>
         </div>
       </div>
     </div>
 
-    <script src="./gamesCarousel.js"></script>
-    <script src="../../components/speedDial/speedDial.js"></script>
-    <script src="../../components/speedDial/speedDialResizer.js"></script>
-  </body>
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-title">Spiele mit Pepper</div>
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-subtitle">
+        Lust auf ein Spiel? Wählen Sie eines aus, und spielen Sie direkt mit
+        mir!
+      </div>
+    </div>
+
+    <div class="lower-section games-lower-section">
+      <!-- Games Carousel Container -->
+      <div class="carousel-container">
+        <button class="carousel-button prev-button" aria-label="Vorheriges Spiel">
+          <img src="../../assets/icons/game_controller_left.svg" alt="Previous" />
+        </button>
+
+        <div class="games-carousel-viewport">
+          <div class="games-carousel">
+            <!-- Memory Game Card -->
+            <a href="./memory/memory.html" class="game-card">
+              <div class="game-card-header">
+                <div class="game-icon-container">
+                  <img src="../../assets/icons/brain.svg" alt="Memory Game" class="game-icon" />
+                </div>
+                <h3 class="game-title">Memory</h3>
+              </div>
+
+              <div class="game-card-content">
+                <p class="game-description">
+                  Finde passende Bildpaare und trainiere dein Gedächtnis
+                </p>
+                <div class="difficulty">
+                  <span class="difficulty-label">Schwierigkeit:</span>
+                  <div class="difficulty-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="game-card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Quiz Game Card -->
+            <a href="./quiz/quiz.html" class="game-card">
+              <div class="game-card-header">
+                <div class="game-icon-container">
+                  <img src="../../assets/icons/questionmark_diamond.svg" alt="Quiz Game" class="game-icon" />
+                </div>
+                <h3 class="game-title">Quiz & Rechnen</h3>
+              </div>
+
+              <div class="game-card-content">
+                <p class="game-description">
+                  Teste dein Wissen und Rechenfähigkeiten
+                </p>
+                <div class="difficulty">
+                  <span class="difficulty-label">Schwierigkeit:</span>
+                  <div class="difficulty-dots">
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="game-card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Coming Soon -->
+            <a class="game-card coming-soon-card">
+              <div class="game-card-header">
+                <div class="game-icon-container">
+                  <img src="../../assets/icons/hourglass.svg" alt="Coming Soon" class="game-icon" />
+                </div>
+                <h3 class="game-title">Bald verfügbar</h3>
+              </div>
+
+              <div class="game-card-content">
+                <p class="game-description">
+                  Hier entstehen neue Spiele für dich und Pepper
+                </p>
+                <div class="difficulty">
+                  <span class="difficulty-label">Entwicklung:</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 40%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="game-card-footer">
+                <div class="info-badge">
+                  <span>Demnächst</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Coming Soon -->
+            <a class="game-card coming-soon-card">
+              <div class="game-card-header">
+                <div class="game-icon-container">
+                  <img src="../../assets/icons/hourglass.svg" alt="Coming Soon" class="game-icon" />
+                </div>
+                <h3 class="game-title">Bald verfügbar</h3>
+              </div>
+
+              <div class="game-card-content">
+                <p class="game-description">
+                  Hier entstehen neue Spiele für dich und Pepper
+                </p>
+                <div class="difficulty">
+                  <span class="difficulty-label">Entwicklung:</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 10%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="game-card-footer">
+                <div class="info-badge">
+                  <span>Demnächst</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <button class="carousel-button next-button" aria-label="Nächstes Spiel">
+          <img src="../../assets/icons/game_controller_right.svg" alt="Next" />
+        </button>
+      </div>
+
+      <div class="pagination-dots">
+        <span class="pagination-dot active" data-index="0"></span>
+        <span class="pagination-dot" data-index="1"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="./gamesCarousel.js"></script>
+  <script src="../../components/speedDial/speedDial.js"></script>
+  <script src="../../components/speedDial/speedDialResizer.js"></script>
+</body>
+
 </html>
