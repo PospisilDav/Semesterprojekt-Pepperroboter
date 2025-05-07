@@ -13,10 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var moveStep = 2;
   var totalPages = Math.max(3, Math.ceil((totalCards - visibleCards) / moveStep) + 1);
   
-  // Drag state tracking
-  var isDragging = false;
-  var currentTranslateX = 0;
-  
   carousel.style.width = (totalCards * (100 / visibleCards)) + '%';
 
   paginationContainer.innerHTML = '';
@@ -62,12 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   
-  carousel.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      if (isDragging) e.preventDefault();
-    });
-  });
-
   prevButton.addEventListener('click', function(e) {
     goToPrevPage();
   });
