@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var prevButton = document.querySelector('.prev-button');
   var nextButton = document.querySelector('.next-button');
   var paginationContainer = document.querySelector('.pagination-dots');
-  var carouselWrapper = document.querySelector('.carousel-wrapper');
 
   // Configuration
   var currentPage = 0;
@@ -16,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
   
   // Drag state tracking
   var isDragging = false;
-  var startPosX = 0;
-  var startTranslateX = 0;
   var currentTranslateX = 0;
   
   carousel.style.width = (totalCards * (100 / visibleCards)) + '%';
@@ -36,8 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateCarousel() {
     var slidePercentage = (100 / visibleCards) * (currentPage * moveStep);
-    
-    var maxScroll = (totalCards - visibleCards) * (100 / visibleCards);
     
     carousel.style.webkitTransform = 'translateX(-' + slidePercentage + '%)';
     carousel.style.transform = 'translateX(-' + slidePercentage + '%)';
@@ -74,12 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   prevButton.addEventListener('click', function(e) {
-    e.preventDefault();
     goToPrevPage();
   });
 
   nextButton.addEventListener('click', function(e) {
-    e.preventDefault();
     goToNextPage();
   });
 
