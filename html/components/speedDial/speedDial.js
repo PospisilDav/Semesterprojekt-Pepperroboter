@@ -1,11 +1,28 @@
-var isMuted = false;
+var isMuted = localStorage.getItem("isMuted") === "true";
 var pepperController = window.pepperController;
 
+const DEFAULT_PATH_MUTE_BUTTON = "../../assets/icons/volume_mute.svg";
+const DEFAULT_PATH_UNMUTE_BUTTON = "../../assets/icons/volume_on.png";
+
+function updateMuteUI() {
+  var muteBtn = document.getElementById("muteBtn");
+  if (!muteBtn) return;
+
+  var muteImg = muteBtn.querySelector("img");
+  if (isMuted) {
+    muteImg.src = window.CUSTOM_UNMUTE_PATH || DEFAULT_PATH_UNMUTE_BUTTON;
+  } else {
+    muteImg.src = window.CUSTOM_MUTE_PATH || DEFAULT_PATH_MUTE_BUTTON;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  const speedDial = document.querySelector(".speed-dial");
-  const speedDialButton = document.querySelector(".speed-dial-button");
-  const muteBtn = document.getElementById("muteBtn");
-  const stopBtn = document.getElementById("stopBtn");
+  var speedDial = document.querySelector(".speed-dial");
+  var speedDialButton = document.querySelector(".speed-dial-button");
+  var muteBtn = document.getElementById("muteBtn");
+  var stopBtn = document.getElementById("stopBtn");
+
+  updateMuteUI();
 
   if (speedDialButton) {
     speedDialButton.addEventListener("click", function () {
@@ -22,16 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
   if (muteBtn) {
     muteBtn.addEventListener("click", function () {
       if (isMuted) {
-        window.pepperController.setUnmute();
-        window.pepperController.playSound(0);
-        muteBtn.querySelector("img").src = "./assets/icons/volume_mute.svg";
+        pepperController.setUnmute();
+        pepperController.playSound(0);
       } else {
-        window.pepperController.setMute();
-        window.pepperController.playSound(0);
-        muteBtn.querySelector("img").src = "./assets/icons/volume_on.png";
+        pepperController.setMute();
+        pepperController.playSound(0);
       }
 
       isMuted = !isMuted;
+      localStorage.setItem("isMuted", isMuted ? "true" : "false");
+      updateMuteUI();
     });
   }
 });

@@ -11,6 +11,8 @@
     <script src="../../../scripts/pepperController.js"></script>
     <script>
       window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html";
+      window.CUSTOM_UNMUTE_PATH = "../../../assets/icons/volume_on.png";
+      window.CUSTOM_MUTE_PATH = "../../../assets/icons/volume_mute.svg";
     </script>
     <script src="../../../scripts/screenSaverTrigger.js"></script>
 
@@ -58,7 +60,7 @@
                 alt="Einstellungen"
               />
             </a>
-            <a class="speed-dial-item" target="_parent">
+            <a class="speed-dial-item" id="muteBtn" target="_parent">
               <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
             </a>
             <a class="speed-dial-item" id="stopBtn" target="_parent">

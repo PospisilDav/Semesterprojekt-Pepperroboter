@@ -1,21 +1,30 @@
-var isMuted = false;
+var isMuted = localStorage.getItem("isMuted") === "true";
+
+function updateUI() {
+  var muteText = document.getElementById("muteText");
+  var muteImg = document.querySelector("#muteBtn img");
+
+  if (isMuted) {
+    muteText.textContent = "Entstummen";
+    muteImg.src = "../../assets/icons/volume_on.png";
+  } else {
+    muteText.textContent = "Stummschalten";
+    muteImg.src = "../../assets/icons/volume_mute.svg";
+  }
+}
 
 function toggleMute() {
   if (isMuted) {
     window.pepperController.setUnmute();
     window.pepperController.playSound(0);
-    document.getElementById("muteText").textContent = "Stummschalten";
-    document.querySelector("#muteBtn img").src =
-      "../../assets/icons/volume_mute.svg";
   } else {
     window.pepperController.playSound(0);
     window.pepperController.setMute();
-    document.getElementById("muteText").textContent = "Entstummen";
-    document.querySelector("#muteBtn img").src =
-      "../../assets/icons/volume_on.png";
   }
 
   isMuted = !isMuted;
+  localStorage.setItem("isMuted", isMuted ? "true" : "false");
+  updateUI();
 }
 
 function volPlus() {
@@ -29,7 +38,9 @@ function volMinus() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("muteBtn").addEventListener("click", function () {
+  updateUI();
+  var muteBtn = document.getElementById("muteBtn");
+  muteBtn.addEventListener("click", function () {
     toggleMute();
   });
 });

@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=962, height=601, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
     <title>Einstellungen - Pepper Roboter</title>
-    <link href="assets/fonts/Roboto.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" href="../../styles/subpage.css">
-    <link rel="stylesheet" href="./settings.css">
-    <link rel="stylesheet" href="settings.css">
-    
+
+    <!-- Stylesheets -->
+    <link href="assets/fonts/Roboto.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <link rel="stylesheet" href="../../styles/subpage.css" />
+    <link rel="stylesheet" href="./settings.css" />
+    <link rel="stylesheet" href="settings.css" />
+
+    <!-- Script dependencies -->
     <script src="/libs/qimessaging/2/qimessaging.js"></script>
     <script src="../../scripts/jquery-2.2.2.min.js"></script>
     <script src="../../scripts/jquery.qimhelpers.js"></script>
     <script src="../../scripts/pepperController.js"></script>
     <script src="../../scripts/screenSaverTrigger.js"></script>
-
-    <script src="../../scripts/pepperController.js"></script>
     <script src="settings.js"></script>
 
-</head>
+    <!-- Back button logic -->
+    <script>
+      function goBack() {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "../../index.html";
+        }
+      }
+    </script>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <img class="background-image" src="../../assets/backgrounds/settings_background.jpg" alt="Hintergrund" />
+      <!-- Background image -->
+      <img
+        class="background-image"
+        src="../../assets/backgrounds/settings_background.jpg"
+        alt="Hintergrund"
+      />
 
-        <!-- Zurück-Button -->
-        <div class="navigation-buttons-container">
-            <a href="../../index.html" class="back-button">
-                <img src="../../assets/icons/arrow_left.svg" alt="Zurück">
-            </a>
+      <!-- Back button -->
+      <div class="navigation-buttons-container">
+        <button onclick="goBack()" class="back-button">
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+        </button>
+      </div>
+
+      <!-- Page header -->
+      <div class="header-section">
+        <div class="header-title">Einstellungen</div>
+      </div>
+
+      <!-- Main settings content -->
+      <div class="settings-container">
+        <div class="settings-section">
+          <h2>Lautstärkeregelung</h2>
+          <div class="volume-buttons">
+            <button id="volumeUpBtn" class="volume-btn" onclick="volPlus()">
+              <img
+                src="../../assets/icons/volume_up.svg"
+                alt="Lauter"
+                class="volume-icon"
+              />
+              <span>Erhöhen</span>
+            </button>
+
+            <button id="volumeDownBtn" class="volume-btn" onclick="volMinus()">
+              <img
+                src="../../assets/icons/volume_down.svg"
+                alt="Leiser"
+                class="volume-icon"
+              />
+              <span>Verringern</span>
+            </button>
+
+            <button id="muteBtn" class="volume-btn">
+              <img
+                src="../../assets/icons/volume_mute.svg"
+                alt="Stumm"
+                class="volume-icon"
+              />
+              <span id="muteText">Stummschalten</span>
+            </button>
+          </div>
         </div>
-
-        <!-- Header Section -->
-        <div class="header-section">
-            <div class="header-title">Einstellungen</div>
-        </div>
-
-        <!-- Einstellungen Inhalt -->
-        <div class="settings-container">
-            <div class="settings-section">
-                <h2>Lautstärkeregelung</h2>
-                <div class="volume-buttons">
-                    <button id="volumeUpBtn" class="volume-btn" onclick="volPlus()">
-                        <img src="../../assets/icons/volume_up.svg" alt="Lauter" class="volume-icon">
-                        <span>Erhöhen</span>
-                    </button>
-
-                    <button id="volumeDownBtn" class="volume-btn" onclick="volMinus()">
-                        <img src="../../assets/icons/volume_down.svg" alt="Leiser" class="volume-icon">
-                        <span>Verringern</span>
-                    </button>
-
-                    <button id="muteBtn" class="volume-btn">
-                        <img src="../../assets/icons/volume_mute.svg" alt="Stumm" class="volume-icon">
-                        <span id="muteText">Stummschalten</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-</body>
+      </div>
+    </div>
+  </body>
 </html>
