@@ -1,76 +1,75 @@
 "use strict";
 
+var currentPlayingButton = null;
+
+var PATH_PLAY_BUTTON = "../../assets/icons/play.svg";
+var PATH_PAUSE_BUTTON = "../../assets/icons/pause.svg";
+
 var pepperController = window.pepperController;
 
-function restaurantsFullyLoaded(e) {
-  window.console.log("restaurants initialized");
+function updatePlayUI(cardElement) {
+  var playImg = cardElement.getElementsByClassName("play-icon")[0];
+  if (!playImg) return;
 
-  pepperController.shutUpAndContinue();
-
-  setTimeout(function () {
-    pepperController.animatedSpeak(
-      "Boy",
-      "Hier finden Sie Restaurants mit regionaler und internationaler Küche sowie gemütliche Cafés."
-    );
-  }, 800);
+  if (currentPlayingButton === playImg) {
+    playImg.src = PATH_PLAY_BUTTON;
+    currentPlayingButton = null;
+    pepperController.shutUp();
+  } else {
+    if (currentPlayingButton) {
+      currentPlayingButton.src = PATH_PLAY_BUTTON;
+      pepperController.shutUp();
+    }
+    playImg.src = PATH_PAUSE_BUTTON;
+    currentPlayingButton = playImg;
+  }
 }
 
-window.addEventListener("load", restaurantsFullyLoaded, false);
+function setupCard(cardId, speakText) {
+  var card = document.getElementById(cardId);
+  if (!card) return;
+
+  card.addEventListener("click", function (e) {
+    e.stopPropagation();
+    updatePlayUI(card);
+
+    setTimeout(function () {
+      pepperController.animatedSpeak("Boy", speakText);
+    }, 800);
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-  const headerAvatar = document.querySelector(".header-avatar");
-  const regionalCard = document.getElementById("regional");
-  const internationalCard = document.getElementById("international");
-  const cafeCard = document.getElementById("Cafe");
+  setupCard(
+    "regional",
+    "Furtwangen lädt Genießer ein, die Vielfalt der Schwarzwälder Küche zu entdecken. Im Höhengasthaus \
+    Kolmenhof werden traditionelle Spezialitäten wie Vesperplatten, Wildgerichte und Schwarzwälder Kirschtorte in ruhiger \
+    Atmosphäre serviert – perfekt nach einer Wanderung zur Donauquelle. Das Gasthaus Bad verwöhnt seine Gäste mit \
+    feiner, regionaler Küche und saisonalen Angeboten wie Spargel- oder Wildwochen."
+  );
 
+  setupCard(
+    "international",
+    "Auch internationale Spezialitäten kommen in Furtwangen nicht zu kurz. Im Ristorante Pizzeria Europa \
+    genießen Gäste italienische Klassiker wie Pizza und Pasta. Der City Kebap und der Kebap Treff bieten frische türkische \
+    Gerichte wie Döner, Dürüm und Falafel - perfekt für eine schnelle und leckere Mahlzeit."
+  );
+
+  setupCard(
+    "cafe",
+    "Für Kaffeeliebhaber und Naschkatzen hat Furtwangen einiges zu bieten. Wer feine Süßwaren schätzt, ist in der Confiserie Mayerhöfer genau richtig: \
+    Hier erwarten die Gäste handgefertigte Pralinen, kunstvoll dekorierte Torten und aromatische Kaffeespezialitäten – alles in liebevoller Handarbeit und gemütlichem Ambiente. \
+    Auch das Eiscafé Edelweiss ist ein beliebter Treffpunkt, besonders an warmen Tagen. \
+    Mit hausgemachtem Eis, frischen Waffeln und echtem italienischem Flair lädt es zum Verweilen und Genießen ein – mitten im Herzen von Furtwangen."
+  );
+
+  var headerAvatar = document.querySelector(".header-avatar");
   if (headerAvatar) {
     headerAvatar.addEventListener("click", function () {
       setTimeout(function () {
         pepperController.animatedSpeak(
           "Boy",
           "Hier finden Sie Restaurants mit regionaler und internationaler Küche sowie gemütliche Cafés."
-        );
-      }, 800);
-    });
-  }
-
-  if (regionalCard) {
-    regionalCard.addEventListener("click", function () {
-      setTimeout(function () {
-        pepperController.animatedSpeak(
-          "Boy",
-          "Furtwangen lädt Genießer ein, die Vielfalt der Schwarzwälder Küche zu entdecken. Im Höhengasthaus \
-          Kolmenhof werden traditionelle Spezialitäten wie Vesperplatten, Wildgerichte und Schwarzwälder Kirschtorte in ruhiger \
-          Atmosphäre serviert – perfekt nach einer Wanderung zur Donauquelle. Das Gasthaus Bad verwöhnt seine Gäste mit \
-          feiner, regionaler Küche und saisonalen Angeboten wie Spargel- oder Wildwochen. Ebenfalls sehr beliebt ist das \
-          Gasthaus Staude, das für seine deftigen Schwarzwälder Klassiker und gemütliche Gastlichkeit bekannt ist."
-        );
-      }, 800);
-    });
-  }
-
-  if (internationalCard) {
-    internationalCard.addEventListener("click", function () {
-      setTimeout(function () {
-        pepperController.animatedSpeak(
-          "Boy",
-          "Auch internationale Spezialitäten kommen in Furtwangen nicht zu kurz. Im Ristorante Pizzeria Europa \
-          genießen Gäste italienische Klassiker wie Pizza und Pasta. Der City Kebap und der Kebap Treff bieten frische türkische \
-          Gerichte wie Döner, Dürüm und Falafel – perfekt für eine schnelle und leckere Mahlzeit."
-        );
-      }, 800);
-    });
-  }
-
-  if (cafeCard) {
-    cafeCard.addEventListener("click", function () {
-      setTimeout(function () {
-        pepperController.animatedSpeak(
-          "Boy",
-          "Für Kaffeeliebhaber und Naschkatzen bietet Furtwangen gemütliche Adressen. In der Confiserie Mayerhöfer \
-          warten feinste Pralinen, Torten und Kaffeespezialitäten. Das Eiscafé Edelweiss lockt mit hausgemachtem Eis und \
-          italienischem Flair. Ein besonderes Ausflugsziel ist die historische Hexenlochmühle, wo man bei Kaffee und \
-          Schwarzwälder Kirschtorte in traditioneller Atmosphäre entspannen kann."
         );
       }, 800);
     });

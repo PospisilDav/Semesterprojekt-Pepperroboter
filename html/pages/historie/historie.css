@@ -28,6 +28,22 @@
   object-fit: cover;
   transition: transform 0.3s ease;
 }
+.item-counter {
+  position: absolute;
+  bottom: 80px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #F5F7FA;
+  color: #07859E;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
 
 .card-content {
   z-index: 1;
@@ -48,6 +64,17 @@
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  z-index: 1;
 }
 
 .card:after {
