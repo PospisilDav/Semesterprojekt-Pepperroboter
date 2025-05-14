@@ -98,3 +98,44 @@
   margin-bottom: -50px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
+
+.show-button {
+  position: absolute;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 0;
+  margin-left: auto;
+  bottom: 10px;
+  background: #0ca81d;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  position: relative;
+  border: 0px solid rgba(255, 255, 255, 0.6);
+}
+
+
+.show-button:active {
+  background-color: #ffffff;
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.show-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 8px;
+  position: relative;
+  animation: slight-bounce 2s ease-in-out infinite;
+}
+
+.show-button-icon img {
+  width: 48px;
+  height: 24px;
+  object-fit: contain;
+}
