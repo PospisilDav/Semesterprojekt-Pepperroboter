@@ -1,5 +1,10 @@
 "use strict";
 
+var currentPlayingButton = undefined;
+
+const PATH_PLAY_BUTTON = "../../assets/icons/play.svg";
+const PATH_PAUSE_BUTTON = "../../assets/icons/pause.svg";
+
 var pepperController = window.pepperController;
 
 function historieFullyLoaded(e) {
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 800);
     });
   }
-    if (gruendungCard) {
+  if (gruendungCard) {
     gruendungCard.addEventListener("click", function () {
       setTimeout(function () {
         pepperController.animatedSpeak(
@@ -76,64 +81,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-var isPlaying = undefined;
+function updatePlayUI(buttonNumber) {
+  const playBtn = document.getElementById(`playBtn${buttonNumber}`);
+  if (!playBtn) return;
 
-const PATH_PLAY_BUTTON = "../../assets/icons/play.svg";
-const PATH_PAUSE_BUTTON = "../../assets/icons/pause.svg";
+  const playImg = playBtn.querySelector("img");
+  if (!playImg) return;
 
-function updatePlayUI(button) {
-  isPlaying = !isPlaying;
-  if (button === 1){
-    var playBtn1 = document.getElementById("playBtn1");
-    if (!playBtn1) return;
-      var playImg = playBtn1.querySelector("img");
-    if (isPlaying) {
-      playImg.src = PATH_PLAY_BUTTON;
-    } else {
-      playImg.src = PATH_PAUSE_BUTTON;
-   }
-} else if (button === 2){
-      var playBtn2 = document.getElementById("playBtn2");
-    if (!playBtn2) return;
-      var playImg = playBtn2.querySelector("img");
-    if (isPlaying) {
-      playImg.src = PATH_PLAY_BUTTON;
-    } else {
-      playImg.src = PATH_PAUSE_BUTTON;
+  if (currentPlayingButton === playImg) {
+    playImg.src = PATH_PLAY_BUTTON;
+    currentPlayingButton = null;
+    pepperController.shutUp();
+  } else {
+    if (currentPlayingButton) {
+      currentPlayingButton.src = PATH_PLAY_BUTTON;
+      pepperController.shutUp();
     }
-  } else if (button === 3) {
-      var playBtn3 = document.getElementById("playBtn3");
-    if (!playBtn3) return;
-   var playImg = playBtn3.querySelector("img");
-    if (isPlaying) {
-      playImg.src = PATH_PLAY_BUTTON;
-   } else {
-      playImg.src = PATH_PAUSE_BUTTON;
-    }
+    playImg.src = PATH_PAUSE_BUTTON;
+    currentPlayingButton = playImg;
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var playBtn1 = document.getElementById("playBtn1");
-  var playBtn2 = document.getElementById("playBtn2");
-  var playBtn3 = document.getElementById("playBtn3");
-
-
-
-  if (playBtn1) {
-    playBtn1.addEventListener("click", function () {
-      updatePlayUI(1);
-    });
-  }
-  if (playBtn2) {
-    playBtn2.addEventListener("click", function () {
-      updatePlayUI(2);
-    });
-  }
-  if (playBtn3) {
-    playBtn3.addEventListener("click", function () {
-      updatePlayUI(3);
-    });
-  }
+  [1, 2, 3].forEach(function (num) {
+    const btn = document.getElementById(`playBtn${num}`);
+    if (btn) {
+      btn.addEventListener("click", function () {
+        updatePlayUI(num);
+      });
+    }
+  });
 });
-
