@@ -74,6 +74,15 @@
   transform: translateY(1px);
 }
 
+.memory-button.clicked {
+  transform: translateY(1px);
+}
+
+.memory-button, .memory-tile {
+  transition: transform 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .memory-button img {
   width: 24px;
   height: 24px;
@@ -103,6 +112,10 @@
 }
 
 .memory-tile:hover {
+  transform: scale(1.05);
+}
+
+.memory-tile.clicked:not(.flipped):not(.matched) {
   transform: scale(1.05);
 }
 
@@ -247,6 +260,12 @@
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
+}
+
+@media (pointer: coarse) {
+  .memory-button, .memory-tile {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 .lower-section {

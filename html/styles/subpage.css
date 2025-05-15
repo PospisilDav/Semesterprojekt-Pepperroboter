@@ -93,3 +93,15 @@
   height: 40px;
   width: auto;
 }
+
+.back-button:active, .home-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: #09a000;
+}
+
+.back-button.clicked, .home-button.clicked {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: #09a000;
+}

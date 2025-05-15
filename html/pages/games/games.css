@@ -293,3 +293,43 @@
   color: #555;
   display: inline-block;
 }
+
+.game-card.clicked {
+  transform: scale(0.98);
+  box-shadow: 0 4px 8px rgba(7, 133, 158, 0.25);
+}
+
+.carousel-button.clicked {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(12, 177, 0, 0.3);
+  background-color: #09a000;
+}
+
+.show-button.clicked {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button.clicked, .home-button.clicked {
+  transform: scale(0.95);
+  background-color: #09a000;
+}
+
+.pagination-dot.clicked:not(.active) {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+@media (pointer: coarse) {
+  .game-card,
+  .carousel-button,
+  .show-button,
+  .back-button,
+  .home-button,
+  .pagination-dot {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .coming-soon-card.clicked {
+    transform: none;
+  }
+}

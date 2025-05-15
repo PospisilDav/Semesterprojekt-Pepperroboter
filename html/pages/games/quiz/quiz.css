@@ -39,6 +39,11 @@
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#answerButtons button.clicked {
+  transform: scale(0.97);
 }
 
 #answerButtons button:hover {
@@ -47,13 +52,6 @@
 
 #answerButtons button:active {
   transform: scale(0.97);
-}
-
-#result {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 20px;
-  color: #52ad59;
 }
 
 #nextBtn {
@@ -66,6 +64,11 @@
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#nextBtn.clicked {
+  transform: scale(0.97);
 }
 
 #nextBtn:hover {
@@ -127,6 +130,7 @@
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
+  line-height: 1.5;
   line-height: 1.5;
   color: inherit;
 }

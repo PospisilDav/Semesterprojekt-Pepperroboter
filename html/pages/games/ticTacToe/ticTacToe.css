@@ -243,6 +243,11 @@
     transition: width 0.5s, height 0.5s;
 }
 
+.board .cell.clicked:not(.taken) {
+    transform: scale(0.97);
+    background: #f0f7ff;
+}
+
 .button-group {
     display: flex;
     flex-direction: column;
@@ -298,6 +303,12 @@
     width: 24px;
     height: 24px;
     filter: brightness(0) invert(1);
+}
+
+.game-btn.clicked {
+    transform: scale(0.97);
+    opacity: 0.9;
+    background-position: right center;
 }
 
 .scoreboard {
@@ -431,6 +442,10 @@
 .toggle-btn:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.toggle-btn.clicked:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .game-status-bar {
@@ -763,6 +778,11 @@
   background: linear-gradient(135deg, #52AD59, #46964C);
 }
 
+.control-btn.clicked {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
 .confetti-container {
   position: absolute;
   top: 0;
@@ -790,5 +810,11 @@
   100% {
     transform: translateY(800px) rotate(720deg);
     opacity: 0;
+  }
+}
+
+@media (pointer: coarse) {
+  .board .cell, .game-btn, .toggle-btn, .control-btn {
+    -webkit-tap-highlight-color: transparent;
   }
 }

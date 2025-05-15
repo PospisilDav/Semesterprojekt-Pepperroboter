@@ -195,6 +195,10 @@ body {
   transform: scale(0.98);
 }
 
+.logo-section.clicked {
+  transform: scale(0.98);
+}
+
 .icon {
   width: 70%;
   height: auto;
@@ -219,6 +223,12 @@ body {
 }
 
 .action-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(12, 177, 0, 0.3);
+  background-color: #09a000;
+}
+
+.action-button.clicked {
   transform: scale(0.95);
   box-shadow: 0 2px 6px rgba(12, 177, 0, 0.3);
   background-color: #09a000;
@@ -284,6 +294,11 @@ body {
 }
 
 .card:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 8px rgba(7, 133, 158, 0.25);
+}
+
+.card.clicked {
   transform: scale(0.98);
   box-shadow: 0 4px 8px rgba(7, 133, 158, 0.25);
 }
@@ -512,6 +527,12 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.show-button.clicked {
+  background-color: #ffffff;
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .show-button-icon {
   display: flex;
   justify-content: center;
@@ -618,6 +639,12 @@ body {
   background: rgba(0, 0, 0, 0.05);
   border-radius: inherit;
   pointer-events: none;
+}
+
+@media (pointer: coarse) {
+  .card, .show-button, .header-avatar-container, .logo-section, .action-button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 @keyframes header-appear {
