@@ -361,17 +361,13 @@ body {
   position: relative;
 }
 
-.title-burgeramt,
-.title-furtwangen,
-.title-spiele {
+.card-title {
   position: relative;
   display: inline-block;
   padding-bottom: 6px;
 }
 
-.title-burgeramt::after,
-.title-furtwangen::after,
-.title-spiele::after {
+.card-title::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -522,13 +518,11 @@ body {
 }
 
 .show-button:active {
-  background-color: #ffffff;
   transform: scale(0.97);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .show-button.clicked {
-  background-color: #ffffff;
   transform: scale(0.97);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

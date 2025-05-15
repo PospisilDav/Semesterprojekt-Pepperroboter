@@ -41,7 +41,7 @@ function setupCard(cardId, speakText) {
 
 document.addEventListener("DOMContentLoaded", function () {
   setupCard(
-    "Gruendung",
+    "founding",
     "Stolz feierte die Stadt Furtwangen am 5. Mai 1998 die Verleihung der Stadtrechte vor 125 Jahren. Das für \
           das Stadtrecht erforderliche „Rathaus“ konnte 1867 durch den Erwerb und Umbau des ehemaligen Gasthauses Adler \
           vorgewiesen werden. Damit war der Weg vom “Marktflecken”, wie Furtwangen bis 1873 offiziell genannt wurde, zur \
@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   setupCard(
-    "ZahlenundFakten",
+    "factsAndFigures",
     "Furtwangen ist eine charmante Stadt im Schwarzwald-Baar-Kreis in Baden-Württemberg und gilt mit ihrer Höhenlage \
            von 850 bis 1.150 Metern über dem Meeresspiegel als die höchstgelegene Stadt des Bundeslandes."
   );
 
   setupCard(
-    "Vergangenheit",
+    "past",
     "Seinen wirtschaftlichen Aufschwung verdankt Furtwangen der Uhr, die im 17. Jahrhundert den Schwarzwald \
           erreichte und der Region im 18. Jahrhundert einen ungeahnten Aufschwung brachte. Ausdruck und Motor dieser \
           Entwicklung war 1850 die Gründung der Uhrmacherschule. Ihr erster Rektor Robert Gerwig erlangte auch als Erbauer \
