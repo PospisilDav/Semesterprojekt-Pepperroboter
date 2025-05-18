@@ -1,177 +1,143 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tac Toe mit Pepper</title>
 
-    <script src="/libs/qimessaging/2/qimessaging.js"></script>
-    <script src="../../../scripts/jquery-2.2.2.min.js"></script>
-    <script src="../../../scripts/jquery.qimhelpers.js"></script>
-    <script src="../../../scripts/pepperController.js"></script>
-    <script>
-      window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html";
-      window.CUSTOM_UNMUTE_PATH = "../../../assets/icons/volume_on.png";
-      window.CUSTOM_MUTE_PATH = "../../../assets/icons/volume_mute.svg";
-    </script>
-    <script src="../../../scripts/screenSaverTrigger.js"></script>
-    <script src="../../../components/speedDial/speedDial.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe mit Pepper</title>
 
-    <link rel="stylesheet" href="../../../components/speedDial/speedDial.css" />
-    <link rel="stylesheet" href="../../../styles/globals.css" />
-    <link rel="stylesheet" href="../../../styles/main.css" />
-    <link rel="stylesheet" href="../../../styles/subpage.css" />
-    <link rel="stylesheet" href="./ticTacToe.css" />
-  </head>
-  <body>
-    <div class="container">
-      <img
-        class="background-image"
-        src="../../../assets/backgrounds/card_background.jpg"
-        alt="Background"
-      />
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../../scripts/pepperController.js"></script>
+  <script>
+    window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html";
+    window.CUSTOM_UNMUTE_PATH = "../../../assets/icons/volume_on.png";
+    window.CUSTOM_MUTE_PATH = "../../../assets/icons/volume_mute.svg";
+  </script>
+  <script src="../../../scripts/screenSaverTrigger.js"></script>
+  <script src="../../../components/speedDial/speedDial.js"></script>
 
-      <!-- Back and Home Buttons -->
-      <div class="navigation-buttons-container">
-        <a href="../games.html" class="back-button" id="back-button">
-          <img src="../../../assets/icons/arrow_left.svg" alt="Zurück" />
-        </a>
-        <a href="../../../index.html" class="home-button" id="home-button">
-          <img src="../../../assets/icons/home.svg" alt="Startseite" />
-        </a>
-      </div>
+  <link rel="stylesheet" href="../../../components/speedDial/speedDial.css" />
+  <link rel="stylesheet" href="../../../styles/globals.css" />
+  <link rel="stylesheet" href="../../../styles/main.css" />
+  <link rel="stylesheet" href="../../../styles/subpage.css" />
+  <link rel="stylesheet" href="./ticTacToe.css" />
+</head>
 
-      <!-- Speed Dial Menu (manually imported)-->
-      <div class="speedDialManually">
-        <div class="speed-dial">
-          <button class="speed-dial-button main-button">
-            <img src="../../../assets/icons/menu.svg" alt="Menü" />
-          </button>
-          <div class="speed-dial-items">
-            <a
-              href="../../../pages/settings/settings.html"
-              class="speed-dial-item"
-              target="_parent"
-            >
-              <img
-                src="../../../assets/icons/settings.svg"
-                alt="Einstellungen"
-              />
-            </a>
-            <a class="speed-dial-item" id="muteBtn" target="_parent">
-              <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
-            </a>
-            <a class="speed-dial-item" id="stopBtn" target="_parent">
-              <img src="../../../assets/icons/stop-button.png" alt="Freeze" />
-            </a>
-          </div>
+<body>
+  <div class="container">
+    <img class="background-image" src="../../../assets/backgrounds/card_background.jpg" alt="Background" />
+
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../games.html" class="back-button" id="back-button">
+        <img src="../../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../../index.html" class="home-button" id="home-button">
+        <img src="../../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
+
+    <!-- Speed Dial Menu (manually imported)-->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a href="../../../pages/search/search.html" class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/search.svg" alt="Dienste suchen" />
+          </a>
+          <a class="speed-dial-item" id="muteBtn" target="_parent">
+            <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" id="stopBtn" target="_parent">
+            <img src="../../../assets/icons/stop-button.png" alt="Freeze" />
+          </a>
         </div>
-      </div>
-
-      <!-- Header Section -->
-      <div class="header-section">
-        <div class="header-title">Spiele mit Pepper</div>
-        <div class="header-avatar-container">
-          <img
-            class="header-avatar"
-            src="../../../assets/pepper_head.svg"
-            alt="Pepper Avatar"
-          />
-        </div>
-        <div class="header-subtitle">
-          Wähle ein Spiel aus und spiele es direkt mit mir.
-        </div>
-      </div>
-
-      <!-- Game Section -->
-      <div class="game-container">
-        <!-- Game Status Bar -->
-        <div class="game-status-bar">
-          <div id="status" class="status-message">Dein Zug (❌)</div>
-          <div class="difficulty-controls">
-            <span class="difficulty-label">Schwierigkeit:</span>
-            <div class="toggle-container">
-              <button
-                id="easyBtn"
-                class="toggle-btn active"
-                aria-pressed="true"
-              >
-                Leicht
-              </button>
-              <button id="hardBtn" class="toggle-btn" aria-pressed="false">
-                Schwer
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="game-content">
-          <!-- Left Player Card -->
-          <div class="player-card you-card">
-            <div class="player-avatar">
-              <div class="player-icon">❌</div>
-            </div>
-            <div class="player-info">
-              <h3 class="player-name">Du</h3>
-              <div id="player-score" class="player-score">0</div>
-            </div>
-          </div>
-
-          <!-- Center Game Board -->
-          <div class="game-board-wrapper">
-            <div
-              id="board"
-              class="game-board"
-              role="grid"
-              aria-label="Tic Tac Toe Spielfeld"
-            ></div>
-            <div class="board-reflection"></div>
-          </div>
-
-          <!-- Right Player Card -->
-          <div class="player-card pepper-card">
-            <div class="player-avatar">
-              <div class="player-icon">⭕</div>
-            </div>
-            <div class="player-info">
-              <h3 class="player-name">Pepper</h3>
-              <div id="ai-score" class="player-score">0</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Game Controls -->
-        <div class="game-controls">
-          <button
-            id="restartBtn"
-            class="control-btn restart-btn"
-            aria-label="Spiel neu starten"
-          >
-            <img
-              src="../../../assets/icons/repeat.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <span>Neu starten</span>
-          </button>
-          <button
-            id="newGameBtn"
-            class="control-btn new-game-btn"
-            aria-label="Neues Spiel beginnen"
-          >
-            <img
-              src="../../../assets/icons/refresh.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <span>Neues Spiel</span>
-          </button>
-        </div>
-
-        <div id="confetti-container" class="confetti-container"></div>
       </div>
     </div>
 
-    <script src="./ticTacToe.js" defer></script>
-  </body>
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-title">Spiele mit Pepper</div>
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-subtitle">
+        Wähle ein Spiel aus und spiele es direkt mit mir.
+      </div>
+    </div>
+
+    <!-- Game Section -->
+    <div class="game-container">
+      <!-- Game Status Bar -->
+      <div class="game-status-bar">
+        <div id="status" class="status-message">Dein Zug (❌)</div>
+        <div class="difficulty-controls">
+          <span class="difficulty-label">Schwierigkeit:</span>
+          <div class="toggle-container">
+            <button id="easyBtn" class="toggle-btn active" aria-pressed="true">
+              Leicht
+            </button>
+            <button id="hardBtn" class="toggle-btn" aria-pressed="false">
+              Schwer
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-content">
+        <!-- Left Player Card -->
+        <div class="player-card you-card">
+          <div class="player-avatar">
+            <div class="player-icon">❌</div>
+          </div>
+          <div class="player-info">
+            <h3 class="player-name">Du</h3>
+            <div id="player-score" class="player-score">0</div>
+          </div>
+        </div>
+
+        <!-- Center Game Board -->
+        <div class="game-board-wrapper">
+          <div id="board" class="game-board" role="grid" aria-label="Tic Tac Toe Spielfeld"></div>
+          <div class="board-reflection"></div>
+        </div>
+
+        <!-- Right Player Card -->
+        <div class="player-card pepper-card">
+          <div class="player-avatar">
+            <div class="player-icon">⭕</div>
+          </div>
+          <div class="player-info">
+            <h3 class="player-name">Pepper</h3>
+            <div id="ai-score" class="player-score">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Controls -->
+      <div class="game-controls">
+        <button id="restartBtn" class="control-btn restart-btn" aria-label="Spiel neu starten">
+          <img src="../../../assets/icons/repeat.svg" alt="" aria-hidden="true" />
+          <span>Neu starten</span>
+        </button>
+        <button id="newGameBtn" class="control-btn new-game-btn" aria-label="Neues Spiel beginnen">
+          <img src="../../../assets/icons/refresh.svg" alt="" aria-hidden="true" />
+          <span>Neues Spiel</span>
+        </button>
+      </div>
+
+      <div id="confetti-container" class="confetti-container"></div>
+    </div>
+  </div>
+
+  <script src="./ticTacToe.js" defer></script>
+</body>
+
 </html>

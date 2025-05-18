@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+  <title>Dienstleistungen Suchen</title>
+
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../scripts/pepperController.js"></script>
+  <script src="../../scripts/screenSaverTrigger.js"></script>
+
+  <link rel="stylesheet" href="../../styles/globals.css" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="../../styles/subpage.css" />
+  <link rel="stylesheet" href="./search.css" />
+  <script src="../../scripts/main.js" defer></script>
+  <script src="../../scripts/screenSaverTrigger.js" defer></script>
+  <script src="../../scripts/easterEgg.js" defer></script>
+  <script src="../../scripts/homepage.js" defer></script>
+  <script src="./search.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <img src="../../assets/backgrounds/furtwangen_background.jpg" alt="Hintergrund" class="background-image" />
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../../index.html" class="home-button" id="home-button">
+        <img src="../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <h1 class="header-title">Dienstleistungen Suchen</h1>
+      <p class="header-subtitle">Suchen Sie nach verschiedenen Dienstleistungen</p>
+
+      <div class="header-avatar-container" id="avatarContainer">
+        <img src="../../assets/pepper_head.svg" alt="Pepper Avatar" class="header-avatar" />
+      </div>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section" id="logoSection">
+      <img src="../../assets/furtwangen_logo.svg" alt="Logo" class="icon" />
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Nach Dienstleistungen suchen..." />
+        <button class="search-button" id="searchButton">
+          <img src="../../assets/icons/search.svg" alt="Suchen" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="lower-section">
+      <div class="cards-container" id="resultsContainer">
+        <!-- Search results will be populated here -->
+        <div class="no-results">Geben Sie einen Suchbegriff ein, um zu beginnen</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

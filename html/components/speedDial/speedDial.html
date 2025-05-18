@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/libs/qimessaging/2/qimessaging.js"></script>
-    <script src="scripts/jquery-2.2.2.min.js"></script>
-    <script src="scripts/jquery.qimhelpers.js"></script>
-    <script src="scripts/pepperController.js"></script>
-    <script src="scripts/screenSaverTrigger.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./speedDial.css" />
-    <script src="./speedDial.js" defer></script>
-  </head>
-  <body>
-    <div class="speed-dial">
-      <button class="speed-dial-button main-button">
-        <img src="../../assets/icons/menu.svg" alt="Menü" />
-      </button>
-      <div class="speed-dial-items">
-        <a
-          href="../../pages/settings/settings.html"
-          class="speed-dial-item"
-          target="_parent"
-        >
-          <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
-        </a>
-        <a class="speed-dial-item" id="muteBtn" target="_parent">
-          <img src="../../assets/icons/volume_mute.svg" alt="Stumm" />
-        </a>
-        <a class="speed-dial-item" id="stopBtn" target="_parent">
-          <img src="../../assets/icons/stop-button.png" alt="Freeze" />
-        </a>
-      </div>
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="scripts/jquery-2.2.2.min.js"></script>
+  <script src="scripts/jquery.qimhelpers.js"></script>
+  <script src="scripts/pepperController.js"></script>
+  <script src="scripts/screenSaverTrigger.js"></script>
+
+  <link rel="stylesheet" href="./speedDial.css" />
+  <script src="./speedDial.js" defer></script>
+</head>
+
+<body>
+  <div class="speed-dial">
+    <button class="speed-dial-button main-button">
+      <img src="../../assets/icons/menu.svg" alt="Menü" />
+    </button>
+    <div class="speed-dial-items">
+      <a href="../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+        <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
+      </a>
+      <a href="../../pages/search/search.html" class="speed-dial-item" target="_parent">
+        <img src="../../assets/icons/search.svg" alt="Dienste suchen" />
+      </a>
+      <a class="speed-dial-item" id="muteBtn" target="_parent">
+        <img src="../../assets/icons/volume_mute.svg" alt="Stumm" />
+      </a>
+      <a class="speed-dial-item" id="stopBtn" target="_parent">
+        <img src="../../assets/icons/stop-button.png" alt="Freeze" />
+      </a>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -1,332 +1,241 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
-    <title>Furtwangen - Informationen</title>
 
-    <script src="/libs/qimessaging/2/qimessaging.js"></script>
-    <script src="../../scripts/jquery-2.2.2.min.js"></script>
-    <script src="../../scripts/jquery.qimhelpers.js"></script>
-    <script src="../../scripts/pepperController.js"></script>
-    <script src="../../scripts/screenSaverTrigger.js"></script>
-    <script src="../../scripts/main.js"></script>
-    <script src="../../scripts/easterEgg.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+  <title>Furtwangen - Informationen</title>
 
-    <script src="furtwangen.js" defer></script>
-    <script src="furtwangenCarousel.js" defer></script>
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../scripts/pepperController.js"></script>
+  <script src="../../scripts/screenSaverTrigger.js"></script>
+  <script src="../../scripts/main.js"></script>
+  <script src="../../scripts/easterEgg.js"></script>
 
-    <link rel="stylesheet" href="../../styles/globals.css" />
-    <link rel="stylesheet" href="../../styles/main.css" />
-    <link rel="stylesheet" href="../../styles/subpage.css" />
-    <link rel="stylesheet" href="../../components/speedDial/speedDial.css" />
-    <link rel="stylesheet" href="./furtwangen.css" />
-    <link rel="stylesheet" href="./furtwangen-carousel.css" />
-    <link href="../../assets/fonts/Roboto2.css" rel="stylesheet" />
+  <script src="furtwangen.js" defer></script>
+  <script src="furtwangenCarousel.js" defer></script>
 
-    <script src="../../components/speedDial/speedDial.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <img
-        class="background-image"
-        src="../../assets/backgrounds/furtwangen_background.jpg"
-        alt="Background"
-      />
+  <link rel="stylesheet" href="../../styles/globals.css" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="../../styles/subpage.css" />
+  <link rel="stylesheet" href="../../components/speedDial/speedDial.css" />
+  <link rel="stylesheet" href="./furtwangen.css" />
+  <link rel="stylesheet" href="./furtwangen-carousel.css" />
+  <link href="../../assets/fonts/Roboto2.css" rel="stylesheet" />
 
-      <!-- Back and Home Buttons -->
-      <div class="navigation-buttons-container">
-        <a href="../../index.html" class="back-button" id="back-button">
-          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-        </a>
-        <a href="../../index.html" class="home-button" id="home-button">
-          <img src="../../assets/icons/home.svg" alt="Startseite" />
-        </a>
-      </div>
+  <script src="../../components/speedDial/speedDial.js"></script>
+</head>
 
-      <!-- Speed Dial Menu (manually imported)-->
-      <div class="speedDialManually">
-        <div class="speed-dial">
-          <button class="speed-dial-button main-button">
-            <img src="../../assets/icons/menu.svg" alt="Menü" />
-          </button>
-          <div class="speed-dial-items">
-            <a
-              href="../../pages/settings/settings.html"
-              class="speed-dial-item"
-              target="_parent"
-            >
-              <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
-            </a>
-            <a class="speed-dial-item" id="muteBtn" target="_parent">
-              <img src="../../assets/icons/volume_mute.svg" alt="Mute" />
-            </a>
-            <a class="speed-dial-item" id="stopBtn" target="_parent">
-              <img src="../../assets/icons/stop-button.png" alt="Freeze" />
-            </a>
-          </div>
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../../index.html" class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../index.html" class="home-button" id="home-button">
+        <img src="../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
+
+    <!-- Speed Dial Menu (manually imported)-->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a href="../../pages/search/search.html" class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/search.svg" alt="Dienste suchen" />
+          </a>
+          <a class="speed-dial-item" id="muteBtn" target="_parent">
+            <img src="../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" id="stopBtn" target="_parent">
+            <img src="../../assets/icons/stop-button.png" alt="Freeze" />
+          </a>
         </div>
-      </div>
-
-      <!-- Header Section -->
-      <div class="header-section">
-        <div class="header-title">Stadt Furtwangen</div>
-        <div class="header-avatar-container">
-          <img
-            class="header-avatar"
-            src="../../assets/pepper_head.svg"
-            alt="Pepper Avatar"
-          />
-        </div>
-        <div class="header-subtitle">
-          Wählen Sie eine Kategorie, um Furtwangen näher kennenzulernen.
-        </div>
-      </div>
-
-      <div class="lower-section">
-        <div class="cards-container">
-          <button class="prev-button" aria-label="Vorherige">
-            <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-          </button>
-
-          <div class="carousel-wrapper">
-            <div class="furtwangen-carousel">
-              <!-- Card 1: Historie -->
-              <a
-                href="../historie/historie.html"
-                class="card card-template-1"
-                id="historie-card"
-              >
-                <div class="card-header">
-                  <div class="card-image" style="width: 110%">
-                    <img
-                      src="../../assets/images/furtwangen_historie.jpg"
-                      style="object-fit: none"
-                      alt="Historie"
-                    />
-                  </div>
-                  <div class="card-title title-furtwangen">Historie</div>
-                </div>
-                <div class="card-content">
-                  <ul class="service-list">
-                    <li><span class="service-item">Stadtgeschichte</span></li>
-                    <li><span class="service-item">Uhrmacherhandwerk</span></li>
-                    <li>
-                      <span class="service-item">Historische Gebäude</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <img
-                  class="logo-detail-outline"
-                  src="../../assets/furtwangen_logo_outline.svg"
-                  alt="Logo outline"
-                />
-              </a>
-
-              <!-- Card 2: Sport -->
-              <a
-                href="../sport/sport.html"
-                class="card card-template-2"
-                id="sport-card"
-              >
-                <div class="card-header">
-                  <div class="card-icon-container">
-                    <img
-                      src="../../assets/icons/walk.svg"
-                      alt="Sport"
-                      class="card-icon wide"
-                    />
-                  </div>
-                  <div class="card-title title-furtwangen">Sport</div>
-                </div>
-                <div class="card-content">
-                  <ul class="service-list">
-                    <li><span class="service-item">Sportvereine</span></li>
-                    <li><span class="service-item">Sportstätten</span></li>
-                    <li><span class="service-item">Wintersport</span></li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <img
-                  class="logo-detail-outline"
-                  src="../../assets/furtwangen_logo_outline.svg"
-                  alt="Logo outline"
-                />
-              </a>
-
-              <!-- Card 3: Restaurants -->
-              <a
-                href="../restaurants/restaurants.html"
-                class="card card-template-1"
-                id="restaurants-card"
-              >
-                <div class="card-header">
-                  <div class="card-image" style="width: 120%">
-                    <img
-                      src="../../assets/images/furtwangen_restaurant.jpg"
-                      style="object-fit: cover"
-                      alt="Restaurants"
-                    />
-                  </div>
-                  <div class="card-title title-furtwangen">Restaurants</div>
-                </div>
-                <div class="card-content">
-                  <ul class="service-list">
-                    <li><span class="service-item">Gaststätten</span></li>
-                    <li><span class="service-item">Cafés</span></li>
-                    <li>
-                      <span class="service-item">Regionale Spezialitäten</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <img
-                  class="logo-detail-outline"
-                  src="../../assets/furtwangen_logo_outline.svg"
-                  alt="Logo outline"
-                />
-              </a>
-
-              <!-- Card 4: Sehenswürdigkeiten -->
-              <a
-                href="../sehenswuerdigkeiten/sehenswuerdigkeiten.html"
-                class="card card-template-3"
-                id="sehenswuerdigkeiten-card"
-              >
-                <div class="card-header">
-                  <div class="card-icon-container">
-                    <img
-                      src="../../assets/icons/camera_on_rectangle.svg"
-                      alt="Sehenswürdigkeiten"
-                      class="card-icon wide"
-                    />
-                  </div>
-                  <div class="card-title title-furtwangen">
-                    Sehenswürdigkeiten
-                  </div>
-                </div>
-                <div class="card-content">
-                  <ul class="service-list">
-                    <li><span class="service-item">Uhrenmuseum</span></li>
-                    <li>
-                      <span class="service-item">Aussichtsturm Brend</span>
-                    </li>
-                    <li><span class="service-item">Günterfelsen</span></li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <img
-                  class="logo-detail-outline"
-                  src="../../assets/furtwangen_logo_outline.svg"
-                  alt="Logo outline"
-                />
-              </a>
-
-              <!-- Card 5: Bildung -->
-              <a
-                href="../bildung/bildung.html"
-                class="card card-template-1"
-                id="bildung-card"
-              >
-                <div class="card-header">
-                  <div class="card-image" style="width: 110%">
-                    <img
-                      src="../../assets/images/HFU_Furtwangen.jpg"
-                      style="object-fit: cover"
-                      alt="Bildung"
-                    />
-                  </div>
-                  <div class="card-title title-furtwangen">Bildung</div>
-                </div>
-                <div class="card-content">
-                  <ul class="service-list">
-                    <li>
-                      <span class="service-item">Hochschule Furtwangen</span>
-                    </li>
-                    <li>
-                      <span class="service-item"
-                        >Studiengänge & Fakultäten</span
-                      >
-                    </li>
-                    <li>
-                      <span class="service-item"
-                        >Campusleben & Internationales</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-footer">
-                  <div class="show-button">
-                    <div class="show-button-icon">
-                      <img
-                        src="../../assets/icons/arrow_right.svg"
-                        alt="Arrow"
-                        class="arrow-icon"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <img
-                  class="logo-detail-outline"
-                  src="../../assets/furtwangen_logo_outline.svg"
-                  alt="Logo outline"
-                />
-              </a>
-            </div>
-          </div>
-
-          <button class="next-button" aria-label="Nächste">
-            <img
-              src="../../assets/icons/arrow_left.svg"
-              style="transform: scaleX(-1)"
-              alt="Nächste"
-            />
-          </button>
-        </div>
-
-        <div class="pagination-dots"></div>
       </div>
     </div>
-  </body>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-title">Stadt Furtwangen</div>
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-subtitle">
+        Wählen Sie eine Kategorie, um Furtwangen näher kennenzulernen.
+      </div>
+    </div>
+
+    <div class="lower-section">
+      <div class="cards-container">
+        <button class="prev-button" aria-label="Vorherige">
+          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+        </button>
+
+        <div class="carousel-wrapper">
+          <div class="furtwangen-carousel">
+            <!-- Card 1: Historie -->
+            <a href="../historie/historie.html" class="card card-template-1" id="historie-card">
+              <div class="card-header">
+                <div class="card-image" style="width: 110%">
+                  <img src="../../assets/images/furtwangen_historie.jpg" style="object-fit: none" alt="Historie" />
+                </div>
+                <div class="card-title title-furtwangen">Historie</div>
+              </div>
+              <div class="card-content">
+                <ul class="service-list">
+                  <li><span class="service-item">Stadtgeschichte</span></li>
+                  <li><span class="service-item">Uhrmacherhandwerk</span></li>
+                  <li>
+                    <span class="service-item">Historische Gebäude</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+              <img class="logo-detail-outline" src="../../assets/furtwangen_logo_outline.svg" alt="Logo outline" />
+            </a>
+
+            <!-- Card 2: Sport -->
+            <a href="../sport/sport.html" class="card card-template-2" id="sport-card">
+              <div class="card-header">
+                <div class="card-icon-container">
+                  <img src="../../assets/icons/walk.svg" alt="Sport" class="card-icon wide" />
+                </div>
+                <div class="card-title title-furtwangen">Sport</div>
+              </div>
+              <div class="card-content">
+                <ul class="service-list">
+                  <li><span class="service-item">Sportvereine</span></li>
+                  <li><span class="service-item">Sportstätten</span></li>
+                  <li><span class="service-item">Wintersport</span></li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+              <img class="logo-detail-outline" src="../../assets/furtwangen_logo_outline.svg" alt="Logo outline" />
+            </a>
+
+            <!-- Card 3: Restaurants -->
+            <a href="../restaurants/restaurants.html" class="card card-template-1" id="restaurants-card">
+              <div class="card-header">
+                <div class="card-image" style="width: 120%">
+                  <img src="../../assets/images/furtwangen_restaurant.jpg" style="object-fit: cover"
+                    alt="Restaurants" />
+                </div>
+                <div class="card-title title-furtwangen">Restaurants</div>
+              </div>
+              <div class="card-content">
+                <ul class="service-list">
+                  <li><span class="service-item">Gaststätten</span></li>
+                  <li><span class="service-item">Cafés</span></li>
+                  <li>
+                    <span class="service-item">Regionale Spezialitäten</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+              <img class="logo-detail-outline" src="../../assets/furtwangen_logo_outline.svg" alt="Logo outline" />
+            </a>
+
+            <!-- Card 4: Sehenswürdigkeiten -->
+            <a href="../sehenswuerdigkeiten/sehenswuerdigkeiten.html" class="card card-template-3"
+              id="sehenswuerdigkeiten-card">
+              <div class="card-header">
+                <div class="card-icon-container">
+                  <img src="../../assets/icons/camera_on_rectangle.svg" alt="Sehenswürdigkeiten"
+                    class="card-icon wide" />
+                </div>
+                <div class="card-title title-furtwangen">
+                  Sehenswürdigkeiten
+                </div>
+              </div>
+              <div class="card-content">
+                <ul class="service-list">
+                  <li><span class="service-item">Uhrenmuseum</span></li>
+                  <li>
+                    <span class="service-item">Aussichtsturm Brend</span>
+                  </li>
+                  <li><span class="service-item">Günterfelsen</span></li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+              <img class="logo-detail-outline" src="../../assets/furtwangen_logo_outline.svg" alt="Logo outline" />
+            </a>
+
+            <!-- Card 5: Bildung -->
+            <a href="../bildung/bildung.html" class="card card-template-1" id="bildung-card">
+              <div class="card-header">
+                <div class="card-image" style="width: 110%">
+                  <img src="../../assets/images/HFU_Furtwangen.jpg" style="object-fit: cover" alt="Bildung" />
+                </div>
+                <div class="card-title title-furtwangen">Bildung</div>
+              </div>
+              <div class="card-content">
+                <ul class="service-list">
+                  <li>
+                    <span class="service-item">Hochschule Furtwangen</span>
+                  </li>
+                  <li>
+                    <span class="service-item">Studiengänge & Fakultäten</span>
+                  </li>
+                  <li>
+                    <span class="service-item">Campusleben & Internationales</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <div class="show-button">
+                  <div class="show-button-icon">
+                    <img src="../../assets/icons/arrow_right.svg" alt="Arrow" class="arrow-icon" />
+                  </div>
+                </div>
+              </div>
+              <img class="logo-detail-outline" src="../../assets/furtwangen_logo_outline.svg" alt="Logo outline" />
+            </a>
+          </div>
+        </div>
+
+        <button class="next-button" aria-label="Nächste">
+          <img src="../../assets/icons/arrow_left.svg" style="transform: scaleX(-1)" alt="Nächste" />
+        </button>
+      </div>
+
+      <div class="pagination-dots"></div>
+    </div>
+  </div>
+</body>
+
 </html>

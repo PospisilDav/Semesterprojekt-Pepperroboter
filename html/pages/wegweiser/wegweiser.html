@@ -1,252 +1,545 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
-    <title>Wegweiser - Pepper</title>
 
-    <script src="/libs/qimessaging/2/qimessaging.js"></script>
-    <script src="../../scripts/jquery-2.2.2.min.js"></script>
-    <script src="../../scripts/jquery.qimhelpers.js"></script>
-    <script src="../../scripts/pepperController.js"></script>
-    <script src="../../scripts/screenSaverTrigger.js"></script>
-    <script src="../../scripts/main.js"></script>
-    <script src="../../scripts/easterEgg.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+  <title>Wegweiser - Pepper</title>
 
-    <link rel="stylesheet" href="../../styles/globals.css" />
-    <link rel="stylesheet" href="../../styles/main.css" />
-    <link rel="stylesheet" href="../../styles/subpage.css" />
-    <link rel="stylesheet" href="./wegweiser.css" />
-    <link href="../../assets/fonts/Roboto3.css" rel="stylesheet" />
-  </head>
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../scripts/pepperController.js"></script>
+  <script src="../../scripts/screenSaverTrigger.js"></script>
+  <script src="../../scripts/main.js"></script>
+  <script src="../../scripts/easterEgg.js"></script>
 
-  <body>
-    <div class="container">
-      <img
-        class="background-image"
-        src="../../assets/backgrounds/furtwangen_background.jpg"
-        alt="Background"
-      />
+  <link rel="stylesheet" href="../../styles/globals.css" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="../../styles/subpage.css" />
+  <link rel="stylesheet" href="./wegweiser.css" />
+  <link href="../../assets/fonts/Roboto3.css" rel="stylesheet" />
+</head>
 
-      <!-- Back and Home Buttons -->
-      <div class="navigation-buttons-container">
-        <a
-          href="../citizenOffice/citizenOffice.html"
-          class="back-button"
-          id="back-button"
-        >
-          <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
-        </a>
-        <a href="../../index.html" class="home-button" id="home-button">
-          <img src="../../assets/icons/home.svg" alt="Startseite" />
-        </a>
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../citizenOffice/citizenOffice.html" class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../index.html" class="home-button" id="home-button">
+        <img src="../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
+
+    <!-- Speed Dial Button -->
+    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
       </div>
-
-      <!-- Speed Dial Button -->
-      <iframe
-        src="../../components/speedDial/speedDial.html"
-        frameborder="0"
-        class="speedDial"
-      ></iframe>
-
-      <!-- Header Section -->
-      <div class="header-section">
-        <div class="header-avatar-container">
-          <img
-            class="header-avatar"
-            src="../../assets/pepper_head.svg"
-            alt="Pepper Avatar"
-          />
-        </div>
-        <div class="header-text-container">
-          <div class="header-title">Wegweiser</div>
-          <div class="header-subtitle">
-            Erfahre Sie mehr über zuständige Ämter, Öffnungszeiten und Standorte.
-          </div>
+      <div class="header-text-container">
+        <div class="header-title">Wegweiser</div>
+        <div class="header-subtitle">
+          Erfahre Sie mehr über zuständige Ämter, Öffnungszeiten und Standorte.
         </div>
       </div>
+    </div>
 
-      <div class="lower-section">
-        <!-- Two-column layout: table + details -->
-        <div class="wegweiser-layout">
-          <!-- Left column: Offices table -->
-          <div class="offices-table">
-            <div class="offices-header">
-              <h2>Ämter in Furtwangen</h2>
+    <div class="lower-section">
+      <!-- Two-column layout: table + details -->
+      <div class="wegweiser-layout">
+        <!-- Left column: Offices table -->
+        <div class="offices-table">
+          <div class="offices-header">
+            <h2>Ämter in Furtwangen</h2>
+          </div>
+
+          <div class="offices-list">
+            <div class="office-item" data-office="fachbereichsleitung">
+              <div class="office-icon">
+                <img src="../../assets/icons/building.svg" alt="Fachbereichsleitung" />
+              </div>
+              <div class="office-name">Fachbereichsleitung</div>
             </div>
 
-            <div class="offices-list">
-              <div class="office-item active" data-office="buergerbuero">
-                <div class="office-icon">
-                  <img src="../../assets/icons/building.svg" alt="Bürgerbüro" />
+            <div class="office-item active" data-office="buergerservice">
+              <div class="office-icon">
+                <img src="../../assets/icons/document.svg" alt="Bürgerservice" />
+              </div>
+              <div class="office-name">Bürgerservice</div>
+            </div>
+
+            <div class="office-item" data-office="standesamt">
+              <div class="office-icon">
+                <img src="../../assets/icons/ring.svg" alt="Standesamt" />
+              </div>
+              <div class="office-name">Standesamt</div>
+            </div>
+
+            <div class="office-item" data-office="stellvfachbereichsleitung">
+              <div class="office-icon">
+                <img src="../../assets/icons/badge.svg" alt="Stellv. Fachbereichsleitung" />
+              </div>
+              <div class="office-name">Stellv. Fachbereichsleitung</div>
+            </div>
+
+            <div class="office-item" data-office="gemeindevollzugsdienst">
+              <div class="office-icon">
+                <img src="../../assets/icons/badge.svg" alt="Gemeindevollzugsdienst" />
+              </div>
+              <div class="office-name">Gemeindevollzugsdienst</div>
+            </div>
+
+            <div class="office-item" data-office="integrationsbeauftragte">
+              <div class="office-icon">
+                <img src="../../assets/icons/people.svg" alt="Integrationsbeauftragte" />
+              </div>
+              <div class="office-name">Integrationsbeauftragte</div>
+            </div>
+
+            <div class="office-item" data-office="integrationsmanagement">
+              <div class="office-icon">
+                <img src="../../assets/icons/people.svg" alt="Integrationsmanagement" />
+              </div>
+              <div class="office-name">Integrationsmanagement</div>
+            </div>
+
+            <div class="office-item" data-office="arbeitsagentur">
+              <div class="office-icon">
+                <img src="../../assets/icons/briefcase.svg" alt="Agentur für Arbeit" />
+              </div>
+              <div class="office-name">Agentur für Arbeit</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Office details -->
+        <div class="office-details">
+          <!-- Fachbereichsleitung -->
+          <div class="office-card" id="fachbereichsleitung-details">
+            <div class="office-header">
+              <h2>Fachbereichsleitung</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">Wahlen, Verwaltung, Koordination</div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktperson" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktperson</h3>
+                    <p>Fr. Quendt</p>
+                  </div>
                 </div>
-                <div class="office-name">Bürgerbüro</div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen</p>
+                  </div>
+                </div>
               </div>
 
-              <div class="office-item" data-office="meldeamt">
-                <div class="office-icon">
-                  <img src="../../assets/icons/document.svg" alt="Meldeamt" />
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
                 </div>
-                <div class="office-name">Meldeamt</div>
-              </div>
-
-              <div class="office-item" data-office="standesamt">
-                <div class="office-icon">
-                  <img src="../../assets/icons/ring.svg" alt="Standesamt" />
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="office-name">Standesamt</div>
-              </div>
-
-              <div class="office-item" data-office="ordnungsamt">
-                <div class="office-icon">
-                  <img src="../../assets/icons/badge.svg" alt="Ordnungsamt" />
-                </div>
-                <div class="office-name">Ordnungsamt</div>
-              </div>
-
-              <div class="office-item" data-office="sozialamt">
-                <div class="office-icon">
-                  <img src="../../assets/icons/people.svg" alt="Sozialamt" />
-                </div>
-                <div class="office-name">Sozialamt</div>
-              </div>
-
-              <div class="office-item" data-office="wahlamt">
-                <div class="office-icon">
-                  <img src="../../assets/icons/vote.svg" alt="Wahlamt" />
-                </div>
-                <div class="office-name">Wahlamt</div>
-              </div>
-
-              <div class="office-item" data-office="fundbuero">
-                <div class="office-icon">
-                  <img src="../../assets/icons/search.svg" alt="Fundbüro" />
-                </div>
-                <div class="office-name">Fundbüro</div>
               </div>
             </div>
           </div>
 
-          <!-- Right column: Office details -->
-          <div class="office-details">
-            <div class="office-card" id="buergerbuero-details">
-              <div class="office-header">
-                <h2>Bürgerbüro</h2>
-                <div class="office-services-wrapper">
-                  <div class="services-label">Zuständig für:</div>
-                  <div class="office-services">
-                    Meldeamt, Standesamt, Ordnungsamt, Sozialamt, Wahlamt,
-                    Fundbüro
+          <!-- Bürgerservice -->
+          <div class="office-card" id="buergerservice-details">
+            <div class="office-header">
+              <h2>Bürgerservice</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Meldeamt, Gewerbeamt, Passamt, Soziales, KFZ-Abmeldung, Führerscheinanträge, Begrüßungsgeld, City-Gutscheine
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktpersonen" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktpersonen</h3>
+                    <p>Fr. Faller, Fr. Mittmann, Fr. Schultz, Fr. Helvaci</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mail.svg" alt="E-Mail" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontakt</h3>
+                    <p>buergerservice@furtwangen.de</p>
+                    <p>Tel: (07723) 939-145</p>
                   </div>
                 </div>
               </div>
 
-              <div class="office-info-compact">
-                <div class="info-row">
-                  <div class="info-item">
-                    <div class="info-icon">
-                      <img
-                        src="../../assets/icons/location.svg"
-                        alt="Adresse"
-                      />
-                    </div>
-                    <div class="info-content">
-                      <h3>Adresse</h3>
-                      <p>Friedrichstraße 4, 78120 Furtwangen im Schwarzwald</p>
-                    </div>
-                  </div>
-
-                  <div class="info-item">
-                    <div class="info-icon">
-                      <img src="../../assets/icons/mail.svg" alt="E-Mail" />
-                    </div>
-                    <div class="info-content">
-                      <h3>E-Mail & Kontakt</h3>
-                      <p>buergerbuero@furtwangen.de</p>
-                      <p>Tel: (07723) 939-145</p>
-                      <p>Fax: (07723) 939-144</p>
-                    </div>
-                  </div>
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
                 </div>
-
-                <div class="info-item opening-hours">
-                  <div class="info-icon">
-                    <img
-                      src="../../assets/icons/clock.svg"
-                      alt="Öffnungszeiten"
-                    />
-                  </div>
-                  <div class="info-content">
-                    <h3>Öffnungszeiten</h3>
-                    <div class="hours-container">
-                      <div class="hours-column">
-                        <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
-                      </div>
-                      <div class="hours-column">
-                        <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
-                      </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="office-card" id="meldeamt-details">
-              <div class="office-header">
-                <h2>Bürgerbüro</h2>
-                <div class="office-services-wrapper">
-                  <div class="services-label">Zuständig für:</div>
-                  <div class="office-services">
-                    Meldeamt, Standesamt, Ordnungsamt, Sozialamt, Wahlamt,
-                    Fundbüro
+          </div>
+
+          <!-- Standesamt -->
+          <div class="office-card" id="standesamt-details">
+            <div class="office-header">
+              <h2>Standesamt</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Geburten, Eheschließungen, Sterbefälle, Kirchenaustritte, Namenserklärungen
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktperson" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktperson</h3>
+                    <p>Fr. Weißer</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen</p>
                   </div>
                 </div>
               </div>
 
-              <div class="office-info-compact">
-                <div class="info-row">
-                  <div class="info-item">
-                    <div class="info-icon">
-                      <img
-                        src="../../assets/icons/location.svg"
-                        alt="Adresse"
-                      />
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
                     </div>
-                    <div class="info-content">
-                      <h3>Adresse</h3>
-                      <p>Friedrichstraße 4, 78120 Furtwangen im Schwarzwald</p>
-                    </div>
-                  </div>
-
-                  <div class="info-item">
-                    <div class="info-icon">
-                      <img src="../../assets/icons/mail.svg" alt="E-Mail" />
-                    </div>
-                    <div class="info-content">
-                      <h3>E-Mail & Kontakt</h3>
-                      <p>buergerbuero@furtwangen.de</p>
-                      <p>Tel: (07723) 939-145 | Fax: (07723) 939-144</p>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <div class="info-item opening-hours">
+          <!-- Stellv. Fachbereichsleitung -->
+          <div class="office-card" id="stellvfachbereichsleitung-details">
+            <div class="office-header">
+              <h2>Stellv. Fachbereichsleitung</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Ordnungsamt, Sondernutzungen, Verkehrsrechtliche Angelegenheiten
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
                   <div class="info-icon">
-                    <img
-                      src="../../assets/icons/clock.svg"
-                      alt="Öffnungszeiten"
-                    />
+                    <img src="../../assets/icons/person.svg" alt="Kontaktperson" />
                   </div>
                   <div class="info-content">
-                    <h3>Öffnungszeiten</h3>
-                    <div class="hours-container">
-                      <div class="hours-column">
-                        <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
-                      </div>
-                      <div class="hours-column">
-                        <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
-                      </div>
+                    <h3>Kontaktperson</h3>
+                    <p>Fr. Steuert-Nagy</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gemeindevollzugsdienst -->
+          <div class="office-card" id="gemeindevollzugsdienst-details">
+            <div class="office-header">
+              <h2>Gemeindevollzugsdienst</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Überwachung ruhender Verkehr, Städt. Märkte (z.B. Wochenmarkt), Ordnungsamt, Vollstreckungen, Stadtjäger
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktpersonen" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktpersonen</h3>
+                    <p>Hr. Fengler (Stadtjäger), Hr. Helger</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integrationsbeauftragte -->
+          <div class="office-card" id="integrationsbeauftragte-details">
+            <div class="office-header">
+              <h2>Integrationsbeauftragte</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Unterbringung, Konzeption, Verwaltung
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktpersonen" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktpersonen</h3>
+                    <p>Fr. Kühlke, Hr. Gwosch</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integrationsmanagement -->
+          <div class="office-card" id="integrationsmanagement-details">
+            <div class="office-header">
+              <h2>Integrationsmanagement</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Beratung von Flüchtlingen, Hilfestellung bei Anträgen und Behördengängen, Hilfestellung bei ärztl. Versorgung, Hilfestellung bei Schulen, Bildung und Teilhabe
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktperson" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktperson</h3>
+                    <p>Fr. Feulifack</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/mappin.svg" alt="Adresse" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Adresse</h3>
+                    <p>Friedrichstraße 4, 78120 Furtwangen</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item opening-hours">
+                <div class="info-icon">
+                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                </div>
+                <div class="info-content">
+                  <h3>Öffnungszeiten</h3>
+                  <div class="hours-container">
+                    <div class="hours-column">
+                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                    </div>
+                    <div class="hours-column">
+                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agentur für Arbeit -->
+          <div class="office-card" id="arbeitsagentur-details">
+            <div class="office-header">
+              <h2>Agentur für Arbeit (Außenstelle)</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Zuständig für:</div>
+                <div class="office-services">
+                  Arbeitsvermittlung, Beratung und Unterstützung bei Jobsuche
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/person.svg" alt="Kontaktperson" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontaktperson</h3>
+                    <p>Fr. Bertl (Arbeitsvermittlerin)</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/phone.svg" alt="Kontakt" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Kontakt</h3>
+                    <p>Nur nach Terminvereinbarung unter: 0800 4 5555 00</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <img src="../../assets/icons/info.svg" alt="Hinweis" />
+                </div>
+                <div class="info-content">
+                  <h3>Hinweis</h3>
+                  <p>Beratung nur nach vorheriger Terminvereinbarung möglich</p>
                 </div>
               </div>
             </div>
@@ -254,6 +547,8 @@
         </div>
       </div>
     </div>
-    <script src="./wegweiser.js"></script>
-  </body>
+  </div>
+  <script src="./wegweiser.js"></script>
+</body>
+
 </html>

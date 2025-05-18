@@ -1,114 +1,105 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=962, height=601, user-scalable=no" />
-    <title>Quiz & Rechenspiel</title>
 
-    <script src="/libs/qimessaging/2/qimessaging.js"></script>
-    <script src="../../../scripts/jquery-2.2.2.min.js"></script>
-    <script src="../../../scripts/jquery.qimhelpers.js"></script>
-    <script src="../../../scripts/pepperController.js"></script>
-    <script>
-      window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html";
-      window.CUSTOM_UNMUTE_PATH = "../../../assets/icons/volume_on.png";
-      window.CUSTOM_MUTE_PATH = "../../../assets/icons/volume_mute.svg";
-    </script>
-    <script src="../../../scripts/screenSaverTrigger.js"></script>
-    <script src="../../../components/speedDial/speedDial.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+  <title>Quiz & Rechenspiel</title>
 
-    <link rel="stylesheet" href="../../../components/speedDial/speedDial.css" />
-    <link rel="stylesheet" href="../../../styles/globals.css" />
-    <link rel="stylesheet" href="../../../styles/main.css" />
-    <link rel="stylesheet" href="../../../styles/subpage.css" />
-    <link rel="stylesheet" href="./quiz.css" />
-  </head>
-  <body>
-    <div class="container">
-      <img
-        class="background-image"
-        src="../../../assets/backgrounds/card_background.jpg"
-        alt="Background"
-      />
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../../scripts/pepperController.js"></script>
+  <script>
+    window.CUSTOM_SCREENSAVER_PATH = "./../../screenSaver/screenSaver.html";
+    window.CUSTOM_UNMUTE_PATH = "../../../assets/icons/volume_on.png";
+    window.CUSTOM_MUTE_PATH = "../../../assets/icons/volume_mute.svg";
+  </script>
+  <script src="../../../scripts/screenSaverTrigger.js"></script>
+  <script src="../../../components/speedDial/speedDial.js"></script>
 
-      <!-- Back and Home Buttons -->
-      <div class="navigation-buttons-container">
-        <a href="../games.html" class="back-button" id="back-button">
-          <img src="../../../assets/icons/arrow_left.svg" alt="Zurück" />
-        </a>
-        <a href="../../../index.html" class="home-button" id="home-button">
-          <img src="../../../assets/icons/home.svg" alt="Startseite" />
-        </a>
-      </div>
+  <link rel="stylesheet" href="../../../components/speedDial/speedDial.css" />
+  <link rel="stylesheet" href="../../../styles/globals.css" />
+  <link rel="stylesheet" href="../../../styles/main.css" />
+  <link rel="stylesheet" href="../../../styles/subpage.css" />
+  <link rel="stylesheet" href="./quiz.css" />
+</head>
 
-      <!-- Speed Dial Menu -->
-      <div class="speedDialManually">
-        <div class="speed-dial">
-          <button class="speed-dial-button main-button">
-            <img src="../../../assets/icons/menu.svg" alt="Menü" />
-          </button>
-          <div class="speed-dial-items">
-            <a
-              href="../../../pages/settings/settings.html"
-              class="speed-dial-item"
-              target="_parent"
-            >
-              <img
-                src="../../../assets/icons/settings.svg"
-                alt="Einstellungen"
-              />
-            </a>
-            <a class="speed-dial-item" id="muteBtn" target="_parent">
-              <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
-            </a>
-            <a class="speed-dial-item" id="stopBtn" target="_parent">
-              <img src="../../../assets/icons/stop-button.png" alt="Freeze" />
-            </a>
-          </div>
-        </div>
-      </div>
+<body>
+  <div class="container">
+    <img class="background-image" src="../../../assets/backgrounds/card_background.jpg" alt="Background" />
 
-      <!-- Header Section -->
-      <div class="header-section">
-        <div class="header-title">Quiz & Rechenspiel</div>
-        <div class="header-avatar-container">
-          <img
-            class="header-avatar"
-            src="../../../assets/pepper_head.svg"
-            alt="Pepper Avatar"
-          />
-        </div>
-        <div class="header-subtitle">
-          Teste dein Wissen und löse spannende Fragen mit Pepper.
-        </div>
-      </div>
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../games.html" class="back-button" id="back-button">
+        <img src="../../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../../index.html" class="home-button" id="home-button">
+        <img src="../../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
 
-      <!-- Game Section -->
-      <div class="game-container">
-        <!-- Question Box -->
-        <div id="game-container">
-          <div id="questionBox">
-            <p id="question">Frage erscheint hier</p>
-            <div id="answerButtons"></div>
-          </div>
-          <p id="result"></p>
-          <button id="nextBtn" class="control-btn new-game-btn hidden">
-            Nächste Frage
-          </button>
-        </div>
-
-        <!-- Add a blurred overlay -->
-        <div id="resultOverlay" class="result-overlay hidden"></div>
-
-        <!-- Result Container -->
-        <div id="resultContainer" class="result-container hidden">
-          <div class="result-content">
-            <p id="resultMessage"></p>
-          </div>
+    <!-- Speed Dial Menu -->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a href="../../../pages/search/search.html" class="speed-dial-item" target="_parent">
+            <img src="../../../assets/icons/search.svg" alt="Dienste suchen" />
+          </a>
+          <a class="speed-dial-item" id="muteBtn" target="_parent">
+            <img src="../../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" id="stopBtn" target="_parent">
+            <img src="../../../assets/icons/stop-button.png" alt="Freeze" />
+          </a>
         </div>
       </div>
     </div>
 
-    <script src="./quiz.js" defer></script>
-  </body>
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-title">Quiz & Rechenspiel</div>
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-subtitle">
+        Teste dein Wissen und löse spannende Fragen mit Pepper.
+      </div>
+    </div>
+
+    <!-- Game Section -->
+    <div class="game-container">
+      <!-- Question Box -->
+      <div id="game-container">
+        <div id="questionBox">
+          <p id="question">Frage erscheint hier</p>
+          <div id="answerButtons"></div>
+        </div>
+        <p id="result"></p>
+        <button id="nextBtn" class="control-btn new-game-btn hidden">
+          Nächste Frage
+        </button>
+      </div>
+
+      <!-- Add a blurred overlay -->
+      <div id="resultOverlay" class="result-overlay hidden"></div>
+
+      <!-- Result Container -->
+      <div id="resultContainer" class="result-container hidden">
+        <div class="result-content">
+          <p id="resultMessage"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./quiz.js" defer></script>
+</body>
+
 </html>
