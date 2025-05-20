@@ -8,6 +8,9 @@ var PATH_PAUSE_BUTTON = "../../assets/icons/pause.svg";
 var pepperController = window.pepperController;
 
 function updatePlayUI(cardElement) {
+  /**
+   * toggle play/pause button on pepper speaking
+   */
   var playImg = cardElement.getElementsByClassName("play-icon")[0];
   if (!playImg) return;
 
@@ -26,6 +29,9 @@ function updatePlayUI(cardElement) {
 }
 
 function setupCard(cardId, speakText) {
+  /**
+   * dynamically render the info cards and add event listeners
+   */
   var card = document.getElementById(cardId);
   if (!card) return;
 

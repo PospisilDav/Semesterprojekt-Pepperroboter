@@ -7,6 +7,10 @@ var last_interaction = Date.now();
 var inactivityTimer = null;
 
 function initScreenSaverTrigger() {
+  /**
+   * Polling elapsed time since last interaction
+   * and redirect to screensaver page if it exceeded
+   */
   inactivityTimer = setInterval(function () {
     var now = Date.now();
     var seconds_since_last_interaction = Math.floor(
@@ -23,6 +27,10 @@ function initScreenSaverTrigger() {
 }
 
 function addInteractionEvents() {
+  /**
+   * Add event listeners to reset the inactivity timer
+   * on user interaction events
+   */
   var events = ["mousedown", "mousemove", "keypress", "scroll", "touchstart"];
 
   for (var i = 0; i < events.length; i++) {
