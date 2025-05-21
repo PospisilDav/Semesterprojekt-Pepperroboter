@@ -5,6 +5,9 @@ const DEFAULT_PATH_MUTE_BUTTON = "../../assets/icons/volume_mute.svg";
 const DEFAULT_PATH_UNMUTE_BUTTON = "../../assets/icons/volume_on.png";
 
 function updateMuteUI() {
+  /**
+   * Toggle mute button image based on the current mute state.
+   */
   var muteBtn = document.getElementById("muteBtn");
   if (!muteBtn) return;
 
@@ -17,6 +20,9 @@ function updateMuteUI() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  /**
+   * Initialize speed dial button functionalities.
+   */
   var speedDial = document.querySelector(".speed-dial");
   var speedDialButton = document.querySelector(".speed-dial-button");
   var muteBtn = document.getElementById("muteBtn");
