@@ -2,8 +2,8 @@
 
 var pepperController = window.pepperController;
 
-function trauzimmerFullyLoaded(e) {
-  window.console.log("trauzimmer initialized");
+function weddingroomFullyLoaded(e) {
+  window.console.log("weddingroom initialized");
 
   pepperController.shutUpAndContinue();
 
@@ -15,7 +15,7 @@ function trauzimmerFullyLoaded(e) {
   }, 800);
 }
 
-window.addEventListener("load", trauzimmerFullyLoaded, false);
+window.addEventListener("load", weddingroomFullyLoaded, false);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get all location items and details cards

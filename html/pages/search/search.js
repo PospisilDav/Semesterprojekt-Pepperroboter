@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Kommunalwahl",
         "Gemeindewahl",
       ],
-      link: "../wegweiser/wegweiser.html?amt=fachbereichsleitung",
+      link: "../guide-page/guide.html?amt=fachbereichsleitung",
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Beratung",
         "Antrag",
       ],
-      link: "../wegweiser/wegweiser.html?amt=buergerservice",
+      link: "../guide-page/guide.html?amt=buergerservice",
     },
     {
       id: 3,
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Kirche",
         "Religion",
       ],
-      link: "../wegweiser/wegweiser.html?amt=standesamt",
+      link: "../guide-page/guide.html?amt=standesamt",
     },
     {
       id: 4,
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Erlaubnis",
         "Antrag",
       ],
-      link: "../wegweiser/wegweiser.html?amt=stellvfachbereichsleitung",
+      link: "../guide-page/guide.html?amt=stellvfachbereichsleitung",
     },
     {
       id: 5,
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "GVD",
         "Kontrolle",
       ],
-      link: "../wegweiser/wegweiser.html?amt=gemeindevollzugsdienst",
+      link: "../guide-page/guide.html?amt=gemeindevollzugsdienst",
     },
     {
       id: 6,
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Hilfe",
         "Unterstützung",
       ],
-      link: "../wegweiser/wegweiser.html?amt=integrationsbeauftragte",
+      link: "../guide-page/guide.html?amt=integrationsbeauftragte",
     },
     {
       id: 7,
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Arzt",
         "Gesundheit",
       ],
-      link: "../wegweiser/wegweiser.html?amt=integrationsmanagement",
+      link: "../guide-page/guide.html?amt=integrationsmanagement",
     },
     {
       id: 8,
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Arbeitslosengeld",
         "Termin",
       ],
-      link: "../wegweiser/wegweiser.html?amt=arbeitsagentur",
+      link: "../guide-page/guide.html?amt=arbeitsagentur",
     },
     {
       id: 9,
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Ausweis",
         "Bescheinigung",
       ],
-      link: "../wegweiser/wegweiser.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
+      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
     },
     {
       id: 10,
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Anmeldung",
         "Gewerbeschein",
       ],
-      link: "../wegweiser/wegweiser.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
+      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
     },
     {
       id: 11,
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Urlaub",
         "Ausland",
       ],
-      link: "../wegweiser/wegweiser.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
+      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
     },
     {
       id: 12,
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Wohnung",
         "Obdach",
       ],
-      link: "../wegweiser/wegweiser.html?amt=buergerservice", // Redirected to Bürgerservice which handles social services
+      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles social services
     },
   ];
 

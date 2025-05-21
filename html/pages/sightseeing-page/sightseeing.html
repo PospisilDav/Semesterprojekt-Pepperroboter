@@ -13,12 +13,12 @@
     <script src="../../scripts/main.js"></script>
     <script src="../../scripts/easterEgg.js"></script>
 
-    <script src="sehenswuerdigkeiten.js"></script>
+    <script src="sightseeing.js"></script>
 
     <link rel="stylesheet" href="../../styles/globals.css" />
     <link rel="stylesheet" href="../../styles/main.css" />
     <link rel="stylesheet" href="../../styles/subpage.css" />
-    <link rel="stylesheet" href="./sehenswuerdigkeiten.css" />
+    <link rel="stylesheet" href="./sightseeing.css" />
     <link href="../../assets/fonts/Roboto2.css" rel="stylesheet" />
   </head>
   <body>
@@ -377,10 +377,6 @@
           "Die Donau ist der zweitlängste Fluss Europas und in Furtwangen entspringt er. Nördlich von Furtwangen befindet sich die Quelle bei der Martinskapelle und dem Kolmenhof. Die Quelle ist die mündungsfernste Quelle der Donau und ist daher geografisch gesehen der Donauursprung.",
         museum_gasthaus_arche:
           "Betritt man die `Wirtschaft` dieses Gebäudes, wird man unwillkürlich in die 1950er Jahre versetzt. Hier gewinnt man einen Einblick in die Reiseverhältnisse aus dieser Zeit.",
-        stoecklewald:
-          "Auch vom Stöcklewaldturm hat man eine einzigartige Panoramaaussicht. Die Plattform ist über 127 Stufen zu erreichen.",
-        hexenlochmuehle:
-          "Die typische Schwarzwaldmühle ist aus dem Jahr 1825. Sie liegt zwischen St. Märgen und Furtwangen im Hexenloch. Die Mühle besitzt als einzige Mühle im Schwarzwald zwei Wasserräder.",
       };
 
       document.addEventListener("DOMContentLoaded", function () {
@@ -415,6 +411,7 @@
 
         for (var i = 0; i < listItems.length; i++) {
           listItems[i].addEventListener("click", function () {
+            pepperController.shutUp();
             // Remove active class from all items
             for (var j = 0; j < listItems.length; j++) {
               listItems[j].classList.remove("active");

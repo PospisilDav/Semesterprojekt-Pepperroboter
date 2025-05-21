@@ -2,8 +2,8 @@
 
 var pepperController = window.pepperController;
 
-function wegweiserFullyLoaded(e) {
-  window.console.log("wegweiser initialized");
+function guideFullyLoaded(e) {
+  window.console.log("guide initialized");
 
   pepperController.shutUpAndContinue();
 
@@ -15,7 +15,7 @@ function wegweiserFullyLoaded(e) {
   }, 800);
 }
 
-window.addEventListener("load", wegweiserFullyLoaded, false);
+window.addEventListener("load", guideFullyLoaded, false);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get URL parameters - older browser compatible way

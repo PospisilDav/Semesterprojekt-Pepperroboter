@@ -20,26 +20,26 @@
 
   <body>
     <div class="container team-container">
-      <!-- Background image consistent with other pages -->
+      <!-- Hintergrundbild -->
       <img
         class="background-image"
         src="../../assets/backgrounds/furtwangen_background.jpg"
         alt="Background"
       />
 
-      <!-- Navigation buttons in consistent style -->
+      <!-- Zurück-Button -->
       <div class="navigation-buttons-container">
         <a href="../../index.html" class="back-button" id="back-button">
           <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
         </a>
       </div>
 
-      <!-- Logo section for consistency -->
+      <!-- Logo -->
       <div class="logo-section">
         <img src="../../assets/furtwangen_logo.svg" alt="Logo" class="icon" />
       </div>
 
-      <!-- Header Section -->
+      <!-- Überschrift -->
       <div class="header-section">
         <div class="header-title">Easter Egg entdeckt!</div>
         <div class="header-avatar-container">
@@ -54,87 +54,75 @@
         </div>
       </div>
 
-      <!-- Main content in card style -->
+      <!-- Hauptinhalt -->
       <div class="lower-section">
         <div class="team-content">
-          <!-- Team photo with styling similar to cards -->
-          <div class="team-photo-card">
-            <div class="team-photo"></div>
+          <!-- Teamfoto und Namen -->
+          <div class="team-photo-card" style="width: 48%;">
+            <div class="team-photo" style="background-image: url('../../assets/team_photo.jpg');"></div>
             <div class="team-overlay">
               <h2>Unser Team</h2>
-              <p>Sommersemester 2025</p>
+              <p>
+                Daniel Rehberg<br />
+                David Pospisil<br />
+                Bastian Grewe<br />
+                Manuel Weisser<br />
+                Julian Walter
+              </p>
             </div>
           </div>
 
-          <!-- Project information -->
-          <div class="project-info-card">
-            <h2>Pepper Infoterminal</h2>
-            <p class="info-subtitle">Ein Projekt der Hochschule Furtwangen</p>
+          <!-- Projektinformationen -->
+          <div class="project-info-card" style="width: 48%;">
+            <h2>Projekt: Pepper Infoterminal</h2>
+            <p class="info-subtitle">Sommersemester 2025 · HFU Informatik</p>
 
             <div class="project-features">
               <div class="feature-item">
-                <img
-                  src="../../assets/icons/mappin.svg"
-                  alt="Standort"
-                  class="feature-icon"
-                />
-                <span>Stadtinformationen</span>
+                <img src="../../assets/icons/mappin.svg" alt="Stadt" class="feature-icon" />
+                <span>Stadtinformation & Bürgerservice</span>
               </div>
               <div class="feature-item">
-                <img
-                  src="../../assets/icons/game_controller.svg"
-                  alt="Spiele"
-                  class="feature-icon"
-                />
-                <span>Interaktive Spiele</span>
+                <img src="../../assets/icons/design.svg" alt="Design" class="feature-icon" />
+                <span>HTML/JS am Tablet</span>
               </div>
             </div>
 
             <div class="project-features">
               <div class="feature-item">
-                <img
-                  src="../../assets/icons/design.svg"
-                  alt="Design"
-                  class="feature-icon"
-                />
-                <span>Benutzerfreundliches Design</span>
+                <img src="../../assets/icons/game_controller.svg" alt="Framework" class="feature-icon" />
+                <span>Choregraphe / Pepper SDK</span>
               </div>
               <div class="feature-item">
-                <img
-                  src="../../assets/icons/pepper_head.png"
-                  alt="Roboter"
-                  class="feature-icon"
-                />
-                <span>Pepper-Roboter Integration</span>
+                <img src="../../assets/icons/pepper_head.png" alt="Robotik" class="feature-icon" />
+                <span>Personen- & Kollisionserkennung</span>
               </div>
             </div>
 
             <p class="project-description">
-              Dieses interaktive Infoterminal wurde als Semesterprojekt
-              entwickelt, um Besuchern, Einwohnern oder auch Touristen einen
-              einfachen Zugang zu wichtigen Informationen zu bieten und
-              gleichzeitig eine unterhaltsame Interaktion mit dem <br />
-              Pepper-Roboter zu ermöglichen.
+              • Agile Entwicklung mit SCRUM<br />
+              • Interaktive Anwendung für das Rathaus Furtwangen<br />
+              • Sprach- & Animationssteuerung mit Pepper<br />
+              • Umsetzung mit Unterstützung von CGI und der Stadtverwaltung<br />
+              • Roll-Out & Live-Test vor Ort
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Pepper decoration icon -->
+      <!-- Pepper-Dekoration -->
       <div class="pepper-decoration"></div>
     </div>
 
-    <!-- Inline script for entrance animation -->
+    <!-- Eintrittsanimation -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Add appear class after small delay for entrance animation
         setTimeout(function () {
           var teamContainer = document.querySelector(".team-container");
           if (teamContainer) {
             teamContainer.classList.add("appear");
           }
 
-          // Animate team content elements sequentially
           var elements = document.querySelectorAll(
             ".team-photo-card, .project-info-card"
           );

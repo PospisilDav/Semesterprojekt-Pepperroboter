@@ -2,8 +2,8 @@
 
 var pepperController = window.pepperController;
 
-function sehenswuerdigkeitenFullyLoaded(e) {
-  window.console.log("sehenswuerdigkeiten initialized");
+function sightseeingFullyLoaded(e) {
+  window.console.log("sightseeing initialized");
 
   pepperController.shutUpAndContinue();
 
@@ -15,7 +15,7 @@ function sehenswuerdigkeitenFullyLoaded(e) {
   }, 800);
 }
 
-window.addEventListener("load", sehenswuerdigkeitenFullyLoaded, false);
+window.addEventListener("load", sightseeingFullyLoaded, false);
 
 document.addEventListener("DOMContentLoaded", function () {
   var headerAvatar = document.querySelector(".header-avatar");
