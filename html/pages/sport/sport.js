@@ -7,35 +7,29 @@ var PATH_PAUSE_BUTTON = "../../assets/icons/pause.svg";
 
 var pepperController = window.pepperController;
 
-function updatePlayUI(cardElement) {
-  var playImg = cardElement.getElementsByClassName("play-icon")[0];
-  if (!playImg) return;
-
-  if (currentPlayingButton === playImg) {
-    playImg.src = PATH_PLAY_BUTTON;
-    currentPlayingButton = null;
-    pepperController.shutUp();
-  } else {
-    if (currentPlayingButton) {
-      currentPlayingButton.src = PATH_PLAY_BUTTON;
-      pepperController.shutUp();
-    }
-    playImg.src = PATH_PAUSE_BUTTON;
-    currentPlayingButton = playImg;
-  }
-}
-
 function setupCard(cardId, speakText) {
   var card = document.getElementById(cardId);
+  var playImg = card.getElementsByClassName("play-icon")[0];
+  if (!playImg) return;
   if (!card) return;
 
   card.addEventListener("click", function (e) {
     e.stopPropagation();
-    updatePlayUI(card);
-
-    setTimeout(function () {
-      pepperController.animatedSpeak("Boy", speakText);
-    }, 800);
+    if (currentPlayingButton === playImg) {
+      playImg.src = PATH_PLAY_BUTTON;
+      currentPlayingButton = null;
+      pepperController.shutUp();
+    } else {
+      if (currentPlayingButton) {
+        currentPlayingButton.src = PATH_PLAY_BUTTON;
+        pepperController.shutUp();
+      }
+      playImg.src = PATH_PAUSE_BUTTON;
+      currentPlayingButton = playImg;
+      setTimeout(function () {
+        pepperController.animatedSpeak("Boy", speakText);
+      }, 800);  
+    }
   });
 }
 

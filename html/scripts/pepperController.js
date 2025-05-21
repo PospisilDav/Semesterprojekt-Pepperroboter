@@ -17,6 +17,7 @@ function pepperController() {
         window.console.log("pepperCtrl animatedSpeak: " + role + " " + meinText);
         // debug: $.raiseALMemoryEvent("SBR/Test/Tablet/TextEventGirl", "Hallo Test");
         if (isDesktop == false)
+            $.raiseALMemoryEvent("SBR/Test/Tablet/ShutUpEvent", "");
             if (role == "Boy")
                 $.raiseALMemoryEvent("SBR/Test/Tablet/TextEventBoy", meinText);
             else
