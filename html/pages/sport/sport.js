@@ -7,10 +7,10 @@ var PATH_PAUSE_BUTTON = "../../assets/icons/pause.svg";
 
 var pepperController = window.pepperController;
 
+/**
+ * dynamically render the info cards and add event listeners
+ */
 function setupCard(cardId, speakText) {
-  /**
-   * dynamically render the info cards and add event listeners
-   */
   var card = document.getElementById(cardId);
   var playImg = card.getElementsByClassName("play-icon")[0];
   if (!playImg) return;

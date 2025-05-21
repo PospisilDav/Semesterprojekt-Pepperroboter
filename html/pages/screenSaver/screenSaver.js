@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // set and update the clock every second
     setInterval(function() {
         const date = new Date()
         var hours = ((date.getHours() + 2) % 24).toString()
