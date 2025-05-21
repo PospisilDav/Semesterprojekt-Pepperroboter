@@ -26,7 +26,6 @@
         <File name="pepper_head" src="html/assets/pepper_head.svg" />
         <File name="uhrenmuseum" src="html/assets/uhrenmuseum.jpg" />
         <File name="furtwangen" src="html/assets/images/furtwangen.jpg" />
-        <File name="mini_pepper" src="html/assets/mini_pepper.jpg" />
         <File name="museum_gasthaus_arche" src="html/assets/museum_gasthaus_arche.jpeg" />
         <File name="rathaus_image" src="html/assets/rathaus_image.jpg" />
         <File name="buergersaal_furtwangen1" src="html/assets/images/buergersaal_furtwangen1.jpg" />
@@ -140,15 +139,9 @@
         <File name="speedDial" src="html/components/speedDial/speedDial.html" />
         <File name="speedDial" src="html/components/speedDial/speedDial.js" />
         <File name="index" src="html/index.html" />
-        <File name="bildung" src="html/pages/bildung/bildung.css" />
-        <File name="bildung" src="html/pages/bildung/bildung.html" />
-        <File name="bildung" src="html/pages/bildung/bildung.js" />
         <File name="citizenOffice" src="html/pages/citizenOffice/citizenOffice.css" />
         <File name="citizenOffice" src="html/pages/citizenOffice/citizenOffice.html" />
         <File name="citizenOffice" src="html/pages/citizenOffice/citizenOffice.js" />
-        <File name="freizeit" src="html/pages/freizeit/freizeit.css" />
-        <File name="freizeit" src="html/pages/freizeit/freizeit.html" />
-        <File name="freizeit" src="html/pages/freizeit/freizeit.js" />
         <File name="furtwangen" src="html/pages/furtwangen/furtwangen.css" />
         <File name="furtwangen" src="html/pages/furtwangen/furtwangen.html" />
         <File name="furtwangen" src="html/pages/furtwangen/furtwangen.js" />
@@ -172,18 +165,12 @@
         <File name="ticTacToe" src="html/pages/games/ticTacToe/ticTacToe.css" />
         <File name="ticTacToe" src="html/pages/games/ticTacToe/ticTacToe.html" />
         <File name="ticTacToe" src="html/pages/games/ticTacToe/ticTacToe.js" />
-        <File name="historie" src="html/pages/historie/historie.css" />
-        <File name="historie" src="html/pages/historie/historie.html" />
-        <File name="historie" src="html/pages/historie/historie.js" />
         <File name="restaurants" src="html/pages/restaurants/restaurants.css" />
         <File name="restaurants" src="html/pages/restaurants/restaurants.html" />
         <File name="restaurants" src="html/pages/restaurants/restaurants.js" />
         <File name="screenSaver" src="html/pages/screenSaver/screenSaver.css" />
         <File name="screenSaver" src="html/pages/screenSaver/screenSaver.html" />
         <File name="screenSaver" src="html/pages/screenSaver/screenSaver.js" />
-        <File name="sehenswuerdigkeiten" src="html/pages/sehenswuerdigkeiten/sehenswuerdigkeiten.css" />
-        <File name="sehenswuerdigkeiten" src="html/pages/sehenswuerdigkeiten/sehenswuerdigkeiten.html" />
-        <File name="sehenswuerdigkeiten" src="html/pages/sehenswuerdigkeiten/sehenswuerdigkeiten.js" />
         <File name="settings" src="html/pages/settings/settings.css" />
         <File name="settings" src="html/pages/settings/settings.html" />
         <File name="settings" src="html/pages/settings/settings.js" />
@@ -193,12 +180,6 @@
         <File name="teamPage" src="html/pages/teamPage/teamPage.css" />
         <File name="teamPage" src="html/pages/teamPage/teamPage.html" />
         <File name="teamPage" src="html/pages/teamPage/teamPage.js" />
-        <File name="trauzimmer" src="html/pages/trauzimmer/trauzimmer.css" />
-        <File name="trauzimmer" src="html/pages/trauzimmer/trauzimmer.html" />
-        <File name="trauzimmer" src="html/pages/trauzimmer/trauzimmer.js" />
-        <File name="wegweiser" src="html/pages/wegweiser/wegweiser.css" />
-        <File name="wegweiser" src="html/pages/wegweiser/wegweiser.html" />
-        <File name="wegweiser" src="html/pages/wegweiser/wegweiser.js" />
         <File name="angular.min" src="html/scripts/angular.min.js" />
         <File name="easterEgg" src="html/scripts/easterEgg.js" />
         <File name="homepage" src="html/scripts/homepage.js" />
@@ -213,6 +194,52 @@
         <File name="globals" src="html/styles/globals.css" />
         <File name="main" src="html/styles/main.css" />
         <File name="subpage" src="html/styles/subpage.css" />
+        <File name="briefcase" src="html/assets/icons/briefcase.svg" />
+        <File name="building_2_circled" src="html/assets/icons/building_2_circled.svg" />
+        <File name="building_circled" src="html/assets/icons/building_circled.svg" />
+        <File name="document_circled" src="html/assets/icons/document_circled.svg" />
+        <File name="hourglass" src="html/assets/icons/hourglass.svg" />
+        <File name="info" src="html/assets/icons/info.svg" />
+        <File name="love" src="html/assets/icons/love.svg" />
+        <File name="mail" src="html/assets/icons/mail.svg" />
+        <File name="pause" src="html/assets/icons/pause.svg" />
+        <File name="person_3_circled" src="html/assets/icons/person_3_circled.svg" />
+        <File name="person_crop_circle_badge_checkmark" src="html/assets/icons/person_crop_circle_badge_checkmark.svg" />
+        <File name="phone" src="html/assets/icons/phone.svg" />
+        <File name="play" src="html/assets/icons/play.svg" />
+        <File name="search" src="html/assets/icons/search.svg" />
+        <File name="shield_circled" src="html/assets/icons/shield_circled.svg" />
+        <File name="HFU_Furtwangen" src="html/assets/images/HFU_Furtwangen.jpg" />
+        <File name="furtwangen_historie" src="html/assets/images/furtwangen_historie.jpg" />
+        <File name="furtwangen_restaurant" src="html/assets/images/furtwangen_restaurant.jpg" />
+        <File name="furtwangen_wappen" src="html/assets/images/furtwangen_wappen.png" />
+        <File name="furtwangenoutdoor" src="html/assets/images/furtwangenoutdoor.jpg" />
+        <File name="hfugebaude" src="html/assets/images/hfugebaude.jpg" />
+        <File name="hfuwiese" src="html/assets/images/hfuwiese.jpg" />
+        <File name="kaffeekuchen" src="html/assets/images/kaffeekuchen.jpg" />
+        <File name="skilanglauf" src="html/assets/images/skilanglauf.jpg" />
+        <File name="speckplatte" src="html/assets/images/speckplatte.png" />
+        <File name="mini_pepper" src="html/assets/mini_pepper.png" />
+        <File name="education" src="html/pages/education-page/education.css" />
+        <File name="education" src="html/pages/education-page/education.html" />
+        <File name="education" src="html/pages/education-page/education.js" />
+        <File name="furtwangen-carousel" src="html/pages/furtwangen/furtwangen-carousel.css" />
+        <File name="furtwangenCarousel" src="html/pages/furtwangen/furtwangenCarousel.js" />
+        <File name="guide" src="html/pages/guide-page/guide.css" />
+        <File name="guide" src="html/pages/guide-page/guide.html" />
+        <File name="guide" src="html/pages/guide-page/guide.js" />
+        <File name="history" src="html/pages/history-page/history.css" />
+        <File name="history" src="html/pages/history-page/history.html" />
+        <File name="history" src="html/pages/history-page/history.js" />
+        <File name="search" src="html/pages/search/search.css" />
+        <File name="search" src="html/pages/search/search.html" />
+        <File name="search" src="html/pages/search/search.js" />
+        <File name="sightseeing" src="html/pages/sightseeing-page/sightseeing.css" />
+        <File name="sightseeing" src="html/pages/sightseeing-page/sightseeing.html" />
+        <File name="sightseeing" src="html/pages/sightseeing-page/sightseeing.js" />
+        <File name="weddingroom" src="html/pages/weddingroom-page/weddingroom.css" />
+        <File name="weddingroom" src="html/pages/weddingroom-page/weddingroom.html" />
+        <File name="weddingroom" src="html/pages/weddingroom-page/weddingroom.js" />
     </Resources>
     <Topics />
     <IgnoredPaths />
