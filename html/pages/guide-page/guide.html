@@ -12,11 +12,13 @@
   <script src="../../scripts/pepperController.js"></script>
   <script src="../../scripts/screenSaverTrigger.js"></script>
   <script src="../../scripts/main.js"></script>
+  <script src="../../components/speedDial/speedDial.js" defer></script>
   <script src="../../scripts/easterEgg.js"></script>
 
   <link rel="stylesheet" href="../../styles/globals.css" />
   <link rel="stylesheet" href="../../styles/main.css" />
   <link rel="stylesheet" href="../../styles/subpage.css" />
+  <link rel="stylesheet" href="../../components/speedDial/speedDial.css" />
   <link rel="stylesheet" href="./guide.css" />
   <link href="../../assets/fonts/Roboto3.css" rel="stylesheet" />
 </head>
@@ -35,8 +37,28 @@
       </a>
     </div>
 
-    <!-- Speed Dial Button -->
-    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+    <!-- Speed Dial Menu (manually imported)-->
+    <div class="speedDialManually">
+      <div class="speed-dial">
+        <button class="speed-dial-button main-button">
+          <img src="../../assets/icons/menu.svg" alt="Menü" />
+        </button>
+        <div class="speed-dial-items">
+          <a href="../../pages/settings/settings.html" class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/settings.svg" alt="Einstellungen" />
+          </a>
+          <a href="../../pages/search/search.html" class="speed-dial-item" target="_parent">
+            <img src="../../assets/icons/search.svg" alt="Dienste suchen" />
+          </a>
+          <a class="speed-dial-item" id="muteBtn" target="_parent">
+            <img src="../../assets/icons/volume_mute.svg" alt="Mute" />
+          </a>
+          <a class="speed-dial-item" id="stopBtn" target="_parent">
+            <img src="../../assets/icons/stop-button.png" alt="Freeze" />
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Header Section -->
     <div class="header-section">
@@ -52,9 +74,7 @@
     </div>
 
     <div class="lower-section">
-      <!-- Two-column layout: table + details -->
       <div class="guide-layout">
-        <!-- Left column: Offices table -->
         <div class="offices-table">
           <div class="offices-header">
             <h2>Ämter in Furtwangen</h2>
@@ -122,7 +142,6 @@
 
         <!-- Right column: Office details -->
         <div class="office-details">
-          <!-- Fachbereichsleitung -->
           <div class="office-card" id="fachbereichsleitung-details">
             <div class="office-header">
               <h2>Fachbereichsleitung</h2>
@@ -174,7 +193,6 @@
             </div>
           </div>
 
-          <!-- Bürgerservice -->
           <div class="office-card" id="buergerservice-details">
             <div class="office-header">
               <h2>Bürgerservice</h2>
@@ -211,26 +229,38 @@
                 </div>
               </div>
 
-              <div class="info-item opening-hours">
-                <div class="info-icon">
-                  <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
-                </div>
-                <div class="info-content">
-                  <h3>Öffnungszeiten</h3>
-                  <div class="hours-container">
-                    <div class="hours-column">
-                      <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
-                    </div>
-                    <div class="hours-column">
-                      <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+              <div class="info-row">
+                <div class="info-item opening-hours">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/clock.svg" alt="Öffnungszeiten" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Öffnungszeiten</h3>
+                    <div class="hours-container">
+                      <div class="hours-column">
+                        <p><strong>Mo-Fr:</strong> 9:00 - 12:30 Uhr</p>
+                      </div>
+                      <div class="hours-column">
+                        <p><strong>Mo & Do:</strong> 14:00 - 17:00 Uhr</p>
+                      </div>
                     </div>
                   </div>
+                </div>
+
+                <div class="office-button-container">
+                  <a href="../citizen-services/citizen-sevices.html" class="office-nav-btn service-btn">
+                    <img src="../../assets/icons/list.svg" alt="Services" />
+                    <span>Services</span>
+                  </a>
+                  <a href="./buergerservice-map.html" class="office-nav-btn map-btn">
+                    <img src="../../assets/icons/map.svg" alt="Map" />
+                    <span>Karte</span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Standesamt -->
           <div class="office-card" id="standesamt-details">
             <div class="office-header">
               <h2>Standesamt</h2>
@@ -284,7 +314,6 @@
             </div>
           </div>
 
-          <!-- Stellv. Fachbereichsleitung -->
           <div class="office-card" id="stellvfachbereichsleitung-details">
             <div class="office-header">
               <h2>Stellv. Fachbereichsleitung</h2>
@@ -338,7 +367,6 @@
             </div>
           </div>
 
-          <!-- Gemeindevollzugsdienst -->
           <div class="office-card" id="gemeindevollzugsdienst-details">
             <div class="office-header">
               <h2>Gemeindevollzugsdienst</h2>
@@ -393,7 +421,6 @@
             </div>
           </div>
 
-          <!-- Integrationsbeauftragte -->
           <div class="office-card" id="integrationsbeauftragte-details">
             <div class="office-header">
               <h2>Integrationsbeauftragte</h2>
@@ -447,7 +474,6 @@
             </div>
           </div>
 
-          <!-- Integrationsmanagement -->
           <div class="office-card" id="integrationsmanagement-details">
             <div class="office-header">
               <h2>Integrationsmanagement</h2>
@@ -502,7 +528,6 @@
             </div>
           </div>
 
-          <!-- Agentur für Arbeit -->
           <div class="office-card" id="arbeitsagentur-details">
             <div class="office-header">
               <h2>Agentur für Arbeit (Außenstelle)</h2>
@@ -537,7 +562,7 @@
                 </div>
               </div>
 
-              <div class="info-item">
+              <div class="info-item tipp">
                 <div class="info-icon">
                   <img src="../../assets/icons/info.svg" alt="Hinweis" />
                 </div>

@@ -6,240 +6,256 @@ document.addEventListener("DOMContentLoaded", function () {
   var avatarContainer = document.getElementById("avatarContainer");
   var logoSection = document.getElementById("logoSection");
 
-  // Service data with categories and search keywords
+  // Überarbeitete und benutzerfreundlichere Services für Bürger und Touristen
   var services = [
+    // BÜRGERSERVICE - PERSÖNLICHE DOKUMENTE
     {
       id: 1,
-      title: "Fachbereichsleitung",
-      bullets: ["Wahlen", "Verwaltung", "Koordination"],
-      category: "Verwaltung",
+      title: "Ausweis & Pass beantragen",
+      bullets: ["Personalausweis", "Reisepass", "Express-Service"],
+      category: "Persönliche Dokumente",
       keywords: [
-        "Leitung",
-        "Amt",
-        "Büro",
-        "Direktion",
-        "Management",
-        "Kommunalwahl",
-        "Gemeindewahl",
-      ],
-      link: "../guide-page/guide.html?amt=fachbereichsleitung",
-    },
-    {
-      id: 2,
-      title: "Bürgerservice",
-      bullets: [
-        "Ausweise & Anmeldungen",
-        "Gewerbe & Fahrzeuge",
-        "Finanzielle Hilfen",
-      ],
-      category: "Bürgerservice",
-      keywords: [
-        "Bürgerbüro",
-        "Einwohner",
-        "Bürger",
-        "Dokumente",
-        "KFZ",
-        "Auto",
-        "Geld",
-        "Hilfe",
-        "Beratung",
-        "Antrag",
+        "Ausweis",
+        "Personalausweis",
+        "Reisepass",
+        "ID",
+        "Pass",
+        "Dokument",
+        "beantragen",
+        "verlängern",
+        "erneuern",
+        "verloren",
+        "gestohlen",
+        "Urlaub",
+        "Reise",
+        "Ausland"
       ],
       link: "../guide-page/guide.html?amt=buergerservice",
+      type: "buergerservice",
+      serviceId: "personalausweis"
     },
+    // BÜRGERSERVICE - PERSONALAUSWEIS (SPEZIFISCHER SERVICE)
+    {
+      id: 2,
+      title: "Personalausweis beantragen",
+      bullets: ["Beantragung", "Verlängerung", "Biometrisches Passbild benötigt"],
+      category: "Bürgerservice",
+      keywords: [
+        "Ausweis",
+        "Personalausweis",
+        "ID",
+        "beantragen", 
+        "neu",
+        "verlängern",
+        "verloren",
+        "gestohlen"
+      ],
+      link: "../citizen-services/citizen-sevices.html?service=personalausweis",
+      type: "buergerservice",
+      serviceId: "personalausweis"
+    },
+    // BÜRGERSERVICE - REISEPASS (SPEZIFISCHER SERVICE)
     {
       id: 3,
-      title: "Standesamt",
-      bullets: ["Geburt & Tod", "Heirat", "Kirchenaustritt & Namensänderung"],
-      category: "Personenstand",
+      title: "Reisepass beantragen",
+      bullets: ["Standard-Reisepass", "Express-Service", "Für Auslandsreisen"],
+      category: "Bürgerservice",
       keywords: [
-        "Hochzeit",
-        "Geburtsurkunde",
-        "Sterbeurkunde",
-        "Ehe",
-        "Heiraten",
-        "Name ändern",
-        "Baby",
-        "Kirche",
-        "Religion",
+        "Reisepass", 
+        "Pass", 
+        "Ausland", 
+        "Reise", 
+        "Urlaub", 
+        "beantragen", 
+        "express", 
+        "schnell"
       ],
-      link: "../guide-page/guide.html?amt=standesamt",
+      link: "../citizen-services/citizen-sevices.html?service=reisepass",
+      type: "buergerservice",
+      serviceId: "reisepass"
     },
+    // BÜRGERSERVICE - KFZ-ABMELDUNG
     {
       id: 4,
-      title: "Stellv. Fachbereichsleitung",
-      bullets: ["Ordnungsamt", "Sondernutzungen", "Verkehrsrecht"],
-      category: "Verwaltung",
+      title: "KFZ-Abmeldung",
+      bullets: ["Fahrzeugabmeldung", "Außerbetriebsetzung", "Ummeldung"],
+      category: "Fahrzeugangelegenheiten",
       keywords: [
-        "Stellvertretung",
-        "Ordnung",
-        "Verkehr",
-        "Straße",
-        "Genehmigung",
-        "Erlaubnis",
-        "Antrag",
+        "KFZ", 
+        "Auto", 
+        "Fahrzeug", 
+        "abmelden", 
+        "Abmeldung", 
+        "Außerbetriebsetzung", 
+        "Zulassung"
       ],
-      link: "../guide-page/guide.html?amt=stellvfachbereichsleitung",
+      link: "../citizen-services/citizen-sevices.html?service=kfz",
+      type: "buergerservice",
+      serviceId: "kfz"
     },
+    // BÜRGERSERVICE - FÜHRERSCHEIN
     {
       id: 5,
-      title: "Gemeindevollzugsdienst",
-      bullets: [
-        "Parkkontrollen",
-        "Märkte & Veranstaltungen",
-        "Vollstreckungen",
-      ],
-      category: "Ordnung",
+      title: "Führerscheinangelegenheiten",
+      bullets: ["Antrag", "Umschreibung", "Internationaler Führerschein"],
+      category: "Fahrzeugangelegenheiten",
       keywords: [
-        "Ordnungsamt",
-        "Parken",
-        "Knöllchen",
-        "Markt",
-        "Wochenmarkt",
-        "Strafe",
-        "Bußgeld",
-        "GVD",
-        "Kontrolle",
+        "Führerschein", 
+        "Fahrerlaubnis", 
+        "beantragen", 
+        "umschreiben", 
+        "international"
       ],
-      link: "../guide-page/guide.html?amt=gemeindevollzugsdienst",
+      link: "../citizen-services/citizen-sevices.html?service=fuehrerschein",
+      type: "buergerservice",
+      serviceId: "fuehrerschein"
     },
+    // BÜRGERSERVICE - MELDEWESEN
     {
       id: 6,
-      title: "Integrationsbeauftragte",
-      bullets: [
-        "Wohnungen für Geflüchtete",
-        "Planung der Integration",
-        "Organisation der Hilfsangebote",
-      ],
-      category: "Integration",
+      title: "Meldeangelegenheiten",
+      bullets: ["An-/Ummeldung", "Abmeldung", "Meldebescheinigung"],
+      category: "Wohnen",
       keywords: [
-        "Flüchtlinge",
-        "Asyl",
-        "Migration",
-        "Ausländer",
-        "Unterkunft",
-        "Wohnen",
-        "Hilfe",
-        "Unterstützung",
+        "Anmeldung", 
+        "Ummeldung", 
+        "Abmeldung", 
+        "Wohnsitz", 
+        "Umzug", 
+        "Meldebescheinigung"
       ],
-      link: "../guide-page/guide.html?amt=integrationsbeauftragte",
+      link: "../citizen-services/citizen-sevices.html?service=meldewesen",
+      type: "buergerservice",
+      serviceId: "meldewesen"
     },
+    // BÜRGERAMT/BÜRGERSERVICE ALLGEMEIN
     {
       id: 7,
-      title: "Integrationsmanagement",
-      bullets: [
-        "Beratung für Geflüchtete",
-        "Hilfe bei Anträgen und Ämtern",
-        "Unterstützung: Schule und Gesundheit",
-      ],
-      category: "Integration",
+      title: "Bürgerservice",
+      bullets: ["Meldeamt", "Passamt", "Gewerbeamt", "KFZ-Abmeldung"],
+      category: "Allgemeine Informationen",
       keywords: [
-        "Flüchtlinge",
-        "Asyl",
-        "Migranten",
-        "Hilfe",
-        "Anträge",
-        "Formulare",
-        "Beratung",
-        "Schule",
-        "Arzt",
-        "Gesundheit",
+        "Bürgerservice", 
+        "Bürgeramt", 
+        "Öffnungszeiten", 
+        "Kontakt", 
+        "Rathaus"
       ],
-      link: "../guide-page/guide.html?amt=integrationsmanagement",
+      link: "../guide-page/guide.html?amt=buergerservice",
+      type: "wegweiser",
+      serviceId: "buergerservice"
     },
+    // STANDESAMT
     {
       id: 8,
-      title: "Agentur für Arbeit",
-      bullets: ["Arbeitsvermittlung", "Hilfe bei Jobsuche", "Nur mit Termin"],
-      category: "Arbeit",
+      title: "Standesamt",
+      bullets: ["Eheschließungen", "Geburten", "Sterbefälle"],
+      category: "Familienleben & Personenstand",
       keywords: [
-        "Arbeitsamt",
-        "Arbeitslos",
-        "Jobcenter",
-        "Stelle",
-        "Beruf",
-        "Vermittlung",
-        "ALG",
-        "Arbeitslosengeld",
-        "Termin",
+        "Standesamt", 
+        "Hochzeit", 
+        "Ehe", 
+        "Heirat", 
+        "Geburt", 
+        "Sterbefall", 
+        "Kirchenaustritt"
       ],
-      link: "../guide-page/guide.html?amt=arbeitsagentur",
+      link: "../guide-page/guide.html?amt=standesamt",
+      type: "wegweiser",
+      serviceId: "standesamt"
     },
+    // GEWERBEAMT
     {
       id: 9,
-      title: "Meldeamt",
-      bullets: ["Wohnung anmelden", "Personalausweis", "Meldebescheinigungen"],
-      category: "Bürgerservice",
+      title: "Gewerbeamt",
+      bullets: ["Gewerbeanmeldung", "Gewerbeummeldung", "Gewerbeabmeldung"],
+      category: "Wirtschaft & Gewerbe",
       keywords: [
-        "Anmeldung",
-        "Ummeldung",
-        "Abmeldung",
-        "Wohnsitz",
-        "Adresse",
-        "Umzug",
-        "Ausweis",
-        "Bescheinigung",
+        "Gewerbe", 
+        "Firma", 
+        "Selbständig", 
+        "anmelden", 
+        "ummelden", 
+        "abmelden", 
+        "Unternehmen"
       ],
-      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
+      link: "../citizen-services/citizen-sevices.html?service=gewerbe",
+      type: "buergerservice",
+      serviceId: "gewerbe"
     },
+    // BEGRÜSSUNGSGELD
     {
       id: 10,
-      title: "Gewerbeamt",
-      bullets: ["Gewerbe anmelden", "Gewerbe ändern", "Gewerbe abmelden"],
-      category: "Wirtschaft",
+      title: "Begrüßungsgeld",
+      bullets: ["Für Neugeborene", "Antragstellung", "Leistungen"],
+      category: "Familie & Soziales",
       keywords: [
-        "Firma",
-        "Unternehmen",
-        "Betrieb",
-        "Selbständig",
-        "Gewerbe",
-        "Business",
-        "Anmeldung",
-        "Gewerbeschein",
+        "Begrüßungsgeld", 
+        "Neugeboren", 
+        "Baby", 
+        "Kind", 
+        "Geld", 
+        "Antrag"
       ],
-      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
+      link: "../citizen-services/citizen-sevices.html?service=begruessungsgeld",
+      type: "buergerservice",
+      serviceId: "begruessungsgeld"
     },
+    // INTEGRATIONSBEAUFTRAGTE
     {
       id: 11,
-      title: "Passamt",
-      bullets: ["Reisepass", "Personalausweis", "Vorläufige Dokumente"],
-      category: "Bürgerservice",
+      title: "Integrationsbeauftragte",
+      bullets: ["Unterbringung", "Beratung", "Verwaltung"],
+      category: "Integration & Migration",
       keywords: [
-        "Pass",
-        "Ausweis",
-        "ID",
-        "Identität",
-        "Dokument",
-        "Reise",
-        "Passbild",
-        "Urlaub",
-        "Ausland",
+        "Integration", 
+        "Migration", 
+        "Flüchtling", 
+        "Ausländer", 
+        "Unterstützung", 
+        "Hilfe"
       ],
-      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles these services
+      link: "../guide-page/guide.html?amt=integrationsbeauftragte",
+      type: "wegweiser",
+      serviceId: "integrationsbeauftragte"
     },
+    // ARBEITSAGENTUR
     {
       id: 12,
-      title: "Sozialamt",
-      bullets: [
-        "Finanzielle Unterstützung",
-        "Hilfe in Notlagen",
-        "Wohnungsangelegenheiten",
-      ],
-      category: "Sozialdienste",
+      title: "Agentur für Arbeit",
+      bullets: ["Arbeitsvermittlung", "Beratung", "Arbeitssuche"],
+      category: "Arbeit & Karriere",
       keywords: [
-        "Sozialhilfe",
-        "Geld",
-        "Unterstützung",
-        "Not",
-        "Wohngeld",
-        "Armut",
-        "Hilfe",
-        "Beratung",
-        "Wohnung",
-        "Obdach",
+        "Arbeitsagentur", 
+        "Arbeitsamt", 
+        "Job", 
+        "Arbeit", 
+        "Arbeitslos", 
+        "Vermittlung", 
+        "Beratung"
       ],
-      link: "../guide-page/guide.html?amt=buergerservice", // Redirected to Bürgerservice which handles social services
+      link: "../guide-page/guide.html?amt=arbeitsagentur",
+      type: "wegweiser",
+      serviceId: "arbeitsagentur"
     },
+    // CITY-GUTSCHEINE
+    {
+      id: 13,
+      title: "City-Gutscheine",
+      bullets: ["Verkauf", "Einlösung", "Gültigkeitsdauer"],
+      category: "Lokale Wirtschaft",
+      keywords: [
+        "Gutschein", 
+        "City", 
+        "Stadt", 
+        "Geschenk", 
+        "Einkaufen", 
+        "lokal"
+      ],
+      link: "../citizen-services/citizen-sevices.html?service=gutscheine",
+      type: "buergerservice",
+      serviceId: "gutscheine"
+    }
   ];
 
   // UI element interactions
@@ -311,6 +327,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      // If there's exactly one result, redirect immediately
+      if (filteredServices.length === 1) {
+        var service = filteredServices[0];
+        window.location.href = service.link;
+        return;
+      }
+      
       displayResults(filteredServices, searchTerm);
     }, 500);
   }
@@ -367,6 +390,11 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           bulletsHtml += "</ul>";
 
+          // Add service type indicator
+          var typeLabel = service.type === "buergerservice" ? 
+            '<span class="service-type buergerservice-type">Bürgerservice</span>' : 
+            '<span class="service-type wegweiser-type">Wegweiser</span>';
+
           // Build card element
           var cardElement = document.createElement("div");
           cardElement.className =
@@ -378,6 +406,7 @@ document.addEventListener("DOMContentLoaded", function () {
             '  <h2 class="card-title">' +
             highlightedTitle +
             "</h2>" +
+            typeLabel +
             "</div>" +
             '<div class="card-content">' +
             bulletsHtml +

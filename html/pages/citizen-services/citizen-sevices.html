@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=962, height=601, user-scalable=no" />
+  <title>Bürgerservice Leistungen - Pepper</title>
+
+  <script src="/libs/qimessaging/2/qimessaging.js"></script>
+  <script src="../../scripts/jquery-2.2.2.min.js"></script>
+  <script src="../../scripts/jquery.qimhelpers.js"></script>
+  <script src="../../scripts/pepperController.js"></script>
+  <script src="../../scripts/screenSaverTrigger.js"></script>
+  <script src="../../scripts/main.js"></script>
+  <script src="../../scripts/easterEgg.js"></script>
+  <script src="./citizen-services.js" defer></script>
+
+  <link rel="stylesheet" href="../../styles/globals.css" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="../../styles/subpage.css" />
+  <link rel="stylesheet" href="../guide-page/guide.css" />
+  <link rel="stylesheet" href="./citizen-services.css" />
+  <link href="../../assets/fonts/Roboto3.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <img class="background-image" src="../../assets/backgrounds/furtwangen_background.jpg" alt="Background" />
+
+    <!-- Back and Home Buttons -->
+    <div class="navigation-buttons-container">
+      <a href="../guide-page/guide.html" class="back-button" id="back-button">
+        <img src="../../assets/icons/arrow_left.svg" alt="Zurück" />
+      </a>
+      <a href="../../index.html" class="home-button" id="home-button">
+        <img src="../../assets/icons/home.svg" alt="Startseite" />
+      </a>
+    </div>
+
+    <!-- Speed Dial Button -->
+    <iframe src="../../components/speedDial/speedDial.html" frameborder="0" class="speedDial"></iframe>
+
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="header-avatar-container">
+        <img class="header-avatar" src="../../assets/pepper_head.svg" alt="Pepper Avatar" />
+      </div>
+      <div class="header-text-container">
+        <div class="header-title">Bürgerservice Leistungen</div>
+        <div class="header-subtitle">
+          Übersicht aller Leistungen des Bürgerservice im Rathaus Furtwangen
+        </div>
+      </div>
+    </div>
+
+    <div class="lower-section">
+      <!-- Two-column layout: table + details -->
+      <div class="guide-layout">
+        <!-- Left column: Services table -->
+        <div class="offices-table services-table">
+          <div class="offices-header">
+            <h2>Verfügbare Leistungen</h2>
+          </div>
+
+          <div class="offices-list services-list">
+            <div class="office-item active" data-service="personalausweis">
+              <div class="office-icon">
+                <img src="../../assets/icons/passport.svg" alt="Personalausweis" />
+              </div>
+              <div class="office-name">Personalausweis</div>
+            </div>
+
+            <div class="office-item" data-service="reisepass">
+              <div class="office-icon">
+                <img src="../../assets/icons/globe.svg" alt="Reisepass" />
+              </div>
+              <div class="office-name">Reisepass</div>
+            </div>
+
+            <div class="office-item" data-service="meldewesen">
+              <div class="office-icon">
+                <img src="../../assets/icons/house.svg" alt="Meldeangelegenheiten" />
+              </div>
+              <div class="office-name">Meldewesen</div>
+            </div>
+
+            <div class="office-item" data-service="kfz">
+              <div class="office-icon">
+                <img src="../../assets/icons/car.svg" alt="KFZ-Abmeldung" />
+              </div>
+              <div class="office-name">KFZ-Abmeldung</div>
+            </div>
+
+            <div class="office-item" data-service="fuehrerschein">
+              <div class="office-icon">
+                <img src="../../assets/icons/license.svg" alt="Führerschein" />
+              </div>
+              <div class="office-name">Führerschein</div>
+            </div>
+
+            <div class="office-item" data-service="begruessungsgeld">
+              <div class="office-icon">
+                <img src="../../assets/icons/gift.svg" alt="Begrüßungsgeld" />
+              </div>
+              <div class="office-name">Begrüßungsgeld</div>
+            </div>
+
+            <div class="office-item" data-service="gewerbe">
+              <div class="office-icon">
+                <img src="../../assets/icons/briefcase.svg" alt="Gewerbe" />
+              </div>
+              <div class="office-name">Gewerbeamt</div>
+            </div>
+
+            <div class="office-item" data-service="gutscheine">
+              <div class="office-icon">
+                <img src="../../assets/icons/voucher.svg" alt="City-Gutscheine" />
+              </div>
+              <div class="office-name">City-Gutscheine</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column: Service details -->
+        <div class="office-details service-details">
+          <!-- Personalausweis -->
+          <div class="office-card" id="personalausweis-details">
+            <div class="office-header">
+              <h2>Personalausweis</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Beschreibung:</div>
+                <div class="office-services">
+                  Beantragung und Abholung von Personalausweisen
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/document.svg" alt="Unterlagen" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Benötigte Unterlagen</h3>
+                    <ul class="requirements-list">
+                      <li>Alten Personalausweis</li>
+                      <li>Biometrisches Passbild</li>
+                      <li>Geburtsurkunde (bei Erstausstellung)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/euro.svg" alt="Gebühren" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Gebühren</h3>
+                    <p>Standardausstellung: <strong>37,00 €</strong></p>
+                    <p>Unter 24 Jahre: <strong>22,80 €</strong></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item tipp">
+                <div class="info-icon">
+                  <img src="../../assets/icons/info.svg" alt="Hinweise" />
+                </div>
+                <div class="info-content">
+                  <h3>Hinweise</h3>
+                  <p>Der Personalausweis wird ca. 3-4 Wochen nach Antragstellung zur Abholung bereitgestellt.</p>
+                  <p>Bei der Beantragung muss der Antragsteller persönlich erscheinen.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reisepass -->
+          <div class="office-card" id="reisepass-details">
+            <div class="office-header">
+              <h2>Reisepass</h2>
+              <div class="office-services-wrapper">
+                <div class="services-label">Beschreibung:</div>
+                <div class="office-services">
+                  Beantragung und Abholung von Reisepässen für In- und Auslandsreisen
+                </div>
+              </div>
+            </div>
+
+            <div class="office-info-compact">
+              <div class="info-row">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/document.svg" alt="Unterlagen" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Benötigte Unterlagen</h3>
+                    <ul class="requirements-list">
+                      <li>Bisherigen Reisepass</li>
+                      <li>Biometrisches Passbild</li>
+                      <li>Personalausweis</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <img src="../../assets/icons/euro.svg" alt="Gebühren" />
+                  </div>
+                  <div class="info-content">
+                    <h3>Gebühren</h3>
+                    <p>Standardreisepass: <strong>60,00 €</strong></p>
+                    <p>Unter 24 Jahre: <strong>37,50 €</strong></p>
+                    <p>Expressbearbeitung: <strong>+32,00 €</strong></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-item tipp">
+                <div class="info-icon">
+                  <img src="../../assets/icons/info.svg" alt="Hinweise" />
+                </div>
+                <div class="info-content">
+                  <h3>Hinweise</h3>
+                  <p>Standardbearbeitungszeit: ca. 4-6 Wochen</p>
+                  <p>Expressbearbeitung: ca. 3 Werktage</p>
+                  <p>Der Reisepass ist nach Beantragung persönlich abzuholen.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional service cards would go here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./citizen-services.js"></script>
+</body>
+
+</html>

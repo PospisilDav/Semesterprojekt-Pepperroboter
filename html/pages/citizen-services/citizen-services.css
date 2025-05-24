@@ -1,0 +1,92 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(103, 194, 58, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.service-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.service-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Services table specific styles */
+.services-table {
+  min-width: 280px;
+  max-width: 300px;
+}
+
+/* Service details container */
+.service-details {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Requirements list styling */
+.requirements-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.requirements-list li {
+  margin-bottom: 6px;
+}
+
+.requirements-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Hide all service detail cards except the active one */
+.office-card {
+  display: none;
+}
+
+.office-card:first-child {
+  display: block;
+}
+
+/* Service item hover effect */
+.office-item:hover {
+  background-color: rgba(82, 173, 89, 0.1);
+}

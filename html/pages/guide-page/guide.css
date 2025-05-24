@@ -129,6 +129,7 @@
   display: flex;
   flex-direction: column;
   animation: card-appear 0.6s ease-in-out;
+  position: relative;
 }
 
 .office-header {
@@ -191,15 +192,112 @@
   display: flex;
   flex-direction: column;
   height: 200px;
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.office-info-compact {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.office-info-compact .info-row:last-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.office-info-compact .info-row:last-child .opening-hours {
+  flex: 1;
+  margin-right: 15px;
+}
+
+.office-info-compact .info-row:last-child .office-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+  margin-top: 15px; /* Add some top margin to align better with opening hours */
+}
+
+.office-button-container {
+  display: flex;
+  gap: 12px;
+}
+
+.office-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 12px 20px;
+  background-color: #40bd4a;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.office-nav-btn:hover {
+  background-color: #3aaf44;
+}
+
+.office-nav-btn:active {
+  background-color: #35a33e;
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.office-nav-btn img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  margin-right: 8px;
+}
+
+.service-btn, .map-btn {
+  background-color: #40bd4a;
+}
+
+.service-btn:hover, .map-btn:hover {
+  background-color: #3aaf44;
+}
+
+.service-btn:active, .map-btn:active {
+  background-color: #35a33e;
+}
+
+.office-nav-btn::before {
+  content: none;
+}
+
+.info-row, .info-item {
+  margin-bottom: 12px;
 }
 
 .office-info-compact > *:not(:last-child) {
   margin-bottom: 15px;
 }
 
+.office-action-buttons {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
 .info-row {
   display: flex;
   height: 200px;
+  margin-bottom: 12px;
 }
 
 .info-row > *:not(:last-child) {
@@ -209,6 +307,7 @@
 .info-item {
   flex: 1;
   margin-right: 15px;
+  margin-bottom: 12px;
 }
 
 .info-item:last-child {
@@ -344,37 +443,16 @@
   overflow-wrap: break-word;
 }
 
-/* Special styling for the Hinweis section */
 .info-item .info-content h3 + p {
   max-width: 100%;
   display: block;
   padding-right: 10px;
 }
 
-/* Make sure the Hinweis box expands to fit content */
-#arbeitsagentur-details .info-item {
+.info-item.tipp {
   height: auto;
   min-height: 80px;
   flex: 0 0 auto;
-}
-
-/* For better display of longer text content */
-#arbeitsagentur-details .info-row {
-  height: auto;
-  flex-wrap: wrap;
-}
-
-/* Ensure all items in info-row have proper spacing when wrapping */
-#arbeitsagentur-details .info-row .info-item {
-  margin-bottom: 15px;
-  flex: 1 1 calc(50% - 15px);
-}
-
-/* Fix for older browsers that don't support calc() */
-@media screen {
-  #arbeitsagentur-details .info-row .info-item {
-    min-width: 200px;
-  }
 }
 
 .info-content h3 {
